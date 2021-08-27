@@ -1,0 +1,137 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!-- Settings, should always be in the overflow -->
+    <item
+        android:id="@+id/action_settings_main"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/action_database"
+        app:showAsAction="always">
+        <menu>
+
+
+            <item
+                android:id="@+id/action_database"
+                android:title="@string/action_database"
+                android:visible="false"
+                tools:visible="true" />
+            <item
+                android:id="@+id/action_data_sync"
+                android:title="@string/action_data_sync" />
+
+            <item
+                android:id="@+id/action_forms"
+                android:title="Forms">
+                <menu>
+                    <item
+                        android:id="@+id/formsReportPending"
+                        android:title="Unfinished" />
+                    <item
+                        android:id="@+id/formsReportDate"
+                        android:title="Report by Date" />
+                    <item
+                        android:id="@+id/formsReportCluster"
+                        android:title="Report by LHW" />
+                </menu>
+            </item>
+            <item
+                android:id="@+id/action_lhws"
+                android:title="Lhws">
+                <menu>
+                    <item
+                        android:id="@+id/lhwsReportPending"
+                        android:title="Unfinished" />
+                    <item
+                        android:id="@+id/lhwsReportDate"
+                        android:title="Report by Date" />
+                    <item
+                        android:id="@+id/lhwsReportCluster"
+                        android:title="Report by LHW" />
+                </menu>
+            </item>
+
+            <item
+                android:id="@+id/action_sections"
+                android:title="Sections">
+
+                <menu>
+                    <group android:id="@+id/lists">
+
+                        <item
+                            android:id="@+id/mwraList"
+                            android:title="@string/mwratitle" />
+                        <item
+                            android:id="@+id/childList"
+                            android:title="@string/childtitle" />
+                    </group>
+
+                    <group android:id="@+id/secH">
+                        <item
+                            android:id="@+id/secH1"
+                            android:title="@string/sech1title" />
+                        <item
+                            android:id="@+id/secH2b"
+                            android:title="@string/sec2btitle" />
+                        <item
+                            android:id="@+id/secH3a"
+                            android:title="@string/sech3title" />
+
+                        <item
+                            android:id="@+id/secH4"
+                            android:title="@string/sech4title" />
+                        <item
+                            android:id="@+id/secH5"
+                            android:title="@string/sech5title" />
+                        <item
+                            android:id="@+id/secH6"
+                            android:title="@string/sech6title" />
+                        <item
+                            android:id="@+id/secH7"
+                            android:title="@string/sech7title" />
+                        <item
+                            android:id="@+id/sech6"
+                            android:title="@string/sech6title" />
+                    </group>
+                    <group android:id="@+id/secW">
+
+
+                        <item
+                            android:id="@+id/secW1"
+                            android:title="@string/secw1title" />
+                        <item
+                            android:id="@+id/secW1b"
+                            android:title="@string/secw1atitle" />
+                        <item
+                            android:id="@+id/secW2"
+                            android:title="@string/secw2title" />
+                        <item
+                            android:id="@+id/secW3"
+                            android:title="@string/secw3title" />
+
+                        <item
+                            android:id="@+id/secW4"
+                            android:title="@string/secw4title" />
+
+                    </group>
+                    <group android:id="@+id/secC">
+
+                        <item
+                            android:id="@+id/secC1"
+                            android:title="@string/secc1title" />
+                        <item
+                            android:id="@+id/secC2"
+                            android:title="@string/secc2title" />
+                        <item
+                            android:id="@+id/secC3"
+                            android:title="@string/secc3title" />
+
+                    </group>
+
+
+                </menu>
+            </item>
+        </menu>
+    </item>
+</menu>

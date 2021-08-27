@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#EF6C00</color>
+    <color name="colorPrimaryLight">#FFA726</color>
+    <color name="colorPrimaryDark">#E65100</color>
+    <color name="colorAccent">#757575</color>
+    <color name="colorAccentLight">#FF9100</color>
+
+    <color name="colorPrimaryOverlay">#7fEF6C00</color>
+    <color name="colorPrimaryLightOverlay">#7fFFA726</color>
+    <color name="colorPrimaryDarkOverlay">#7fE65100</color>
+    <color name="colorAccentOverlay">#7f757575</color>
+    <color name="colorAccentLightOverlay">#7fEEEEEE</color>
+
+    <!-- Standard App Colors -->
+    <color name="grayDark">#424242</color>
+    <color name="grayDark1">#696969</color>
+    <color name="grayLight">#EEEEEE</color>
+    <color name="greenLight">#d600ef00</color>
+    <color name="redLight">#d6ef0000</color>
+    <color name="gray">#757575</color>
+    <color name="green">#009900</color>
+    <color name="redOverlay">#7f990000</color>
+    <color name="blackOverlay">#7f000000</color>
+    <color name="whiteOverlay">#7fffffff</color>
+    <color name="redDark">#990000</color>
+    <color name="lightPink">#EEE4C4BA</color>
+    <color name="lightPink1">#7fefd6d6</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="girl_pink">#FF80AB</color>
+    <color name="boy_blue">#82B1FF</color>
+</resources>

@@ -1,0 +1,2 @@
+rootProject.name = "EPI_Register"
+include ':app'
