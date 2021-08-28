@@ -502,21 +502,20 @@
                         android:id="@+id/wr_ttd1dscheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/wr_ttd1ds1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/wr_ttd1ds1" />
 
                         <CheckBox
                             android:id="@+id/wr_ttd1ds2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/wr_ttd1ds2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -561,21 +560,20 @@
                         android:id="@+id/wr_ttd2dscheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/wr_ttd2ds1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/wr_ttd2ds1" />
 
                         <CheckBox
                             android:id="@+id/wr_ttd2ds2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/wr_ttd2ds2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -620,21 +618,20 @@
                         android:id="@+id/wr_ttd3dscheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/wr_ttd3ds1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/wr_ttd3ds1" />
 
                         <CheckBox
                             android:id="@+id/wr_ttd3ds2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/wr_ttd3ds2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -679,21 +676,20 @@
                         android:id="@+id/wr_ttd4dscheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/wr_ttd4ds1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/wr_ttd4ds1" />
 
                         <CheckBox
                             android:id="@+id/wr_ttd4ds2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/wr_ttd4ds2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -738,21 +734,20 @@
                         android:id="@+id/wr_ttd5dscheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/wr_ttd5ds1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/wr_ttd5ds1" />
 
                         <CheckBox
                             android:id="@+id/wr_ttd5ds2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/wr_ttd5ds2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -793,7 +788,9 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/wr_comments" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+            </androidx.cardview.widget.CardView>
+
+            <!--EndButton LinearLayout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

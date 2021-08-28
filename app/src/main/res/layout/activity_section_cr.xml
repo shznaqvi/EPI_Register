@@ -597,21 +597,20 @@
                         android:id="@+id/cr_bcg_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_bcg_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_bcg_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_bcg_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_bcg_d2" />
                     </LinearLayout>
 
@@ -661,21 +660,20 @@
                         android:id="@+id/cr_hep_bdcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_hep_b1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_hep_b1" />
 
                         <CheckBox
                             android:id="@+id/cr_hep_b2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_hep_b2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -720,21 +718,20 @@
                         android:id="@+id/cr_opv0_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_opv0_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_opv0_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_opv0_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_opv0_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -780,21 +777,20 @@
                         android:id="@+id/cr_opv1_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_opv1_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_opv1_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_opv1_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_opv1_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -840,21 +836,20 @@
                         android:id="@+id/cr_opv2_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_opv2_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_opv2_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_opv2_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_opv2_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -899,21 +894,20 @@
                         android:id="@+id/cr_opv3_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_opv3_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_opv3_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_opv3_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_opv3_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -958,21 +952,20 @@
                         android:id="@+id/cr_rota1_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_rota1_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_rota1_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_rota1_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_rota1_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1017,21 +1010,20 @@
                         android:id="@+id/cr_rota2_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_rota2_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_rota2_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_rota2_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_rota2_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1076,21 +1068,20 @@
                         android:id="@+id/cr_ipv_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_ipv_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_ipv_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_ipv_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_ipv_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1135,21 +1126,20 @@
                         android:id="@+id/cr_pcv1_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_pcv1_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_pcv1_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_pcv1_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_pcv1_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1194,21 +1184,20 @@
                         android:id="@+id/cr_pcv2_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_pcv2_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_pcv2_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_pcv2_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_pcv2_d1" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1253,21 +1242,20 @@
                         android:id="@+id/cr_pcv3_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_pcv3_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_pcv3_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_pcv3_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_pcv3_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1312,21 +1300,20 @@
                         android:id="@+id/cr_penta1_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_penta1_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_penta1_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_penta1_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_penta1_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1371,21 +1358,20 @@
                         android:id="@+id/cr_penta2_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_penta2_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_penta2_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_penta2_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_penta2_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1430,21 +1416,20 @@
                         android:id="@+id/cr_penta3_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_penta3_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_penta3_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_penta3_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_penta3_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1489,21 +1474,20 @@
                         android:id="@+id/cr_measles1_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_measles1_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_measles1_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_measles1_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_measles1_d2" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1548,21 +1532,20 @@
                         android:id="@+id/cr_measles2_dcheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="end"
                         android:orientation="horizontal"
                         android:tag="0">
 
                         <CheckBox
                             android:id="@+id/cr_measles2_d1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_measles2_d1" />
 
                         <CheckBox
                             android:id="@+id/cr_measles2_d2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="@string/cr_measles2_d2" />
                     </LinearLayout>
                 </LinearLayout>
