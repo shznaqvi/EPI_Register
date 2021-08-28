@@ -81,7 +81,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- wr_reg_number  CheckBox   -->
+            <!-- wr_reg_number  Input-Numeric   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVwr_reg_number"
                 style="@style/cardView">
@@ -109,6 +109,17 @@
                             android:layout_weight="1"
                             android:text="@string/wr_reg_number" />
                     </LinearLayout>
+
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/wr_reg_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/wr_reg_number"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        app:maxValue="40"
+                        app:minValue="1"
+                        app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -238,9 +249,9 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- wr_child_name  Input   -->
+            <!-- wr_women_name  Input   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_child_name"
+                android:id="@+id/fldGrpCVwr_women_name"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -258,20 +269,21 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_wr_child_name" />
+                            android:text="@string/Q_wr_women_name" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/wr_child_name" />
+                            android:text="@string/wr_women_name" />
                     </LinearLayout>
 
                     <EditText
-                        android:id="@+id/wr_child_name"
+                        android:id="@+id/wr_women_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/wr_child_name" />
+                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                        android:hint="@string/wr_women_name" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -308,6 +320,7 @@
                         android:id="@+id/wr_father_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                         android:hint="@string/wr_father_name" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -383,42 +396,11 @@
                             android:text="@string/wr_address" />
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/wr_address"
+                    <CheckBox
+                        android:id="@+id/wr_address_previous"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/wr_address" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- wr_address_previous  CheckBox   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_address_previous"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_address_previous" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/wr_address_previous" />
-                    </LinearLayout>
+                        android:text="@string/wr_address_previous" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -474,9 +456,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        style="@style/sub_labels"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/wr_tt_title" />
+                        android:text="@string/wr_tt_title"
+                        android:textAlignment="center" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -514,96 +498,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/wr_ttd1" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- wr_ttd1ds  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd1ds"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/wr_ttd1dscheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:tag="0">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd1ds" />
-
-                        <TextView
+                        <CheckBox
+                            android:id="@+id/wr_ttd1ds1"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/wr_ttd1ds" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- wr_ttd1ds1  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd1ds1"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd1ds1" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wr_ttd1ds1" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-            <!-- wr_ttd1ds2  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd1ds2"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd1ds2" />
-
-                        <TextView
+                        <CheckBox
+                            android:id="@+id/wr_ttd1ds2"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wr_ttd1ds2" />
                     </LinearLayout>
@@ -644,96 +557,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/wr_ttd2" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- wr_ttd2ds  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd2ds"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/wr_ttd2dscheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:tag="0">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd2ds" />
-
-                        <TextView
+                        <CheckBox
+                            android:id="@+id/wr_ttd2ds1"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/wr_ttd2ds" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- wr_ttd2ds1  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd2ds1"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd2ds1" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wr_ttd2ds1" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-            <!-- wr_ttd2ds2  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd2ds2"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd2ds2" />
-
-                        <TextView
+                        <CheckBox
+                            android:id="@+id/wr_ttd2ds2"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wr_ttd2ds2" />
                     </LinearLayout>
@@ -774,96 +616,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/wr_ttd3" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- wr_ttd3ds  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd3ds"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/wr_ttd3dscheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:tag="0">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd3ds" />
-
-                        <TextView
+                        <CheckBox
+                            android:id="@+id/wr_ttd3ds1"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/wr_ttd3ds" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- wr_ttd3ds1  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd3ds1"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd3ds1" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wr_ttd3ds1" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-            <!-- wr_ttd3ds2  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd3ds2"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd3ds2" />
-
-                        <TextView
+                        <CheckBox
+                            android:id="@+id/wr_ttd3ds2"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wr_ttd3ds2" />
                     </LinearLayout>
@@ -904,96 +675,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/wr_ttd4" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- wr_ttd4ds  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd4ds"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/wr_ttd4dscheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:tag="0">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd4ds" />
-
-                        <TextView
+                        <CheckBox
+                            android:id="@+id/wr_ttd4ds1"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/wr_ttd4ds" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- wr_ttd4ds1  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd4ds1"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd4ds1" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wr_ttd4ds1" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-            <!-- wr_ttd4ds2  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd4ds2"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd4ds2" />
-
-                        <TextView
+                        <CheckBox
+                            android:id="@+id/wr_ttd4ds2"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wr_ttd4ds2" />
                     </LinearLayout>
@@ -1034,103 +734,32 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/wr_ttd5" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- wr_ttd5ds  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd5ds"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/wr_ttd5dscheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:tag="0">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd5ds" />
-
-                        <TextView
+                        <CheckBox
+                            android:id="@+id/wr_ttd5ds1"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/wr_ttd5ds" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- wr_ttd5ds1  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd5ds1"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd5ds1" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wr_ttd5ds1" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-            <!-- wr_ttd5ds2  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_ttd5ds2"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_ttd5ds2" />
-
-                        <TextView
+                        <CheckBox
+                            android:id="@+id/wr_ttd5ds2"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/wr_ttd5ds2" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- wr_comments  CheckBox   -->
+            <!-- wr_comments  Input   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVwr_comments"
                 style="@style/cardView">
@@ -1158,6 +787,12 @@
                             android:layout_weight="1"
                             android:text="@string/wr_comments" />
                     </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/wr_comments"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/wr_comments" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
             <LinearLayout
@@ -1172,8 +807,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:background="@color/red_overlay"
-                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:background="@color/redOverlay"
+                    android:onClick="@{() -> callback.btnEnd()}"
                     android:text="Cancel"
                     android:textColor="@color/white" />
 
@@ -1182,8 +817,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:background="@color/green_overlay"
-                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:background="@color/greenLight"
+                    android:onClick="@{() -> callback.btnContinue()}"
                     android:text="Save"
                     android:textColor="@color/white" />
             </LinearLayout>
