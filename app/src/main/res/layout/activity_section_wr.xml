@@ -33,6 +33,8 @@
                     android:orientation="vertical">
 
                     <TextView
+                        style="@style/labelsHead"
+                        android:textAlignment="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/wr_register_title" />
@@ -339,12 +341,6 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bottom"
                         android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_wr_age_years" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -804,7 +800,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/redOverlay"
-                    android:onClick="@{() -> callback.btnEnd()}"
+                    android:onClick="btnEnd"
                     android:text="Cancel"
                     android:textColor="@color/white" />
 
@@ -814,7 +810,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/greenLight"
-                    android:onClick="@{() -> callback.btnContinue()}"
+                    android:onClick="btnContinue"
                     android:text="Save"
                     android:textColor="@color/white" />
             </LinearLayout>

@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.epi_register;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,9 @@ import androidx.databinding.DataBindingUtil;
 
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.epi_register.models.Form;
+import edu.aku.hassannaqvi.epi_register.ui.sections.SectionCRActivity;
+import edu.aku.hassannaqvi.epi_register.ui.sections.SectionWRActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -54,13 +58,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.openAnthro:
             case R.id.updateBlood:
 
-   /*         case R.id.sech1:
+            case R.id.seccr:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionH1Activity.class));
+                startActivity(new Intent(this, SectionCRActivity.class));
                 break;
 
-        */
-
+            case R.id.secwr:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionWRActivity.class));
+                break;
         }
     }
 }

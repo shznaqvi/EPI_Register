@@ -105,14 +105,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_HHID, form.getHhid());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(FormsTable.COLUMN_SH1, form.sH1toString());
+        /* values.put(FormsTable.COLUMN_SH1, form.sH1toString());
 
-        /* values.put(FormsTable.COLUMN_SH2A, form.getsH2a());*/
+         *//* values.put(FormsTable.COLUMN_SH2A, form.getsH2a());*//*
         values.put(FormsTable.COLUMN_SH2B, form.sH2btoString());
-/*
+*//*
         values.put(FormsTable.COLUMN_SH2d, form.getsH2d());
         values.put(FormsTable.COLUMN_SH2c, form.getsH2c());
-*/
+*//*
         values.put(FormsTable.COLUMN_SH3A, form.sH3atoString());
         values.put(FormsTable.COLUMN_SH3B, form.sH3btoString());
         values.put(FormsTable.COLUMN_SH4, form.sH4toString());
@@ -121,14 +121,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SH7, form.sH7toString());
 
         values.put(FormsTable.COLUMN_SW1A, form.sW1atoString());
-        /*values.put(FormsTable.COLUMN_SW1B, form.sW1b());*/
+        *//*values.put(FormsTable.COLUMN_SW1B, form.sW1b());*//*
         values.put(FormsTable.COLUMN_SW2, form.sW2toString());
         values.put(FormsTable.COLUMN_SW3, form.sW3toString());
         values.put(FormsTable.COLUMN_SW4, form.sW4toString());
 
         values.put(FormsTable.COLUMN_SC1, form.sC1toString());
         values.put(FormsTable.COLUMN_SC2, form.sC2toString());
-        values.put(FormsTable.COLUMN_SC3, form.sC3toString());
+        values.put(FormsTable.COLUMN_SC3, form.sC3toString());*/
 
 
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());

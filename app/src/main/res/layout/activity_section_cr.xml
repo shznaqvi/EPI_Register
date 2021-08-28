@@ -4,12 +4,15 @@
     <data>
 
         <import type="android.view.View" />
-        <!--<variable
+
+        <variable
             name="form"
-            type="edu.aku.hassannaqvi.seiska.models.Form" />-->
+            type="edu.aku.hassannaqvi.epi_register.models.Form" />
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.epi_register.ui.sections.SectionCRActivity" />
+
     </data>
 
     <ScrollView
@@ -33,6 +36,8 @@
                     android:orientation="vertical">
 
                     <TextView
+                        style="@style/labelsHead"
+                        android:textAlignment="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/cr_register_title" />
@@ -77,6 +82,7 @@
                         android:maxLength="2"
                         app:maxValue="40"
                         app:minValue="1"
+                        android:text="@={form.cr_dmu_register}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -119,6 +125,7 @@
                         android:maxLength="2"
                         app:maxValue="40"
                         app:minValue="1"
+                        android:text="@={form.cr_reg_number}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -161,6 +168,7 @@
                         android:maxLength="3"
                         app:maxValue="500"
                         app:minValue="1"
+                        android:text="@={form.cr_page_number}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -203,6 +211,7 @@
                         android:maxLength="4"
                         app:maxValue="9999"
                         app:minValue="1"
+                        android:text="@={form.cr_rsno}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -245,6 +254,7 @@
                         android:maxLength="5"
                         app:maxValue="99999"
                         app:minValue="1"
+                        android:text="@={form.cr_card_number}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -283,6 +293,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                        android:text="@={form.cr_child_name}"
                         android:hint="@string/cr_child_name" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -321,6 +332,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                        android:text="@={form.cr_father_name}"
                         android:hint="@string/cr_father_name" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -392,6 +404,7 @@
                             android:maxLength="2"
                             app:maxValue="29"
                             app:minValue="1"
+                            android:text="@={form.cr_age_days}"
                             app:type="range" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -405,6 +418,7 @@
                             android:maxLength="2"
                             app:maxValue="60"
                             app:minValue="1"
+                            android:text="@={form.cr_age_months}"
                             app:type="range" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -418,6 +432,7 @@
                             android:maxLength="1"
                             app:maxValue="4"
                             app:minValue="1"
+                            android:text="@={form.cr_age_years}"
                             app:type="range" />
 
 
@@ -468,6 +483,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:checked="@{form.cr_gender.equals(`1`)}"
+                            android:onClick="@{()->form.setCr_gender(`1`)}"
                             android:text="@string/cr_gender1" />
 
                         <RadioButton
@@ -475,6 +492,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:checked="@{form.cr_gender.equals(`2`)}"
+                            android:onClick="@{()->form.setCr_gender(`2`)}"
                             android:text="@string/cr_gender2" />
                     </RadioGroup>
                 </LinearLayout>
@@ -552,8 +571,8 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/cr_phone"
                         android:inputType="number"
-
-
+                        android:maxLength="11"
+                        android:text="@={form.cr_phone}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -1655,7 +1674,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/redOverlay"
-                    android:onClick="@{() -> callback.btnEnd()}"
+                    android:onClick="btnEnd"
                     android:text="Cancel"
                     android:textColor="@color/white" />
 
@@ -1665,10 +1684,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/greenLight"
-                    android:onClick="@{() -> callback.btnContinue()}"
+                    android:onClick="btnContinue"
                     android:text="Save"
                     android:textColor="@color/white" />
+
             </LinearLayout>
+            <!--EndButton LinearLayout-->
+
         </LinearLayout>
+
     </ScrollView>
+
 </layout>

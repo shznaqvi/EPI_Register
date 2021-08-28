@@ -64,7 +64,7 @@ public class SectionCRActivity extends AppCompatActivity {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH1, form.sH1toString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_CR, form.cRtoString());
         } catch (JSONException e) {
             Toast.makeText(this, "Updating Database...\\t " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

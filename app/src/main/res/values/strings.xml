@@ -60,40 +60,7 @@
     <string name="cntBtn">Are you sure, you want to continue - interview</string>
     <string name="failedUpdateDb">SORRY! Failed to update DB</string>
     <string name="invalidDate">Invalid date!</string>
-    <string name="ageCalc">"Both Month and Year don't be zero!!"</string>
 
-    <string name="modhtitle">MODULE H: HOUSEHOLD AND MEMBERS INFORMATION</string>
-    <string name="identtitle">SECTION H1: HOUSEHOLD IDENTIFICATION INFORMATION</string>
-    <string name="sech1title">SECTION H1: HOUSEHOLD INFORMATION (HH)</string>
-    <string name="h101t">District</string>
-    <string name="h101">District</string>
-    <string name="h102t">City/Village</string>
-    <string name="h102">City/Village</string>
-    <string name="h103t">Cluster Number</string>
-    <string name="h103">Cluster Number</string>
-    <string name="h104t">Household number</string>
-    <string name="h104">Household number</string>
-    <string name="h105t">Interviewer’s name</string>
-    <string name="h105">Interviewer’s name</string>
-    <string name="h106">Date of interview</string>
-    <string name="h106d">Date</string>
-    <string name="h106m">Month</string>
-    <string name="h106y">Year</string>
-    <string name="h107"> Time of interview </string>
-    <string name="h107h"> Hours </string>
-    <string name="h107m"> Minutes </string>
-    <string name="h108t">Name of the Respondent</string>
-    <string name="h108">Name</string>
-    <string name="h109t">Age of Respondent in completed</string>
-    <string name="h109">Age in Years</string>
-    <string name="h110">Is respondent Head of Household?</string>
-    <string name="h110a">Yes</string>
-    <string name="h110b">No</string>
-    <string name="instr1">The enumerator will read out the consent for understanding of respondent and will mention the purpose of the study and time required to complete the interview.</string>
-    <string name="h111">Was written consent taken?</string>
-    <string name="h111a">Yes</string>
-    <string name="h111b">No</string>
-    <string name="instr2">If written consent is not given STOP interview and move to Question H113 of this section to REFUSED on the outcome of the interview</string>
     <string name="istatus">Result of Household Questionnaire interview</string>
     <string name="istatusa">Completed</string>
     <string name="istatusb">No household member at home or no competent respondent at home at time of visit</string>
@@ -104,7 +71,6 @@
     <string name="istatus96">Other (specify)</string>
 
     <!--EPI Strings-->
-
     <!--Section CR-->
     <string name="cr_mainheading">CR: Child Register</string>
     <string name="wr_mainheading">WR: Women Register</string>
@@ -213,7 +179,7 @@
     <string name="cr_pcv2">PCV2</string>
     <string name="cr_pcv2_d">Date Status</string>
     <string name="cr_pcv2_d1">Date Not Mentioned</string>
-    <string name="cr_pcv2_d1">Date Not Readable</string>
+    <string name="cr_pcv2_d2">Date Not Readable</string>
     <string name="cr_pcv3">PCV3</string>
     <string name="cr_pcv3_d">Date Status</string>
     <string name="cr_pcv3_d1">Date Not Mentioned</string>
@@ -276,6 +242,9 @@
     <string name="wr_ttd5ds1">Date Not Mentioned</string>
     <string name="wr_ttd5ds2">Date Not Readable</string>
     <string name="wr_comments">Comments if Any</string>
+
+    <string name="action_database">Database Manager</string>
+    <string name="action_data_sync">Sync Data</string>
 
 
     <string name='Q_address'>address</string>
@@ -371,20 +340,13 @@
     <string name='Q_wr_ttd5'>wr_ttd5</string>
     <string name='Q_wr_ttd5ds'>wr_ttd5ds</string>
 
-
-    <string name='Q_h101'>h101</string>
-    <string name='Q_h102'>h102</string>
-    <string name='Q_h103'>h103</string>
-    <string name='Q_h104'>h104</string>
-    <string name='Q_h105'>h105</string>
-    <string name='Q_h106'>h106</string>
-    <string name='Q_h107'>h107</string>
-    <string name='Q_h108'>h108</string>
-    <string name='Q_h109'>h109</string>
-    <string name='Q_h110'>h110</string>
-    <string name='Q_h111'>h111</string>
     <string name='Q_istatus'>istatus</string>
     <string name="btnDownload">Download Data</string>
+    <string name="folder_not_created">Folder Not Created</string>
+    <string name="network_conn_error">Network Connection Error</string>
+    <string name="invalid_password">Invalid Password</string>
+    <string name="username_required">Username Required</string>
+    <string name="incorrect_username_or_password">Incorrect Username Or Password</string>
 
     <!--ERROR MESSAGES-->
 
