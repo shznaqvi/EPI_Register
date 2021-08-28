@@ -287,9 +287,9 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- wr_father_name  Input   -->
+            <!-- wr_husband_name  Input   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVwr_father_name"
+                android:id="@+id/fldGrpCVwr_husband_name"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -307,21 +307,20 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_wr_father_name" />
+                            android:text="@string/Q_wr_husband_name" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/wr_father_name" />
+                            android:text="@string/wr_husband_name" />
                     </LinearLayout>
 
                     <EditText
-                        android:id="@+id/wr_father_name"
+                        android:id="@+id/wr_husband_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
-                        android:hint="@string/wr_father_name" />
+                        android:hint="@string/wr_husband_name" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

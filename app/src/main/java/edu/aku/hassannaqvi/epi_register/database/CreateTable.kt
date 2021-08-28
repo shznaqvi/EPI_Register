@@ -24,27 +24,8 @@ object CreateTable {
             + FormsTable.COLUMN_SYNCED + " TEXT,"
             + FormsTable.COLUMN_SYNCED_DATE + " TEXT,"
             + FormsTable.COLUMN_APPVERSION + " TEXT,"
-            + FormsTable.COLUMN_SH1 + " TEXT,"
-            + FormsTable.COLUMN_SH2B + " TEXT,"
-            /*
-            + FormsTable.COLUMN_SH2c + " TEXT,"
-            + FormsTable.COLUMN_SH2d + " TEXT,"
-            */
-            + FormsTable.COLUMN_SH3A + " TEXT,"
-            + FormsTable.COLUMN_SH3B + " TEXT,"
-            + FormsTable.COLUMN_SH4 + " TEXT,"
-            + FormsTable.COLUMN_SH5 + " TEXT,"
-            + FormsTable.COLUMN_SH6 + " TEXT,"
-            + FormsTable.COLUMN_SH7 + " TEXT,"
-
-            // MWRA
-            + FormsTable.COLUMN_SW1A + " TEXT,"
-            + FormsTable.COLUMN_SW2 + " TEXT,"
-            + FormsTable.COLUMN_SW3 + " TEXT,"
-            + FormsTable.COLUMN_SW4 + " TEXT,"
-            + FormsTable.COLUMN_SC1 + " TEXT,"
-            + FormsTable.COLUMN_SC2 + " TEXT,"
-            + FormsTable.COLUMN_SC3 + " TEXT"
+            + FormsTable.COLUMN_CR + " TEXT,"
+            + FormsTable.COLUMN_WR + " TEXT,"
             + " );"
             )
 

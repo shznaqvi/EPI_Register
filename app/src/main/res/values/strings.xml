@@ -249,7 +249,7 @@
     <string name="wr_rsno">Register Serial Number</string>
     <string name="wr_card_number">Card Number </string>
     <string name="wr_women_name">Woman Name</string>
-    <string name="wr_father_name">Father Name</string>
+    <string name="wr_husband_name">Husband Name</string>
     <string name="wr_age_years">Years</string>
     <string name="wr_address">Address</string>
     <string name="wr_address_previous">Address as Previous</string>
@@ -353,7 +353,7 @@
     <string name='Q_wr_women_name'>wr_women_name</string>
     <string name='Q_wr_comments'>wr_comments</string>
     <string name='Q_wr_dmu_register'>wr_dmu_register</string>
-    <string name='Q_wr_father_name'>wr_father_name</string>
+    <string name='Q_wr_husband_name'>wr_husband_name</string>
     <string name='Q_wr_page_number'>wr_page_number</string>
     <string name='Q_wr_phone'>wr_phone</string>
     <string name='Q_wr_reg_number'>wr_reg_number</string>
