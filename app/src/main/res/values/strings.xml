@@ -4,8 +4,8 @@
     <string name="section3_mainheading"> Section 3: Eligibility </string>
     <string name="section4_mainheading"> Section 4: Treatment </string>
     <string name="section5_mainheading"> Section 5: Diagnosis and outcome</string>
-    <string name="open_household_form">OPEN HOUSEHOLD FORM</string>
-    <string name="open_anthro_form">UPDATE ANTHRO FORM</string>
+    <string name="open_child_form">OPEN CHILD FORM</string>
+    <string name="open_women_form">OPEN WOMEN FORM</string>
     <string name="open_blood_form">UPDATE BLOOD INFORMANTION</string>
     <string name="open_stool_form">UPDATE STOOL INFORMANTION</string>
     <string name="region">REGION</string>

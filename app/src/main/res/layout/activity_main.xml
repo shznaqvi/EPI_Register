@@ -77,7 +77,7 @@
                     app:cardCornerRadius="24dp">
 
                     <LinearLayout
-                        android:id="@+id/openForm"
+                        android:id="@+id/openChildForm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clickable="true"
@@ -99,7 +99,7 @@
                                 android:drawablePadding="12dp"
                                 android:gravity="center_vertical"
                                 android:minWidth="460dp"
-                                android:text="@string/open_household_form"
+                                android:text="@string/open_child_form"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="16dp" />
 
@@ -108,7 +108,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="36dp"
                                 android:gravity="center_horizontal|center_vertical"
-                                android:text="Open to enter household form"
+                                android:text="Open to enter child form"
                                 android:textColor="@color/gray"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -135,7 +135,7 @@
                     app:cardCornerRadius="24dp">
 
                     <LinearLayout
-                        android:id="@+id/openAnthro"
+                        android:id="@+id/openWomenForm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:onClick="sectionPress"
@@ -156,7 +156,7 @@
                                 android:drawablePadding="12dp"
                                 android:gravity="center_vertical"
                                 android:minWidth="460dp"
-                                android:text="@string/open_anthro_form"
+                                android:text="@string/open_women_form"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="16dp" />
 
@@ -165,7 +165,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="36dp"
                                 android:gravity="center_horizontal|center_vertical"
-                                android:text="Update anthropometry and examination"
+                                android:text="Open to enter women form"
                                 android:textColor="@color/gray"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -183,6 +183,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -240,6 +241,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"

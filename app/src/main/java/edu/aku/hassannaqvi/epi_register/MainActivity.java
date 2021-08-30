@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
     public void sectionPress(View view) {
 
         switch (view.getId()) {
-            case R.id.openForm:
+            case R.id.openChildForm:
                 MainApp.idType = 1;
                 break;
-            case R.id.openAnthro:
+            case R.id.openWomenForm:
                 MainApp.idType = 2;
                 break;
 
@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId()) {
 
-            case R.id.openForm:
-            case R.id.openAnthro:
+            case R.id.openChildForm:
+            case R.id.openWomenForm:
             case R.id.updateBlood:
 
             case R.id.seccr:
