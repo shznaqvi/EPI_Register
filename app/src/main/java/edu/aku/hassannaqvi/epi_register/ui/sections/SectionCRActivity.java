@@ -32,6 +32,7 @@ public class SectionCRActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cr);
         bi.setCallback(this);
+        bi.setForm(form);
         if (form == null) form = new Form();
 //        bi.setForm(form);
 //        setSupportActionBar(bi.toolbar);
@@ -89,6 +90,8 @@ public class SectionCRActivity extends AppCompatActivity {
             }
             finish();
             startActivity(i);*/
+            finish();
+            startActivity(new Intent(this, SectionCRActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }

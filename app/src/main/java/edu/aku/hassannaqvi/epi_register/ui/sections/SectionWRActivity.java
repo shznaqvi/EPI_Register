@@ -32,6 +32,7 @@ public class SectionWRActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_wr);
         bi.setCallback(this);
+        bi.setForm(form);
         if (form == null) form = new Form();
 //        bi.setForm(form);
 //        setSupportActionBar(bi.toolbar);

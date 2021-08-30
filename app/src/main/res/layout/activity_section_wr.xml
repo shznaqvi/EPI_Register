@@ -4,9 +4,11 @@
     <data>
 
         <import type="android.view.View" />
-        <!--<variable
+
+        <variable
             name="form"
-            type="edu.aku.hassannaqvi.seiska.models.Form" />-->
+            type="edu.aku.hassannaqvi.epi_register.models.Form" />
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.epi_register.ui.sections.SectionWRActivity" />
@@ -34,10 +36,10 @@
 
                     <TextView
                         style="@style/labelsHead"
-                        android:textAlignment="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/wr_register_title" />
+                        android:text="@string/wr_register_title"
+                        android:textAlignment="center" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -488,11 +490,15 @@
                             android:text="@string/wr_ttd1" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/wr_ttd1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/wr_ttd1" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/wr_ttd1dscheck"
@@ -546,11 +552,15 @@
                             android:text="@string/wr_ttd2" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/wr_ttd2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/wr_ttd2" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/wr_ttd2dscheck"
@@ -604,11 +614,15 @@
                             android:text="@string/wr_ttd3" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/wr_ttd3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/wr_ttd3" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/wr_ttd3dscheck"
@@ -662,11 +676,15 @@
                             android:text="@string/wr_ttd4" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/wr_ttd4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/wr_ttd4" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/wr_ttd4dscheck"
@@ -720,11 +738,15 @@
                             android:text="@string/wr_ttd5" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/wr_ttd5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/wr_ttd5" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/wr_ttd5dscheck"

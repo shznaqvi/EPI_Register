@@ -37,10 +37,10 @@
 
                     <TextView
                         style="@style/labelsHead"
-                        android:textAlignment="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/cr_register_title" />
+                        android:text="@string/cr_register_title"
+                        android:textAlignment="center" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -80,9 +80,9 @@
                         android:hint="@string/cr_dmu_register"
                         android:inputType="number"
                         android:maxLength="2"
+                        android:text="@={form.cr_dmu_register}"
                         app:maxValue="40"
                         app:minValue="1"
-                        android:text="@={form.cr_dmu_register}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -123,9 +123,9 @@
                         android:hint="@string/cr_reg_number"
                         android:inputType="number"
                         android:maxLength="2"
+                        android:text="@={form.cr_reg_number}"
                         app:maxValue="40"
                         app:minValue="1"
-                        android:text="@={form.cr_reg_number}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -166,9 +166,9 @@
                         android:hint="@string/cr_page_number"
                         android:inputType="number"
                         android:maxLength="3"
+                        android:text="@={form.cr_page_number}"
                         app:maxValue="500"
                         app:minValue="1"
-                        android:text="@={form.cr_page_number}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -209,9 +209,9 @@
                         android:hint="@string/cr_rsno"
                         android:inputType="number"
                         android:maxLength="4"
+                        android:text="@={form.cr_rsno}"
                         app:maxValue="9999"
                         app:minValue="1"
-                        android:text="@={form.cr_rsno}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -252,9 +252,9 @@
                         android:hint="@string/cr_card_number"
                         android:inputType="number"
                         android:maxLength="5"
+                        android:text="@={form.cr_card_number}"
                         app:maxValue="99999"
                         app:minValue="1"
-                        android:text="@={form.cr_card_number}"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -293,8 +293,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                        android:text="@={form.cr_child_name}"
-                        android:hint="@string/cr_child_name" />
+                        android:hint="@string/cr_child_name"
+                        android:text="@={form.cr_child_name}" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -332,8 +332,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                        android:text="@={form.cr_father_name}"
-                        android:hint="@string/cr_father_name" />
+                        android:hint="@string/cr_father_name"
+                        android:text="@={form.cr_father_name}" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -402,9 +402,9 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
+                            android:text="@={form.cr_age_days}"
                             app:maxValue="29"
                             app:minValue="1"
-                            android:text="@={form.cr_age_days}"
                             app:type="range" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -416,9 +416,9 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
+                            android:text="@={form.cr_age_months}"
                             app:maxValue="60"
                             app:minValue="1"
-                            android:text="@={form.cr_age_months}"
                             app:type="range" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -429,10 +429,10 @@
                             android:gravity="center"
                             android:hint="####"
                             android:inputType="number"
-                            android:maxLength="1"
+                            android:maxLength="4"
+                            android:text="@={form.cr_age_years}"
                             app:maxValue="4"
                             app:minValue="1"
-                            android:text="@={form.cr_age_years}"
                             app:type="range" />
 
 
@@ -573,8 +573,12 @@
                         android:inputType="number"
                         android:maxLength="11"
                         android:text="@={form.cr_phone}"
+                        app:maxValue="11"
+                        app:minValue="1"
                         app:type="range" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- cr_bcg  Input   -->
@@ -606,11 +610,15 @@
                             android:text="@string/cr_bcg" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_bcg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_bcg" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_bcg_dcheck"
@@ -727,11 +735,15 @@
                             android:text="@string/cr_opv0" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_opv0"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_opv0" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_opv0_dcheck"
@@ -786,11 +798,15 @@
                             android:text="@string/cr_opv1" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_opv1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_opv1" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_opv1_dcheck"
@@ -845,11 +861,15 @@
                             android:text="@string/cr_opv2" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_opv2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_opv2" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_opv2_dcheck"
@@ -903,11 +923,15 @@
                             android:text="@string/cr_opv3" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_opv3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_opv3" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_opv3_dcheck"
@@ -961,11 +985,15 @@
                             android:text="@string/cr_rota1" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_rota1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_rota1" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_rota1_dcheck"
@@ -1019,11 +1047,15 @@
                             android:text="@string/cr_rota2" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_rota2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_rota2" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_rota2_dcheck"
@@ -1077,11 +1109,15 @@
                             android:text="@string/cr_ipv" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_ipv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_ipv" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_ipv_dcheck"
@@ -1135,11 +1171,15 @@
                             android:text="@string/cr_pcv1" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_pcv1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_pcv1" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_pcv1_dcheck"
@@ -1193,11 +1233,15 @@
                             android:text="@string/cr_pcv2" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_pcv2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_pcv2" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_pcv2_dcheck"
@@ -1251,11 +1295,15 @@
                             android:text="@string/cr_pcv3" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_pcv3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_pcv3" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_pcv3_dcheck"
@@ -1309,11 +1357,15 @@
                             android:text="@string/cr_penta1" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_penta1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_penta1" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_penta1_dcheck"
@@ -1367,11 +1419,15 @@
                             android:text="@string/cr_penta2" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_penta2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_penta2" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_penta2_dcheck"
@@ -1425,11 +1481,15 @@
                             android:text="@string/cr_penta3" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_penta3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_penta3" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_penta3_dcheck"
@@ -1483,11 +1543,15 @@
                             android:text="@string/cr_measles1" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_measles1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_measles1" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_measles1_dcheck"
@@ -1541,11 +1605,15 @@
                             android:text="@string/cr_measles2" />
                     </LinearLayout>
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cr_measles2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cr_measles2" />
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:inputType="number"
+                        app:mask="##/##/####"
+                        app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                     <LinearLayout
                         android:id="@+id/cr_measles2_dcheck"
