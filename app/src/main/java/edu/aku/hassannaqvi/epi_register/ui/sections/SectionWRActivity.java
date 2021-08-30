@@ -17,7 +17,6 @@ import edu.aku.hassannaqvi.epi_register.contracts.TableContracts;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
 import edu.aku.hassannaqvi.epi_register.database.DatabaseHelper;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivitySectionWrBinding;
-import edu.aku.hassannaqvi.epi_register.models.Form;
 import edu.aku.hassannaqvi.epi_register.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.epi_register.core.MainApp.form;
@@ -32,8 +31,8 @@ public class SectionWRActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_wr);
         bi.setCallback(this);
-        bi.setForm(form);
-        if (form == null) form = new Form();
+       /* bi.setForm(form);
+        if (form == null) form = new Form();*/
 //        bi.setForm(form);
 //        setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;

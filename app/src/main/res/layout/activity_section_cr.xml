@@ -5,9 +5,9 @@
 
         <import type="android.view.View" />
 
-        <variable
-            name="form"
-            type="edu.aku.hassannaqvi.epi_register.models.Form" />
+        <!--        <variable
+                    name="form"
+                    type="edu.aku.hassannaqvi.epi_register.models.Form" />-->
 
         <variable
             name="callback"
@@ -99,7 +99,6 @@
                             android:hint="@string/cr_dmu_register"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={form.cr_dmu_register}"
                             app:maxValue="40"
                             app:minValue="1"
                             app:type="range" />
@@ -142,7 +141,6 @@
                             android:hint="@string/cr_reg_number"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={form.cr_reg_number}"
                             app:maxValue="40"
                             app:minValue="1"
                             app:type="range" />
@@ -185,7 +183,6 @@
                             android:hint="@string/cr_page_number"
                             android:inputType="number"
                             android:maxLength="3"
-                            android:text="@={form.cr_page_number}"
                             app:maxValue="500"
                             app:minValue="1"
                             app:type="range" />
@@ -228,7 +225,6 @@
                             android:hint="@string/cr_rsno"
                             android:inputType="number"
                             android:maxLength="4"
-                            android:text="@={form.cr_rsno}"
                             app:maxValue="9999"
                             app:minValue="1"
                             app:type="range" />
@@ -271,7 +267,6 @@
                             android:hint="@string/cr_card_number"
                             android:inputType="number"
                             android:maxLength="5"
-                            android:text="@={form.cr_card_number}"
                             app:maxValue="99999"
                             app:minValue="1"
                             app:type="range" />
@@ -312,8 +307,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                            android:hint="@string/cr_child_name"
-                            android:text="@={form.cr_child_name}" />
+                            android:hint="@string/cr_child_name" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -351,8 +345,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                            android:hint="@string/cr_father_name"
-                            android:text="@={form.cr_father_name}" />
+                            android:hint="@string/cr_father_name" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -421,7 +414,6 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.cr_age_days}"
                                 app:maxValue="29"
                                 app:minValue="1"
                                 app:type="range" />
@@ -435,7 +427,6 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.cr_age_months}"
                                 app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
@@ -449,7 +440,6 @@
                                 android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
-                                android:text="@={form.cr_age_years}"
                                 app:maxValue="2021"
                                 app:minValue="2020"
                                 app:type="range" />
@@ -502,8 +492,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked="@{form.cr_gender.equals(`1`)}"
-                                android:onClick="@{()->form.setCr_gender(`1`)}"
                                 android:text="@string/cr_gender1" />
 
                             <RadioButton
@@ -511,8 +499,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked="@{form.cr_gender.equals(`2`)}"
-                                android:onClick="@{()->form.setCr_gender(`2`)}"
                                 android:text="@string/cr_gender2" />
                         </RadioGroup>
                     </LinearLayout>
@@ -591,7 +577,6 @@
                             android:hint="@string/cr_phone"
                             android:inputType="number"
                             android:maxLength="11"
-                            android:text="@={form.cr_phone}"
                             app:maxValue="11"
                             app:minValue="1"
                             app:type="range" />
@@ -623,44 +608,56 @@
                                 android:text="@string/Q_cr_bcg" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/cr_bcg" />
+
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cr_bcg"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="DD/MM/YYYY"
-                            android:inputType="number"
-                            app:mask="##/##/####"
-                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
-
                         <LinearLayout
-                            android:id="@+id/cr_bcg_dcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="end"
-                            android:orientation="horizontal"
-                            android:tag="0">
+                            android:orientation="vertical">
 
-                            <CheckBox
-                                android:id="@+id/cr_bcg_d1"
-                                android:layout_width="wrap_content"
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/cr_bcg"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr_bcg_d1" />
+                                android:layout_weight="3"
+                                android:gravity="center"
+                                android:hint="DD/MM/YYYY"
+                                android:inputType="number"
+                                app:mask="##/##/####"
+                                app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
-                            <CheckBox
-                                android:id="@+id/cr_bcg_d2"
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:id="@+id/fldGrpCVcr_bcg_d"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr_bcg_d2" />
+                                android:gravity="end"
+                                android:orientation="horizontal"
+                                android:tag="0">
+
+                                <CheckBox
+                                    android:id="@+id/cr_bcg_d1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:tag="-1"
+                                    android:text="@string/cr_bcg_d1" />
+
+                                <CheckBox
+                                    android:id="@+id/cr_bcg_d2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:tag="-1"
+                                    android:text="@string/cr_bcg_d2" />
+
+                            </LinearLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- cr_hep_b  Input   -->

@@ -5,9 +5,9 @@
 
         <import type="android.view.View" />
 
-        <variable
+<!--        <variable
             name="form"
-            type="edu.aku.hassannaqvi.epi_register.models.Form" />
+            type="edu.aku.hassannaqvi.epi_register.models.Form" />-->
 
         <variable
             name="callback"
