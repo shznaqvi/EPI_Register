@@ -455,8 +455,8 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/wr_phone"
                             android:inputType="number"
-
-
+                            app:maxValue="11"
+                            app:minValue="1"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

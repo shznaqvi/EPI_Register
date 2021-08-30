@@ -621,9 +621,8 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cr_bcg"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="3"
                                 android:gravity="center"
                                 android:hint="DD/MM/YYYY"
                                 android:inputType="number"

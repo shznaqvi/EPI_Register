@@ -107,6 +107,8 @@ public class SectionWRActivity extends AppCompatActivity {
             }
             finish();
             startActivity(i);*/
+            finish();
+            startActivity(new Intent(this, SectionWRActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
