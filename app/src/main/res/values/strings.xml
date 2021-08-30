@@ -74,7 +74,7 @@
     <!--Section CR-->
     <string name="cr_mainheading">CR: Child Register</string>
     <string name="wr_mainheading">WR: Women Register</string>
-    <string name="app_name">  </string>
+    <string name="app_name">EPI Register</string>
     <string name="btnSync">Download Data</string>
     <string name="btnUpload">Upload Data</string>
     <string name="prompt_email">Email</string>
@@ -82,7 +82,7 @@
     <string name="action_sign_in">Login</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="splashText"> </string>
-    <string name="splashText2">  </string>
+    <string name="splashText2"> </string>
     <string name="check_pending_forms">CHECK PENDING FORMS</string>
     <string name="open_new_form">OPEN NEW FORM</string>
     <string name="records_summary">Records Summary</string>
@@ -93,7 +93,7 @@
     <string name="dkn"> Don’t Know </string>
     <string name="none"> No one </string>
     <string name="never"> Never</string>
-    <string name="na"> Applicable /Not Available  </string>
+    <string name="na"> Applicable /Not Available </string>
     <string name="nap"> Not Applicable </string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_field_required">This field is required</string>
@@ -112,7 +112,7 @@
     <string name="km"> Kilometers </string>
     <string name="cm"> cm </string>
     <string name="in"> Inch </string>
-    <string name="rupees">  Rupees </string>
+    <string name="rupees"> Rupees </string>
     <string name="num"> Number </string>
     <string name="name"> Name </string>
     <string name="contactnum">Contact Number </string>
