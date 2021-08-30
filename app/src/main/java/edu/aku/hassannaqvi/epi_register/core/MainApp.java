@@ -6,6 +6,10 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.provider.Settings;
 import android.view.View;
+import android.widget.CheckBox;
+
+import com.edittextpicker.aliazaz.EditTextPicker;
+import com.validatorcrawler.aliazaz.Clear;
 
 import org.json.JSONArray;
 
@@ -120,6 +124,19 @@ public class MainApp extends Application {
                 .apply();
         deviceid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
+    }
+
+    public static void cbCheck(CheckBox cb1, CheckBox cb2, EditTextPicker edt) {
+        cb1.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                Clear.clearAllFields(edt, false);
+                cb2.setChecked(false);
+                cb2.setEnabled(false);
+            } else {
+                Clear.clearAllFields(edt, true);
+                cb2.setEnabled(true);
+            }
+        });
     }
 
 }

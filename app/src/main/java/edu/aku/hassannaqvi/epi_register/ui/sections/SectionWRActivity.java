@@ -19,6 +19,7 @@ import edu.aku.hassannaqvi.epi_register.database.DatabaseHelper;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivitySectionWrBinding;
 import edu.aku.hassannaqvi.epi_register.ui.EndingActivity;
 
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.cbCheck;
 import static edu.aku.hassannaqvi.epi_register.core.MainApp.form;
 
 public class SectionWRActivity extends AppCompatActivity {
@@ -31,11 +32,29 @@ public class SectionWRActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_wr);
         bi.setCallback(this);
+        setupSkips();
        /* bi.setForm(form);
         if (form == null) form = new Form();*/
 //        bi.setForm(form);
 //        setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+    }
+
+    private void setupSkips() {
+        cbCheck(bi.wrTtd1ds1, bi.wrTtd1ds2, bi.wrTtd1);
+        cbCheck(bi.wrTtd1ds2, bi.wrTtd1ds1, bi.wrTtd1);
+
+        cbCheck(bi.wrTtd2ds1, bi.wrTtd2ds2, bi.wrTtd2);
+        cbCheck(bi.wrTtd2ds2, bi.wrTtd2ds1, bi.wrTtd2);
+
+        cbCheck(bi.wrTtd3ds1, bi.wrTtd3ds2, bi.wrTtd3);
+        cbCheck(bi.wrTtd3ds2, bi.wrTtd3ds1, bi.wrTtd3);
+
+        cbCheck(bi.wrTtd4ds1, bi.wrTtd4ds2, bi.wrTtd4);
+        cbCheck(bi.wrTtd4ds2, bi.wrTtd4ds1, bi.wrTtd4);
+
+        cbCheck(bi.wrTtd5ds1, bi.wrTtd5ds2, bi.wrTtd5);
+        cbCheck(bi.wrTtd5ds2, bi.wrTtd5ds1, bi.wrTtd5);
     }
 
     private boolean insertNewRecord() {

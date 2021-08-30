@@ -3,14 +3,11 @@ package edu.aku.hassannaqvi.epi_register.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.edittextpicker.aliazaz.EditTextPicker;
-import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -22,6 +19,7 @@ import edu.aku.hassannaqvi.epi_register.database.DatabaseHelper;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivitySectionCrBinding;
 import edu.aku.hassannaqvi.epi_register.ui.EndingActivity;
 
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.cbCheck;
 import static edu.aku.hassannaqvi.epi_register.core.MainApp.form;
 
 public class SectionCRActivity extends AppCompatActivity {
@@ -99,7 +97,7 @@ public class SectionCRActivity extends AppCompatActivity {
     }
 
 
-    private void cbCheck(CheckBox cb1, CheckBox cb2, EditTextPicker edt) {
+/*    private void cbCheck(CheckBox cb1, CheckBox cb2, EditTextPicker edt) {
         cb1.setOnCheckedChangeListener((compoundButton, b) -> {
             if (b) {
                 Clear.clearAllFields(edt, false);
@@ -110,7 +108,7 @@ public class SectionCRActivity extends AppCompatActivity {
                 cb2.setEnabled(true);
             }
         });
-    }
+    }*/
 
     private boolean insertNewRecord() {
         if (!form.getUid().equals("")) return true;
