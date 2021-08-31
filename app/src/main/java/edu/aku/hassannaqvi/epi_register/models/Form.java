@@ -124,8 +124,6 @@ public class Form extends BaseObservable {
     private String cr_measles2_d1 = StringUtils.EMPTY;
     private String cr_measles2_d2 = StringUtils.EMPTY;
     private String cr_birth_status = StringUtils.EMPTY;
-    private String cr_birth_status1 = StringUtils.EMPTY;
-    private String cr_birth_status2 = StringUtils.EMPTY;
     private String cr_comments = StringUtils.EMPTY;
     // Section WR
     private String wr_dmu_register = StringUtils.EMPTY;
@@ -1188,26 +1186,6 @@ public class Form extends BaseObservable {
     }
 
     @Bindable
-    public String getCr_birth_status1() {
-        return cr_birth_status1;
-    }
-
-    public void setCr_birth_status1(String cr_birth_status1) {
-        this.cr_birth_status1 = cr_birth_status1;
-        notifyPropertyChanged(BR.cr_birth_status1);
-    }
-
-    @Bindable
-    public String getCr_birth_status2() {
-        return cr_birth_status2;
-    }
-
-    public void setCr_birth_status2(String cr_birth_status2) {
-        this.cr_birth_status2 = cr_birth_status2;
-        notifyPropertyChanged(BR.cr_birth_status2);
-    }
-
-    @Bindable
     public String getCr_comments() {
         return cr_comments;
     }
@@ -1627,8 +1605,6 @@ public class Form extends BaseObservable {
             this.cr_measles2 = json.getString("cr_measles2");
             this.cr_measles2_d1 = json.getString("cr_measles2_d1");
             this.cr_measles2_d2 = json.getString("cr_measles2_d2");
-            this.cr_birth_status1 = json.getString("cr_birth_status1");
-            this.cr_birth_status2 = json.getString("cr_birth_status2");
             this.cr_comments = json.getString("cr_comments");
         }
     }
@@ -1736,8 +1712,6 @@ public class Form extends BaseObservable {
                 .put("cr_measles2", cr_measles2)
                 .put("cr_measles2_d1", cr_measles2_d1)
                 .put("cr_measles2_d2", cr_measles2_d2)
-                .put("cr_birth_status1", cr_birth_status1)
-                .put("cr_birth_status2", cr_birth_status2)
                 .put("cr_comments", cr_comments);
 
         return json.toString();

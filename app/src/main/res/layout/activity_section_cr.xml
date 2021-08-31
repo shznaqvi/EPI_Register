@@ -635,7 +635,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:orientation="horizontal"
-                                android:tag="0">
+                                android:tag="-1">
 
                                 <CheckBox
                                     android:id="@+id/cr_bcg_d1"
@@ -704,7 +704,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_hep_b1"
@@ -766,7 +766,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_opv0_d1"
@@ -829,7 +829,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_opv1_d1"
@@ -892,7 +892,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_opv2_d1"
@@ -954,7 +954,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_opv3_d1"
@@ -1016,7 +1016,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_rota1_d1"
@@ -1078,7 +1078,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_rota2_d1"
@@ -1140,7 +1140,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_ipv_d1"
@@ -1202,7 +1202,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_pcv1_d1"
@@ -1264,7 +1264,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_pcv2_d1"
@@ -1326,7 +1326,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_pcv3_d1"
@@ -1388,7 +1388,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_penta1_d1"
@@ -1450,7 +1450,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_penta2_d1"
@@ -1512,7 +1512,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_penta3_d1"
@@ -1574,7 +1574,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_measles1_d1"
@@ -1636,7 +1636,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:orientation="horizontal"
-                            android:tag="0">
+                            android:tag="-1">
 
                             <CheckBox
                                 android:id="@+id/cr_measles2_d1"
@@ -1653,7 +1653,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr_birth_status  CheckBox   -->
+                <!-- cr_birth_status  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcr_birth_status"
                     style="@style/cardView">
@@ -1682,27 +1682,26 @@
                                 android:text="@string/cr_birth_status" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/cr_birth_statuscheck"
+                        <RadioGroup
+                            android:id="@+id/cr_birth_status"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:tag="0">
+                            android:orientation="horizontal">
 
-                            <CheckBox
+                            <RadioButton
                                 android:id="@+id/cr_birth_status1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/cr_birth_status1" />
 
-                            <CheckBox
+                            <RadioButton
                                 android:id="@+id/cr_birth_status2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/cr_birth_status2" />
-                        </LinearLayout>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

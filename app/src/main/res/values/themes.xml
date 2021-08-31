@@ -32,6 +32,7 @@
         <!-- Customize your theme here. -->
     </style>
 
+
     <style name="AppThemeEnglish1" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">true</item>
 
@@ -462,4 +463,10 @@
         <item name="android:windowBackground">@drawable/splash_screen</item>
         <item name="android:windowAnimationStyle">@drawable/splash_screen</item>
     </style>
+
+    <style name="Theme.loading" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@drawable/loading_screen</item>
+        <item name="android:windowAnimationStyle">@drawable/loading_screen</item>
+    </style>
+
 </resources>

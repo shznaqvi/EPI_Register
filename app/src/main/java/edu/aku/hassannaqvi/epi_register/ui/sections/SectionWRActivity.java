@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.epi_register.ui.sections;
 
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.cbCheck;
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.form;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,9 +22,6 @@ import edu.aku.hassannaqvi.epi_register.database.DatabaseHelper;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivitySectionWrBinding;
 import edu.aku.hassannaqvi.epi_register.ui.EndingActivity;
 
-import static edu.aku.hassannaqvi.epi_register.core.MainApp.cbCheck;
-import static edu.aku.hassannaqvi.epi_register.core.MainApp.form;
-
 public class SectionWRActivity extends AppCompatActivity {
     private static final String TAG = "SectionWRActivity";
     ActivitySectionWrBinding bi;
@@ -29,6 +29,7 @@ public class SectionWRActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppThemeEnglish1);
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_wr);
         bi.setCallback(this);

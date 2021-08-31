@@ -1,5 +1,11 @@
 package edu.aku.hassannaqvi.epi_register.database;
 
+import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_NAME;
+import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_VERSION;
+import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_FORMS;
+import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_USERS;
+import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_VERSIONAPP;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -15,38 +21,14 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.AnthroTable;
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.BloodTable;
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.ChildListTable;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.FormsTable;
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.MWRAListTable;
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.PregnancyTable;
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.SamplesTable;
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.StoolTable;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.VersionTable;
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.ZScoreTable;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
 import edu.aku.hassannaqvi.epi_register.models.Form;
 import edu.aku.hassannaqvi.epi_register.models.Users;
 import edu.aku.hassannaqvi.epi_register.models.VersionApp;
-import edu.aku.hassannaqvi.epi_register.models.ZStandard;
-
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_NAME;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_VERSION;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_ANTHRO;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_CHILDLIST;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_CLUSTERS;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_FORMS;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_MWRALIST;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_PREGNANCY;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_RANDOM;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_SAMPLES;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_USERS;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_VERSIONAPP;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_ZSTANDARD;
 
 
 
@@ -67,18 +49,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_USERS);
-        db.execSQL(SQL_CREATE_CLUSTERS);
-        db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(SQL_CREATE_FORMS);
-        db.execSQL(SQL_CREATE_MWRALIST);
-        db.execSQL(SQL_CREATE_CHILDLIST);
-        db.execSQL(SQL_CREATE_ANTHRO);
-       /* db.execSQL(SQL_CREATE_BLOOD);
-        db.execSQL(SQL_CREATE_STOOL);*/
-        db.execSQL(SQL_CREATE_PREGNANCY);
-        db.execSQL(SQL_CREATE_SAMPLES);
         db.execSQL(SQL_CREATE_VERSIONAPP);
-        db.execSQL(SQL_CREATE_ZSTANDARD);
 
     }
 
@@ -105,30 +77,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_HHID, form.getHhid());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
-        /* values.put(FormsTable.COLUMN_SH1, form.sH1toString());
-
-         *//* values.put(FormsTable.COLUMN_SH2A, form.getsH2a());*//*
-        values.put(FormsTable.COLUMN_SH2B, form.sH2btoString());
-*//*
-        values.put(FormsTable.COLUMN_SH2d, form.getsH2d());
-        values.put(FormsTable.COLUMN_SH2c, form.getsH2c());
-*//*
-        values.put(FormsTable.COLUMN_SH3A, form.sH3atoString());
-        values.put(FormsTable.COLUMN_SH3B, form.sH3btoString());
-        values.put(FormsTable.COLUMN_SH4, form.sH4toString());
-        values.put(FormsTable.COLUMN_SH5, form.sH5toString());
-        values.put(FormsTable.COLUMN_SH6, form.sH6toString());
-        values.put(FormsTable.COLUMN_SH7, form.sH7toString());
-
-        values.put(FormsTable.COLUMN_SW1A, form.sW1atoString());
-        *//*values.put(FormsTable.COLUMN_SW1B, form.sW1b());*//*
-        values.put(FormsTable.COLUMN_SW2, form.sW2toString());
-        values.put(FormsTable.COLUMN_SW3, form.sW3toString());
-        values.put(FormsTable.COLUMN_SW4, form.sW4toString());
-
-        values.put(FormsTable.COLUMN_SC1, form.sC1toString());
-        values.put(FormsTable.COLUMN_SC2, form.sC2toString());
-        values.put(FormsTable.COLUMN_SC3, form.sC3toString());*/
 
 
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
@@ -568,115 +516,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedMWRAList(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
 
-// New value for one column
-        ContentValues values = new ContentValues();
-        values.put(MWRAListTable.COLUMN_SYNCED, true);
-        values.put(MWRAListTable.COLUMN_SYNCED_DATE, new Date().toString());
 
-// Which row to update, based on the title
-        String where = MWRAListTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
 
-        int count = db.update(
-                MWRAListTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-    public void updateSyncedChildList(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-// New value for one column
-        ContentValues values = new ContentValues();
-        values.put(ChildListTable.COLUMN_SYNCED, true);
-        values.put(ChildListTable.COLUMN_SYNCED_DATE, new Date().toString());
-
-// Which row to update, based on the title
-        String where = ChildListTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-
-        int count = db.update(
-                ChildListTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-    public void updateSyncedAnthro(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-// New value for one column
-        ContentValues values = new ContentValues();
-        values.put(AnthroTable.COLUMN_SYNCED, true);
-        values.put(AnthroTable.COLUMN_SYNCED_DATE, new Date().toString());
-
-// Which row to update, based on the title
-        String where = AnthroTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-
-        int count = db.update(
-                AnthroTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-    public void updateSyncedBlood(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-// New value for one column
-        ContentValues values = new ContentValues();
-        values.put(BloodTable.COLUMN_SYNCED, true);
-        values.put(BloodTable.COLUMN_SYNCED_DATE, new Date().toString());
-
-// Which row to update, based on the title
-        String where = BloodTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-
-        int count = db.update(
-                BloodTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-    public void updateSyncedStool(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(StoolTable.COLUMN_SYNCED, true);
-        values.put(StoolTable.COLUMN_SYNCED_DATE, new Date().toString());
-
-        String where = StoolTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-
-        int count = db.update(
-                StoolTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-    public void updateSyncedPreg(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(PregnancyTable.COLUMN_SYNCED, true);
-        values.put(PregnancyTable.COLUMN_SYNCED_DATE, new Date().toString());
-
-        String where = PregnancyTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-
-        int count = db.update(
-                PregnancyTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-    public void updateSyncedSamp(String id) {
+/*    public void updateSyncedSamp(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues values = new ContentValues();
         values.put(SamplesTable.COLUMN_SYNCED, true);
@@ -690,7 +533,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values,
                 where,
                 whereArgs);
-    }
+    }*/
 
 
     public ArrayList<Cursor> getData(String Query) {
@@ -736,129 +579,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return alc;
         }
     }
-
-    public List<String> getLMS(int age, int gender, String catA, String catB) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Log.d(TAG, "getLMS: " + age + " | " + gender + " | " + catA + " | " + catB);
-        Cursor c = db.rawQuery("SELECT l,m,s " +
-                        "FROM " + ZScoreTable.TABLE_NAME + " " +
-                        "WHERE " + ZScoreTable.COLUMN_AGE + "=? " +
-                        "AND "
-                        + ZScoreTable.COLUMN_SEX + "=?" +
-                        "AND "
-                        + ZScoreTable.COLUMN_CAT + " IN (?,?)"
-                ,
-                new String[]{String.valueOf(age), String.valueOf(gender), catA, catB});
-        List<String> lms = null;
-        while (c.moveToNext()) {
-            lms = new ArrayList<>();
-            lms.add(c.getString(c.getColumnIndex(ZScoreTable.COLUMN_L)));
-            Log.d(TAG, "getLMS: L -> " + c.getString(c.getColumnIndex(ZScoreTable.COLUMN_L)));
-            lms.add(c.getString(c.getColumnIndex(ZScoreTable.COLUMN_M)));
-            Log.d(TAG, "getLMS: M -> " + c.getString(c.getColumnIndex(ZScoreTable.COLUMN_M)));
-            lms.add(c.getString(c.getColumnIndex(ZScoreTable.COLUMN_S)));
-            Log.d(TAG, "getLMS: S -> " + c.getString(c.getColumnIndex(ZScoreTable.COLUMN_S)));
-
-        }
-        return lms;
-    }
-
-    public List<String> getWHLMS(Double height, int gender, String catA) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT l,m,s " +
-                        "FROM " + ZScoreTable.TABLE_NAME +
-                        " WHERE " + ZScoreTable.COLUMN_MEASURE + "=?" +
-                        " AND " + ZScoreTable.COLUMN_SEX + "=?" +
-                        " AND " + ZScoreTable.COLUMN_CAT + "=?"
-                ,
-                new String[]{String.valueOf(height), String.valueOf(gender), catA});
-        List<String> whlms = new ArrayList<>();
-        Log.d(TAG, "getWHLMS: height " + height);
-        Log.d(TAG, "getWHLMS: " + c.getCount());
-        while (c.moveToNext()) {
-            whlms = new ArrayList<>();
-            whlms.add(c.getString(c.getColumnIndex(ZScoreTable.COLUMN_L)));
-            whlms.add(c.getString(c.getColumnIndex(ZScoreTable.COLUMN_M)));
-            whlms.add(c.getString(c.getColumnIndex(ZScoreTable.COLUMN_S)));
-
-        }
-        c.close();
-        return whlms;
-    }
-
-
-    public int syncZStandard(JSONArray zsList) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(ZScoreTable.TABLE_NAME, null, null);
-        int insertCount = 0;
-        try {
-            for (int i = 0; i < zsList.length(); i++) {
-
-                JSONObject jsonObjectzs = zsList.getJSONObject(i);
-
-                ZStandard Zstandard = new ZStandard();
-                Zstandard.Sync(jsonObjectzs);
-                ContentValues values = new ContentValues();
-
-                values.put(ZScoreTable.COLUMN_SEX, Zstandard.getSex());
-                values.put(ZScoreTable.COLUMN_AGE, Zstandard.getAge());
-                values.put(ZScoreTable.COLUMN_MEASURE, Zstandard.getMeasure());
-                values.put(ZScoreTable.COLUMN_L, Zstandard.getL());
-                values.put(ZScoreTable.COLUMN_M, Zstandard.getM());
-                values.put(ZScoreTable.COLUMN_S, Zstandard.getS());
-                values.put(ZScoreTable.COLUMN_CAT, Zstandard.getCat());
-                long rowID = db.insert(ZScoreTable.TABLE_NAME, null, values);
-                if (rowID != -1) insertCount++;
-            }
-
-        } catch (Exception e) {
-            Log.d(TAG, "syncZStandard(e): " + e);
-            db.close();
-        } finally {
-            db.close();
-        }
-        return insertCount;
-    }
-
-    public Form getFormByClusterHHNo(String cluster_no, String hh_no) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = FormsTable.COLUMN_CLUSTER + "=? AND " +
-                FormsTable.COLUMN_HHID + " =? ";
-
-        String[] whereArgs = {cluster_no, hh_no};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = FormsTable.COLUMN_ID + " ASC";
-
-        Form form = null;
-        try {
-            c = db.query(
-                    FormsTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                form = new Form().Hydrate(c);
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return form;
-    }
-
 }

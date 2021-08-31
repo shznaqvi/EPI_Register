@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.epi_register.workers;
 
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.PROJECT_NAME;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -11,9 +13,6 @@ import androidx.work.Data;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -22,8 +21,6 @@ import java.nio.charset.StandardCharsets;
 import edu.aku.hassannaqvi.epi_register.R;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
 import edu.aku.hassannaqvi.epi_register.database.DatabaseHelper;
-
-import static edu.aku.hassannaqvi.epi_register.core.MainApp.PROJECT_NAME;
 
 
 public class ReadJSONWorker extends Worker {
@@ -89,13 +86,6 @@ public class ReadJSONWorker extends Worker {
                     .build();
 
             db = MainApp.appInfo.dbHelper;
-            try {
-                //    Log.d(TAG, "doWork: JSON: "+result);
-                db.syncZStandard(new JSONArray(result.toString()));
-                return Result.success(data);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
 
 
             //displayNotification(nTitle, "Uploaded successfully");

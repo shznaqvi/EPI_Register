@@ -1,5 +1,9 @@
 package edu.aku.hassannaqvi.epi_register.ui;
 
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.sdDir;
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.uploadData;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
@@ -45,9 +49,7 @@ import java.util.concurrent.TimeUnit;
 
 import edu.aku.hassannaqvi.epi_register.R;
 import edu.aku.hassannaqvi.epi_register.adapters.SyncListAdapter;
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.ClustersTable;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.FormsTable;
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.RandomTable;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
@@ -58,10 +60,6 @@ import edu.aku.hassannaqvi.epi_register.workers.DataDownWorkerALL;
 import edu.aku.hassannaqvi.epi_register.workers.DataUpWorkerALL;
 import edu.aku.hassannaqvi.epi_register.workers.PhotoUploadWorker2;
 import edu.aku.hassannaqvi.epi_register.workers.ReadJSONWorker;
-
-import static edu.aku.hassannaqvi.epi_register.core.MainApp.PROJECT_NAME;
-import static edu.aku.hassannaqvi.epi_register.core.MainApp.sdDir;
-import static edu.aku.hassannaqvi.epi_register.core.MainApp.uploadData;
 
 
 public class SyncActivity extends AppCompatActivity {
@@ -161,21 +159,10 @@ public class SyncActivity extends AppCompatActivity {
                 bi.pBar.setVisibility(View.GONE);
                 downloadTables.clear();
                 boolean sync_flag = getIntent().getBooleanExtra("login", false);
-                if (sync_flag) {
-                    downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(ClustersTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(RandomTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
-                } else {
-                    // Set tables to DOWNLOAD
-                    downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
 
-                 /*   String select = " idCamp, camp_no, dist_id, district, ucCode, ucName, area_name, plan_date ";
-                    String filter = " camp_status = 'Planned' AND locked = 0 ";
-                    downloadTables.add(new SyncModel(Camps.TableCamp.TABLE_NAME, select, filter));
-                    downloadTables.add(new SyncModel(Doctor.TableDoctor.TABLE_NAME));*/
-                }
+                downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
+                downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
+
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);
                 BeginDownload();
@@ -248,23 +235,10 @@ public class SyncActivity extends AppCompatActivity {
                                         jsonArray = new JSONArray(result);
                                         insertCount = db.syncUser(jsonArray);
                                         break;
-                                 /*   case ClustersTable.TABLE_NAME:
-                                        jsonArray = new JSONArray(result);
-                                        insertCount = db.syncClusters(jsonArray);
-                                        break;
-                                    case RandomTable.TABLE_NAME:
-                                        jsonArray = new JSONArray(result);
-                                        insertCount = db.syncRandom(jsonArray);
-                                        break;*/
                                     case VersionTable.TABLE_NAME:
                                         insertCount = db.syncVersionApp(new JSONObject(result));
                                         if (insertCount == 1) jsonArray.put("1");
                                         break;
-                          /*          case Camps.TableCamp.TABLE_NAME:
-                                        jsonArray = new JSONArray(result);
-                                        insertCount = db.syncCamp(jsonArray);
-                                        Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
-                                        break;*/
 
                                 }
 
