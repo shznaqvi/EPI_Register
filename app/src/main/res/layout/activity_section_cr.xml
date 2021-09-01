@@ -142,10 +142,7 @@
                             android:inputType="number"
                             android:maxLength="4"
                             app:mask="##-##"
-                            app:maxValue="40"
-                            app:minValue="1"
-                            app:pattern="^(\\d{2,2}\\-\\d{2,2})$"
-                            app:type="range" />
+                            app:pattern="^(\\d{2,2}\\-\\d{2,2})$" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -585,7 +582,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cr_phone"
                             android:inputType="number"
-                            android:maxLength="11"
+                            android:maxLength="2"
                             app:maxValue="11"
                             app:minValue="1"
                             app:type="range" />

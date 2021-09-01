@@ -102,40 +102,12 @@ public class SectionCRActivity extends AppCompatActivity {
 
     }
 
-
-/*    private void cbCheck(CheckBox cb1, CheckBox cb2, EditTextPicker edt) {
-        cb1.setOnCheckedChangeListener((compoundButton, b) -> {
-            if (b) {
-                Clear.clearAllFields(edt, false);
-                cb2.setChecked(false);
-                cb2.setEnabled(false);
-            } else {
-                Clear.clearAllFields(edt, true);
-                cb2.setEnabled(true);
-            }
-        });
-    }*/
-
-    private boolean insertNewRecord() {
-        if (!form.getUid().equals("")) return true;
-        long rowId = 0;
-        rowId = db.addForm(form);
-        form.setId(String.valueOf(rowId));
-        if (rowId > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
-            return true;
-        } else {
-            Toast.makeText(this, "Updating Database… ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
-
     private boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         long updcount = db.addForm(form);
         form.setId(String.valueOf(updcount));
-//        updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_CR, form.getcR());
+        updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_CR, form.getcR());
+        db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, "1");
         if (updcount > 0) {
             form.setUid(form.getDeviceId() + form.getId());
             long count = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
@@ -146,25 +118,17 @@ public class SectionCRActivity extends AppCompatActivity {
         }
     }
 
+
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
         try {
             saveDraft();
         } catch (JSONException e) {
             e.printStackTrace();
         }
         if (updateDB()) {
-       /*     Intent i;
-            if (bi.h111a.isChecked()) {
-                i = new Intent(this, SectionH2bActivity.class).putExtra("complete", true);
-            } else {
-                i = new Intent(this, EndingActivity.class).putExtra("complete", false);
-            }
             finish();
-            startActivity(i);*/
-            finish();
-            startActivity(new Intent(this, SectionCRActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionCRActivity.class));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }

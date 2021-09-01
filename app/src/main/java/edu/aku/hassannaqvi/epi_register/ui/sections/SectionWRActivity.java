@@ -99,16 +99,8 @@ public class SectionWRActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         if (updateDB()) {
-       /*     Intent i;
-            if (bi.h111a.isChecked()) {
-                i = new Intent(this, SectionH2bActivity.class).putExtra("complete", true);
-            } else {
-                i = new Intent(this, EndingActivity.class).putExtra("complete", false);
-            }
             finish();
-            startActivity(i);*/
-            finish();
-            startActivity(new Intent(this, SectionWRActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionWRActivity.class));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }

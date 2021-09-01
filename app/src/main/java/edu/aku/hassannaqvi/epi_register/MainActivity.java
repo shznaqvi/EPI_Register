@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
+import edu.aku.hassannaqvi.epi_register.database.AndroidManager;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.epi_register.models.Form;
 import edu.aku.hassannaqvi.epi_register.ui.sections.SectionCRActivity;
@@ -40,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.openWomenForm:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionWRActivity.class));
+                break;
+            case R.id.dbm:
+                startActivity(new Intent(this, AndroidManager.class));
                 break;
 
         }

@@ -48,6 +48,12 @@
 
 
         <activity
+            android:name=".database.AndroidManager"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
             android:name=".ui.sections.SectionWRActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.loading"
