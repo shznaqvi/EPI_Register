@@ -20,6 +20,7 @@ import edu.aku.hassannaqvi.epi_register.contracts.TableContracts;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
 import edu.aku.hassannaqvi.epi_register.database.DatabaseHelper;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivitySectionWrBinding;
+import edu.aku.hassannaqvi.epi_register.models.Form;
 import edu.aku.hassannaqvi.epi_register.ui.EndingActivity;
 
 public class SectionWRActivity extends AppCompatActivity {
@@ -92,7 +93,11 @@ public class SectionWRActivity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
-        saveDraft();
+        try {
+            saveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         if (updateDB()) {
        /*     Intent i;
             if (bi.h111a.isChecked()) {
@@ -109,8 +114,63 @@ public class SectionWRActivity extends AppCompatActivity {
         }
     }
 
-    private void saveDraft() {
+    private void saveDraft() throws JSONException {
 
+        form = new Form();
+
+        form.setWr_dmu_register(bi.wrDmuRegister.getText().toString());
+
+        form.setWr_reg_number(bi.wrRegNumber.getText().toString());
+
+        form.setWr_page_number(bi.wrPageNumber.getText().toString());
+
+        form.setWr_rsno(bi.wrRsno.getText().toString());
+
+        form.setWr_card_number(bi.wrCardNumber.getText().toString());
+
+        form.setWr_women_name(bi.wrWomenName.getText().toString());
+
+        form.setWr_husband_name(bi.wrHusbandName.getText().toString());
+
+        form.setWr_age_years(bi.wrAgeYears.getText().toString());
+
+        form.setWr_address(bi.wrAddressPrevious.getText().toString());
+
+        form.setWr_phone(bi.wrPhone.getText().toString());
+
+        form.setWr_ttd1(bi.wrTtd1.getText().toString());
+
+        form.setWr_ttd1ds1(bi.wrTtd1ds1.isChecked() ? "1" : "-1");
+
+        form.setWr_ttd1ds2(bi.wrTtd1ds2.isChecked() ? "2" : "-1");
+
+        form.setWr_ttd2(bi.wrTtd2.getText().toString());
+
+        form.setWr_ttd2ds1(bi.wrTtd2ds1.isChecked() ? "1" : "-1");
+
+        form.setWr_ttd2ds2(bi.wrTtd2ds2.isChecked() ? "2" : "-1");
+
+        form.setWr_ttd3(bi.wrTtd3.getText().toString());
+
+        form.setWr_ttd3ds1(bi.wrTtd3ds1.isChecked() ? "1" : "-1");
+
+        form.setWr_ttd3ds2(bi.wrTtd3ds2.isChecked() ? "2" : "-1");
+
+        form.setWr_ttd4(bi.wrTtd4.getText().toString());
+
+        form.setWr_ttd4ds1(bi.wrTtd4ds1.isChecked() ? "1" : "-1");
+
+        form.setWr_ttd4ds2(bi.wrTtd4ds2.isChecked() ? "2" : "-1");
+
+        form.setWr_ttd5(bi.wrTtd5.getText().toString());
+
+        form.setWr_ttd5ds1(bi.wrTtd5ds1.isChecked() ? "1" : "-1");
+
+        form.setWr_ttd5ds2(bi.wrTtd5ds2.isChecked() ? "2" : "-1");
+
+        form.setWr_comments(bi.wrComments.getText().toString());
+
+        form.setcR(form.wRtoString());
     }
 
     public void btnEnd(View view) {

@@ -198,7 +198,7 @@ public class SectionCRActivity extends AppCompatActivity {
                 : bi.crGender2.isChecked() ? "2"
                 : "-1");
 
-//        form.setCr_address(bi.cr_address.getText().toString());
+        form.setCr_address(bi.crAddressPrevious.getText().toString());
 
         form.setCr_phone(bi.crPhone.getText().toString());
 
