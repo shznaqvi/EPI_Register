@@ -442,6 +442,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 */
 
+
     //get UnSyncedTables
     public JSONArray getUnsyncedForms() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -449,8 +450,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        //whereClause = null;
-        whereClause = FormsTable.COLUMN_SYNCED + " is null ";
+        whereClause = FormsTable.COLUMN_SYNCED + " is null AND " +
+                FormsTable.COLUMN_ISTATUS + "= '1'";
 
         String[] whereArgs = null;
 
@@ -477,13 +478,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Log.d(TAG, "getUnsyncedForms: " + c.getCount());
                 Form form = new Form();
                 allForms.put(form.Hydrate(c).toJSONObject());
-
-
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "getUnsyncedForms: getUnsyncedForms " + e.getMessage()
-            );
         } finally {
             if (c != null) {
                 c.close();

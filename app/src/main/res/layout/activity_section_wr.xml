@@ -140,11 +140,8 @@
                             android:hint="@string/wr_reg_number"
                             android:inputType="number"
                             android:maxLength="4"
-                            app:mask="##.##"
-                            app:maxValue="40"
-                            app:minValue="1"
-                            app:pattern="^(\\d{2,2}\\-\\d{2,2})$"
-                            app:type="range" />
+                            app:mask="##-##"
+                            app:pattern="^(\\d{2,2}\\-\\d{2,2})$" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

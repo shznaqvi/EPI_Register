@@ -16,6 +16,10 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.epi_register.R;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
@@ -106,11 +110,11 @@ public class SectionCRActivity extends AppCompatActivity {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         long updcount = db.addForm(form);
         form.setId(String.valueOf(updcount));
-        updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_CR, form.getcR());
-        db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, "1");
-        if (updcount > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            long count = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
+        form.setUid(form.getDeviceId() + form.getId());
+        long count = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
+        if (count > 0) {
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_CR, form.getcR());
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, "1");
             return true;
         } else {
             Toast.makeText(this, "Updating Database… ERROR!", Toast.LENGTH_SHORT).show();
@@ -129,14 +133,17 @@ public class SectionCRActivity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionCRActivity.class));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
+        } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
     }
 
     private void saveDraft() throws JSONException {
 
         form = new Form();
+        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        form.setUserName(MainApp.user.getUserName());
+        form.setDeviceId(MainApp.appInfo.getDeviceID());
+        form.setDeviceTag(MainApp.appInfo.getTagName());
+        form.setAppver(MainApp.appInfo.getAppVersion());
 
         form.setCr_dmu_register(bi.crDmuRegister.getText().toString());
 

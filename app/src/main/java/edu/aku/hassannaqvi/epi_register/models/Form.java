@@ -1515,7 +1515,7 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.wr_comments);
     }
 
-    public Form Hydrate(Cursor cursor) throws JSONException {
+    public Form Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UID));
         this.cluster = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CLUSTER));
@@ -1528,248 +1528,281 @@ public class Form extends BaseObservable {
         this.iStatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED_DATE));
-
         cRHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CR)));
         wRHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_WR)));
 
         return this;
     }
 
-    public void cRHydrate(String string) throws JSONException {
+    public void cRHydrate(String string) {
         Log.d(TAG, "cRHydrate: " + string);
         if (string != null) {
-
-            JSONObject json = null;
-            json = new JSONObject(string);
-            this.cr_dmu_register = json.getString("cr_dmu_register");
-            this.cr_reg_number = json.getString("cr_reg_number");
-            this.cr_page_number = json.getString("cr_page_number");
-            this.cr_rsno = json.getString("cr_rsno");
-            this.cr_card_number = json.getString("cr_card_number");
-            this.cr_child_name = json.getString("cr_child_name");
-            this.cr_father_name = json.getString("cr_father_name");
-            this.cr_age_months = json.getString("cr_age_months");
-            this.cr_age_years = json.getString("cr_age_years");
-            this.cr_age_days = json.getString("cr_age_days");
-            this.cr_gender = json.getString("cr_gender");
-            this.cr_address = json.getString("cr_address");
-            this.cr_phone = json.getString("cr_phone");
-            this.cr_bcg = json.getString("cr_bcg");
-            this.cr_bcg_d1 = json.getString("cr_bcg_d1");
-            this.cr_bcg_d2 = json.getString("cr_bcg_d2");
-            this.cr_hep_b = json.getString("cr_hep_b");
-            this.cr_hep_b1 = json.getString("cr_hep_b1");
-            this.cr_hep_b2 = json.getString("cr_hep_b2");
-            this.cr_opv0 = json.getString("cr_opv0");
-            this.cr_opv0_d1 = json.getString("cr_opv0_d1");
-            this.cr_opv0_d2 = json.getString("cr_opv0_d2");
-            this.cr_opv1 = json.getString("cr_opv1");
-            this.cr_opv1_d1 = json.getString("cr_opv1_d1");
-            this.cr_opv1_d2 = json.getString("cr_opv1_d2");
-            this.cr_opv2 = json.getString("cr_opv2");
-            this.cr_opv2_d1 = json.getString("cr_opv2_d1");
-            this.cr_opv2_d2 = json.getString("cr_opv2_d2");
-            this.cr_opv3 = json.getString("cr_opv3");
-            this.cr_opv3_d1 = json.getString("cr_opv3_d1");
-            this.cr_opv3_d2 = json.getString("cr_opv3_d2");
-            this.cr_rota1 = json.getString("cr_rota1");
-            this.cr_rota1_d1 = json.getString("cr_rota1_d1");
-            this.cr_rota1_d2 = json.getString("cr_rota1_d2");
-            this.cr_rota2 = json.getString("cr_rota2");
-            this.cr_rota2_d1 = json.getString("cr_rota2_d1");
-            this.cr_rota2_d2 = json.getString("cr_rota2_d2");
-            this.cr_ipv = json.getString("cr_ipv");
-            this.cr_ipv_d1 = json.getString("cr_ipv_d1");
-            this.cr_ipv_d2 = json.getString("cr_ipv_d2");
-            this.cr_pcv1 = json.getString("cr_pcv1");
-            this.cr_pcv1_d1 = json.getString("cr_pcv1_d1");
-            this.cr_pcv1_d2 = json.getString("cr_pcv1_d2");
-            this.cr_pcv2 = json.getString("cr_pcv2");
-            this.cr_pcv2_d1 = json.getString("cr_pcv2_d1");
-            this.cr_pcv2_d1 = json.getString("cr_pcv2_d1");
-            this.cr_pcv3 = json.getString("cr_pcv3");
-            this.cr_pcv3_d1 = json.getString("cr_pcv3_d1");
-            this.cr_pcv3_d2 = json.getString("cr_pcv3_d2");
-            this.cr_penta1 = json.getString("cr_penta1");
-            this.cr_penta1_d1 = json.getString("cr_penta1_d1");
-            this.cr_penta1_d2 = json.getString("cr_penta1_d2");
-            this.cr_penta2 = json.getString("cr_penta2");
-            this.cr_penta2_d1 = json.getString("cr_penta2_d1");
-            this.cr_penta2_d2 = json.getString("cr_penta2_d2");
-            this.cr_penta3 = json.getString("cr_penta3");
-            this.cr_penta3_d1 = json.getString("cr_penta3_d1");
-            this.cr_penta3_d2 = json.getString("cr_penta3_d2");
-            this.cr_measles1 = json.getString("cr_measles1");
-            this.cr_measles1_d1 = json.getString("cr_measles1_d1");
-            this.cr_measles1_d2 = json.getString("cr_measles1_d2");
-            this.cr_measles2 = json.getString("cr_measles2");
-            this.cr_measles2_d1 = json.getString("cr_measles2_d1");
-            this.cr_measles2_d2 = json.getString("cr_measles2_d2");
-            this.cr_comments = json.getString("cr_comments");
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
+                this.cr_dmu_register = json.getString("cr_dmu_register");
+                this.cr_reg_number = json.getString("cr_reg_number");
+                this.cr_page_number = json.getString("cr_page_number");
+                this.cr_rsno = json.getString("cr_rsno");
+                this.cr_card_number = json.getString("cr_card_number");
+                this.cr_child_name = json.getString("cr_child_name");
+                this.cr_father_name = json.getString("cr_father_name");
+                this.cr_age_months = json.getString("cr_age_months");
+                this.cr_age_years = json.getString("cr_age_years");
+                this.cr_age_days = json.getString("cr_age_days");
+                this.cr_gender = json.getString("cr_gender");
+                this.cr_address = json.getString("cr_address");
+                this.cr_phone = json.getString("cr_phone");
+                this.cr_bcg = json.getString("cr_bcg");
+                this.cr_bcg_d1 = json.getString("cr_bcg_d1");
+                this.cr_bcg_d2 = json.getString("cr_bcg_d2");
+                this.cr_hep_b = json.getString("cr_hep_b");
+                this.cr_hep_b1 = json.getString("cr_hep_b1");
+                this.cr_hep_b2 = json.getString("cr_hep_b2");
+                this.cr_opv0 = json.getString("cr_opv0");
+                this.cr_opv0_d1 = json.getString("cr_opv0_d1");
+                this.cr_opv0_d2 = json.getString("cr_opv0_d2");
+                this.cr_opv1 = json.getString("cr_opv1");
+                this.cr_opv1_d1 = json.getString("cr_opv1_d1");
+                this.cr_opv1_d2 = json.getString("cr_opv1_d2");
+                this.cr_opv2 = json.getString("cr_opv2");
+                this.cr_opv2_d1 = json.getString("cr_opv2_d1");
+                this.cr_opv2_d2 = json.getString("cr_opv2_d2");
+                this.cr_opv3 = json.getString("cr_opv3");
+                this.cr_opv3_d1 = json.getString("cr_opv3_d1");
+                this.cr_opv3_d2 = json.getString("cr_opv3_d2");
+                this.cr_rota1 = json.getString("cr_rota1");
+                this.cr_rota1_d1 = json.getString("cr_rota1_d1");
+                this.cr_rota1_d2 = json.getString("cr_rota1_d2");
+                this.cr_rota2 = json.getString("cr_rota2");
+                this.cr_rota2_d1 = json.getString("cr_rota2_d1");
+                this.cr_rota2_d2 = json.getString("cr_rota2_d2");
+                this.cr_ipv = json.getString("cr_ipv");
+                this.cr_ipv_d1 = json.getString("cr_ipv_d1");
+                this.cr_ipv_d2 = json.getString("cr_ipv_d2");
+                this.cr_pcv1 = json.getString("cr_pcv1");
+                this.cr_pcv1_d1 = json.getString("cr_pcv1_d1");
+                this.cr_pcv1_d2 = json.getString("cr_pcv1_d2");
+                this.cr_pcv2 = json.getString("cr_pcv2");
+                this.cr_pcv2_d1 = json.getString("cr_pcv2_d1");
+                this.cr_pcv2_d1 = json.getString("cr_pcv2_d1");
+                this.cr_pcv3 = json.getString("cr_pcv3");
+                this.cr_pcv3_d1 = json.getString("cr_pcv3_d1");
+                this.cr_pcv3_d2 = json.getString("cr_pcv3_d2");
+                this.cr_penta1 = json.getString("cr_penta1");
+                this.cr_penta1_d1 = json.getString("cr_penta1_d1");
+                this.cr_penta1_d2 = json.getString("cr_penta1_d2");
+                this.cr_penta2 = json.getString("cr_penta2");
+                this.cr_penta2_d1 = json.getString("cr_penta2_d1");
+                this.cr_penta2_d2 = json.getString("cr_penta2_d2");
+                this.cr_penta3 = json.getString("cr_penta3");
+                this.cr_penta3_d1 = json.getString("cr_penta3_d1");
+                this.cr_penta3_d2 = json.getString("cr_penta3_d2");
+                this.cr_measles1 = json.getString("cr_measles1");
+                this.cr_measles1_d1 = json.getString("cr_measles1_d1");
+                this.cr_measles1_d2 = json.getString("cr_measles1_d2");
+                this.cr_measles2 = json.getString("cr_measles2");
+                this.cr_measles2_d1 = json.getString("cr_measles2_d1");
+                this.cr_measles2_d2 = json.getString("cr_measles2_d2");
+                this.cr_comments = json.getString("cr_comments");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public void wRHydrate(String string) throws JSONException {
+
+    public void wRHydrate(String string) {
         Log.d(TAG, "wRHydrate: " + string);
         if (string != null) {
-
-            JSONObject json = null;
-            json = new JSONObject(string);
-            this.wr_dmu_register = json.getString("wr_dmu_register");
-            this.wr_reg_number = json.getString("wr_reg_number");
-            this.wr_page_number = json.getString("wr_page_number");
-            this.wr_rsno = json.getString("wr_rsno");
-            this.wr_card_number = json.getString("wr_card_number");
-            this.wr_women_name = json.getString("wr_women_name");
-            this.wr_husband_name = json.getString("wr_husband_name");
-            this.wr_age_years = json.getString("wr_age_years");
-            this.wr_address = json.getString("wr_address");
-            this.wr_phone = json.getString("wr_phone");
-            this.wr_ttd1 = json.getString("wr_ttd1");
-            this.wr_ttd1ds1 = json.getString("wr_ttd1ds1");
-            this.wr_ttd1ds2 = json.getString("wr_ttd1ds2");
-            this.wr_ttd2 = json.getString("wr_ttd2");
-            this.wr_ttd2ds1 = json.getString("wr_ttd2ds1");
-            this.wr_ttd2ds2 = json.getString("wr_ttd2ds2");
-            this.wr_ttd3 = json.getString("wr_ttd3");
-            this.wr_ttd3ds1 = json.getString("wr_ttd3ds1");
-            this.wr_ttd3ds2 = json.getString("wr_ttd3ds2");
-            this.wr_ttd4 = json.getString("wr_ttd4");
-            this.wr_ttd4ds1 = json.getString("wr_ttd4ds1");
-            this.wr_ttd4ds2 = json.getString("wr_ttd4ds2");
-            this.wr_ttd5 = json.getString("wr_ttd5");
-            this.wr_ttd5ds1 = json.getString("wr_ttd5ds1");
-            this.wr_ttd5ds2 = json.getString("wr_ttd5ds2");
-            this.wr_comments = json.getString("wr_comments");
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
+                this.wr_dmu_register = json.getString("wr_dmu_register");
+                this.wr_reg_number = json.getString("wr_reg_number");
+                this.wr_page_number = json.getString("wr_page_number");
+                this.wr_rsno = json.getString("wr_rsno");
+                this.wr_card_number = json.getString("wr_card_number");
+                this.wr_women_name = json.getString("wr_women_name");
+                this.wr_husband_name = json.getString("wr_husband_name");
+                this.wr_age_years = json.getString("wr_age_years");
+                this.wr_address = json.getString("wr_address");
+                this.wr_phone = json.getString("wr_phone");
+                this.wr_ttd1 = json.getString("wr_ttd1");
+                this.wr_ttd1ds1 = json.getString("wr_ttd1ds1");
+                this.wr_ttd1ds2 = json.getString("wr_ttd1ds2");
+                this.wr_ttd2 = json.getString("wr_ttd2");
+                this.wr_ttd2ds1 = json.getString("wr_ttd2ds1");
+                this.wr_ttd2ds2 = json.getString("wr_ttd2ds2");
+                this.wr_ttd3 = json.getString("wr_ttd3");
+                this.wr_ttd3ds1 = json.getString("wr_ttd3ds1");
+                this.wr_ttd3ds2 = json.getString("wr_ttd3ds2");
+                this.wr_ttd4 = json.getString("wr_ttd4");
+                this.wr_ttd4ds1 = json.getString("wr_ttd4ds1");
+                this.wr_ttd4ds2 = json.getString("wr_ttd4ds2");
+                this.wr_ttd5 = json.getString("wr_ttd5");
+                this.wr_ttd5ds1 = json.getString("wr_ttd5ds1");
+                this.wr_ttd5ds2 = json.getString("wr_ttd5ds2");
+                this.wr_comments = json.getString("wr_comments");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public String cRtoString() throws JSONException {
+
+    public String cRtoString() {
         Log.d(TAG, "cRtoString: ");
         JSONObject json = new JSONObject();
 
-        json.put("cr_dmu_register", cr_dmu_register)
-                .put("cr_reg_number", cr_reg_number)
-                .put("cr_page_number", cr_page_number)
-                .put("cr_rsno", cr_rsno)
-                .put("cr_card_number", cr_card_number)
-                .put("cr_child_name", cr_child_name)
-                .put("cr_father_name", cr_father_name)
-                .put("cr_age_months", cr_age_months)
-                .put("cr_age_years", cr_age_years)
-                .put("cr_age_days", cr_age_days)
-                .put("cr_gender", cr_gender)
-                .put("cr_address", cr_address)
-                .put("cr_phone", cr_phone)
-                .put("cr_bcg", cr_bcg)
-                .put("cr_bcg_d1", cr_bcg_d1)
-                .put("cr_bcg_d2", cr_bcg_d2)
-                .put("cr_hep_b", cr_hep_b)
-                .put("cr_hep_b1", cr_hep_b1)
-                .put("cr_hep_b2", cr_hep_b2)
-                .put("cr_opv0", cr_opv0)
-                .put("cr_opv0_d1", cr_opv0_d1)
-                .put("cr_opv0_d2", cr_opv0_d2)
-                .put("cr_opv1", cr_opv1)
-                .put("cr_opv1_d1", cr_opv1_d1)
-                .put("cr_opv1_d2", cr_opv1_d2)
-                .put("cr_opv2", cr_opv2)
-                .put("cr_opv2_d1", cr_opv2_d1)
-                .put("cr_opv2_d2", cr_opv2_d2)
-                .put("cr_opv3", cr_opv3)
-                .put("cr_opv3_d1", cr_opv3_d1)
-                .put("cr_opv3_d2", cr_opv3_d2)
-                .put("cr_rota1", cr_rota1)
-                .put("cr_rota1_d1", cr_rota1_d1)
-                .put("cr_rota1_d2", cr_rota1_d2)
-                .put("cr_rota2", cr_rota2)
-                .put("cr_rota2_d1", cr_rota2_d1)
-                .put("cr_rota2_d2", cr_rota2_d2)
-                .put("cr_ipv", cr_ipv)
-                .put("cr_ipv_d1", cr_ipv_d1)
-                .put("cr_ipv_d2", cr_ipv_d2)
-                .put("cr_pcv1", cr_pcv1)
-                .put("cr_pcv1_d1", cr_pcv1_d1)
-                .put("cr_pcv1_d2", cr_pcv1_d2)
-                .put("cr_pcv2", cr_pcv2)
-                .put("cr_pcv2_d1", cr_pcv2_d1)
-                .put("cr_pcv2_d1", cr_pcv2_d1)
-                .put("cr_pcv3", cr_pcv3)
-                .put("cr_pcv3_d1", cr_pcv3_d1)
-                .put("cr_pcv3_d2", cr_pcv3_d2)
-                .put("cr_penta1", cr_penta1)
-                .put("cr_penta1_d1", cr_penta1_d1)
-                .put("cr_penta1_d2", cr_penta1_d2)
-                .put("cr_penta2", cr_penta2)
-                .put("cr_penta2_d1", cr_penta2_d1)
-                .put("cr_penta2_d2", cr_penta2_d2)
-                .put("cr_penta3", cr_penta3)
-                .put("cr_penta3_d1", cr_penta3_d1)
-                .put("cr_penta3_d2", cr_penta3_d2)
-                .put("cr_measles1", cr_measles1)
-                .put("cr_measles1_d1", cr_measles1_d1)
-                .put("cr_measles1_d2", cr_measles1_d2)
-                .put("cr_measles2", cr_measles2)
-                .put("cr_measles2_d1", cr_measles2_d1)
-                .put("cr_measles2_d2", cr_measles2_d2)
-                .put("cr_comments", cr_comments);
+        try {
+            json.put("cr_dmu_register", cr_dmu_register)
+                    .put("cr_reg_number", cr_reg_number)
+                    .put("cr_page_number", cr_page_number)
+                    .put("cr_rsno", cr_rsno)
+                    .put("cr_card_number", cr_card_number)
+                    .put("cr_child_name", cr_child_name)
+                    .put("cr_father_name", cr_father_name)
+                    .put("cr_age_months", cr_age_months)
+                    .put("cr_age_years", cr_age_years)
+                    .put("cr_age_days", cr_age_days)
+                    .put("cr_gender", cr_gender)
+                    .put("cr_address", cr_address)
+                    .put("cr_phone", cr_phone)
+                    .put("cr_bcg", cr_bcg)
+                    .put("cr_bcg_d1", cr_bcg_d1)
+                    .put("cr_bcg_d2", cr_bcg_d2)
+                    .put("cr_hep_b", cr_hep_b)
+                    .put("cr_hep_b1", cr_hep_b1)
+                    .put("cr_hep_b2", cr_hep_b2)
+                    .put("cr_opv0", cr_opv0)
+                    .put("cr_opv0_d1", cr_opv0_d1)
+                    .put("cr_opv0_d2", cr_opv0_d2)
+                    .put("cr_opv1", cr_opv1)
+                    .put("cr_opv1_d1", cr_opv1_d1)
+                    .put("cr_opv1_d2", cr_opv1_d2)
+                    .put("cr_opv2", cr_opv2)
+                    .put("cr_opv2_d1", cr_opv2_d1)
+                    .put("cr_opv2_d2", cr_opv2_d2)
+                    .put("cr_opv3", cr_opv3)
+                    .put("cr_opv3_d1", cr_opv3_d1)
+                    .put("cr_opv3_d2", cr_opv3_d2)
+                    .put("cr_rota1", cr_rota1)
+                    .put("cr_rota1_d1", cr_rota1_d1)
+                    .put("cr_rota1_d2", cr_rota1_d2)
+                    .put("cr_rota2", cr_rota2)
+                    .put("cr_rota2_d1", cr_rota2_d1)
+                    .put("cr_rota2_d2", cr_rota2_d2)
+                    .put("cr_ipv", cr_ipv)
+                    .put("cr_ipv_d1", cr_ipv_d1)
+                    .put("cr_ipv_d2", cr_ipv_d2)
+                    .put("cr_pcv1", cr_pcv1)
+                    .put("cr_pcv1_d1", cr_pcv1_d1)
+                    .put("cr_pcv1_d2", cr_pcv1_d2)
+                    .put("cr_pcv2", cr_pcv2)
+                    .put("cr_pcv2_d1", cr_pcv2_d1)
+                    .put("cr_pcv2_d1", cr_pcv2_d1)
+                    .put("cr_pcv3", cr_pcv3)
+                    .put("cr_pcv3_d1", cr_pcv3_d1)
+                    .put("cr_pcv3_d2", cr_pcv3_d2)
+                    .put("cr_penta1", cr_penta1)
+                    .put("cr_penta1_d1", cr_penta1_d1)
+                    .put("cr_penta1_d2", cr_penta1_d2)
+                    .put("cr_penta2", cr_penta2)
+                    .put("cr_penta2_d1", cr_penta2_d1)
+                    .put("cr_penta2_d2", cr_penta2_d2)
+                    .put("cr_penta3", cr_penta3)
+                    .put("cr_penta3_d1", cr_penta3_d1)
+                    .put("cr_penta3_d2", cr_penta3_d2)
+                    .put("cr_measles1", cr_measles1)
+                    .put("cr_measles1_d1", cr_measles1_d1)
+                    .put("cr_measles1_d2", cr_measles1_d2)
+                    .put("cr_measles2", cr_measles2)
+                    .put("cr_measles2_d1", cr_measles2_d1)
+                    .put("cr_measles2_d2", cr_measles2_d2)
+                    .put("cr_comments", cr_comments);
 
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
         return json.toString();
     }
+
 
     public String wRtoString() throws JSONException {
         Log.d(TAG, "wRtoString: ");
         JSONObject json = new JSONObject();
+        try {
+            json.put("wr_dmu_register", wr_dmu_register)
+                    .put("wr_reg_number", wr_reg_number)
+                    .put("wr_page_number", wr_page_number)
+                    .put("wr_rsno", wr_rsno)
+                    .put("wr_card_number", wr_card_number)
+                    .put("wr_women_name", wr_women_name)
+                    .put("wr_husband_name", wr_husband_name)
+                    .put("wr_age_years", wr_age_years)
+                    .put("wr_address", wr_address)
+                    .put("wr_phone", wr_phone)
+                    .put("wr_ttd1", wr_ttd1)
+                    .put("wr_ttd1ds1", wr_ttd1ds1)
+                    .put("wr_ttd1ds2", wr_ttd1ds2)
+                    .put("wr_ttd2", wr_ttd2)
+                    .put("wr_ttd2ds1", wr_ttd2ds1)
+                    .put("wr_ttd2ds2", wr_ttd2ds2)
+                    .put("wr_ttd3", wr_ttd3)
+                    .put("wr_ttd3ds1", wr_ttd3ds1)
+                    .put("wr_ttd3ds2", wr_ttd3ds2)
+                    .put("wr_ttd4", wr_ttd4)
+                    .put("wr_ttd4ds1", wr_ttd4ds1)
+                    .put("wr_ttd4ds2", wr_ttd4ds2)
+                    .put("wr_ttd5", wr_ttd5)
+                    .put("wr_ttd5ds1", wr_ttd5ds1)
+                    .put("wr_ttd5ds2", wr_ttd5ds2)
+                    .put("wr_comments", wr_comments);
 
-        json.put("wr_dmu_register", wr_dmu_register)
-                .put("wr_reg_number", wr_reg_number)
-                .put("wr_page_number", wr_page_number)
-                .put("wr_rsno", wr_rsno)
-                .put("wr_card_number", wr_card_number)
-                .put("wr_women_name", wr_women_name)
-                .put("wr_husband_name", wr_husband_name)
-                .put("wr_age_years", wr_age_years)
-                .put("wr_address", wr_address)
-                .put("wr_phone", wr_phone)
-                .put("wr_ttd1", wr_ttd1)
-                .put("wr_ttd1ds1", wr_ttd1ds1)
-                .put("wr_ttd1ds2", wr_ttd1ds2)
-                .put("wr_ttd2", wr_ttd2)
-                .put("wr_ttd2ds1", wr_ttd2ds1)
-                .put("wr_ttd2ds2", wr_ttd2ds2)
-                .put("wr_ttd3", wr_ttd3)
-                .put("wr_ttd3ds1", wr_ttd3ds1)
-                .put("wr_ttd3ds2", wr_ttd3ds2)
-                .put("wr_ttd4", wr_ttd4)
-                .put("wr_ttd4ds1", wr_ttd4ds1)
-                .put("wr_ttd4ds2", wr_ttd4ds2)
-                .put("wr_ttd5", wr_ttd5)
-                .put("wr_ttd5ds1", wr_ttd5ds1)
-                .put("wr_ttd5ds2", wr_ttd5ds2)
-                .put("wr_comments", wr_comments);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
         return json.toString();
     }
 
-    public JSONObject toJSONObject() throws JSONException {
+
+    public JSONObject toJSONObject() {
+
         JSONObject json = new JSONObject();
 
-        json.put(FormsTable.COLUMN_ID, this.id);
-        json.put(FormsTable.COLUMN_UID, this.uid);
-        json.put(FormsTable.COLUMN_CLUSTER, this.cluster);
-        json.put(FormsTable.COLUMN_HHID, this.hhid);
-        json.put(FormsTable.COLUMN_USERNAME, this.userName);
-        json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-        //  json.put(FormsTable.COLUMN_SYNCED, this.synced);
-        //  json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
+        try {
+            json.put(FormsTable.COLUMN_ID, this.id);
+            json.put(FormsTable.COLUMN_UID, this.uid);
+            json.put(FormsTable.COLUMN_CLUSTER, this.cluster);
+            json.put(FormsTable.COLUMN_HHID, this.hhid);
+            json.put(FormsTable.COLUMN_USERNAME, this.userName);
+            json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
+            json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
+            json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
+            json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
+            //  json.put(FormsTable.COLUMN_SYNCED, this.synced);
+            //  json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
 
-        // Sections
-        json.put(FormsTable.COLUMN_CR, new JSONObject(cRtoString()));
-        json.put(FormsTable.COLUMN_WR, new JSONObject(wRtoString()));
+            // Sections
+            json.put(FormsTable.COLUMN_CR, new JSONObject(cRtoString()));
+            json.put(FormsTable.COLUMN_WR, new JSONObject(wRtoString()));
 
 
-        return json;
+            if (this.cR != null && !this.cR.equals("")) {
+                json.put(FormsTable.COLUMN_CR, new JSONObject(this.cR));
+            }
+
+            if (this.wR != null && !this.wR.equals("")) {
+                json.put(FormsTable.COLUMN_WR, new JSONObject(this.wR));
+            }
+
+            return json;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

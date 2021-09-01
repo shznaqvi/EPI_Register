@@ -15,6 +15,10 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.epi_register.R;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
@@ -59,30 +63,16 @@ public class SectionWRActivity extends AppCompatActivity {
         cbCheck(bi.wrTtd5ds2, bi.wrTtd5ds1, bi.wrTtd5);
     }
 
-    private boolean insertNewRecord() {
-        if (!form.getUid().equals("")) return true;
-        long rowId = 0;
-        rowId = db.addForm(form);
-        form.setId(String.valueOf(rowId));
-        if (rowId > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
-            return true;
-        } else {
-            Toast.makeText(this, "Updating Database… ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
 
     private boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = 0;
-        try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_WR, form.wRtoString());
-        } catch (JSONException e) {
-            Toast.makeText(this, "Updating Database...\\t " + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-        if (updcount == 1) {
+        long updcount = db.addForm(form);
+        form.setId(String.valueOf(updcount));
+        form.setUid(form.getDeviceId() + form.getId());
+        long count = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
+        if (count > 0) {
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_WR, form.getwR());
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, "1");
             return true;
         } else {
             Toast.makeText(this, "Updating Database… ERROR!", Toast.LENGTH_SHORT).show();
@@ -92,7 +82,6 @@ public class SectionWRActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
         try {
             saveDraft();
         } catch (JSONException e) {
@@ -109,6 +98,11 @@ public class SectionWRActivity extends AppCompatActivity {
     private void saveDraft() throws JSONException {
 
         form = new Form();
+        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        form.setUserName(MainApp.user.getUserName());
+        form.setDeviceId(MainApp.appInfo.getDeviceID());
+        form.setDeviceTag(MainApp.appInfo.getTagName());
+        form.setAppver(MainApp.appInfo.getAppVersion());
 
         form.setWr_dmu_register(bi.wrDmuRegister.getText().toString());
 
@@ -162,7 +156,7 @@ public class SectionWRActivity extends AppCompatActivity {
 
         form.setWr_comments(bi.wrComments.getText().toString());
 
-        form.setcR(form.wRtoString());
+        form.setwR(form.wRtoString());
     }
 
     public void btnEnd(View view) {
