@@ -61,13 +61,7 @@ public class SectionWRActivity extends AppCompatActivity {
     private boolean insertNewRecord() {
         if (!form.getUid().equals("")) return true;
         long rowId = 0;
-        try {
-            rowId = db.addForm(form);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "Database Exception... ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+        rowId = db.addForm(form);
         form.setId(String.valueOf(rowId));
         if (rowId > 0) {
             form.setUid(form.getDeviceId() + form.getId());

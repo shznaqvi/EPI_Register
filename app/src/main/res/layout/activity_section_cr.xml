@@ -140,9 +140,11 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cr_reg_number"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="4"
+                            app:mask="##-##"
                             app:maxValue="40"
                             app:minValue="1"
+                            app:pattern="^(\\d{2,2}\\-\\d{2,2})$"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -533,10 +535,17 @@
                                 android:text="@string/cr_address" />
                         </LinearLayout>
 
+                        <EditText
+                            android:id="@+id/cr_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cr_address" />
+
                         <CheckBox
                             android:id="@+id/cr_address_previous"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:tag="-1"
                             android:text="@string/cr_address_previous" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

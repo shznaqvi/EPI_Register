@@ -139,9 +139,11 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/wr_reg_number"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="4"
+                            app:mask="##.##"
                             app:maxValue="40"
                             app:minValue="1"
+                            app:pattern="^(\\d{2,2}\\-\\d{2,2})$"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
