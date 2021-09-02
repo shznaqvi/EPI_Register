@@ -53,6 +53,10 @@ public class SectionCRActivity extends AppCompatActivity {
             Clear.clearAllFields(bi.crAddress, !b);
         });
 
+        bi.crPhoneNa.setOnCheckedChangeListener((compoundButton, b) -> {
+            Clear.clearAllFields(bi.crPhone, !b);
+        });
+
         cbCheck(bi.crBcgD1, bi.crBcgD2, bi.crBcg);
         cbCheck(bi.crBcgD2, bi.crBcgD1, bi.crBcg);
 
@@ -174,6 +178,8 @@ public class SectionCRActivity extends AppCompatActivity {
         form.setCr_address(bi.crAddressPrevious.isChecked() ? "1" : "-1");
 
         form.setCr_phone(bi.crPhone.getText().toString());
+
+        form.setCr_phone_na(bi.crPhoneNa.isChecked() ? "1" : "-1");
 
         form.setCr_bcg(bi.crBcg.getText().toString());
 

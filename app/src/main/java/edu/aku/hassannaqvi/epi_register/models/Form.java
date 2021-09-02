@@ -55,6 +55,7 @@ public class Form extends BaseObservable {
     private String cr_address = StringUtils.EMPTY;
     private String cr_address_previous = StringUtils.EMPTY;
     private String cr_phone = StringUtils.EMPTY;
+    private String cr_phone_na = StringUtils.EMPTY;
     private String cr_bcg = StringUtils.EMPTY;
     private String cr_bcg_d = StringUtils.EMPTY;
     private String cr_bcg_d1 = StringUtils.EMPTY;
@@ -137,6 +138,7 @@ public class Form extends BaseObservable {
     private String wr_address = StringUtils.EMPTY;
     private String wr_address_previous = StringUtils.EMPTY;
     private String wr_phone = StringUtils.EMPTY;
+    private String wr_phone_na = StringUtils.EMPTY;
     private String wr_ttd1 = StringUtils.EMPTY;
     private String wr_ttd1ds = StringUtils.EMPTY;
     private String wr_ttd1ds1 = StringUtils.EMPTY;
@@ -493,6 +495,16 @@ public class Form extends BaseObservable {
     public void setCr_phone(String cr_phone) {
         this.cr_phone = cr_phone;
         notifyPropertyChanged(BR.cr_phone);
+    }
+
+    @Bindable
+    public String getCr_phone_na() {
+        return cr_phone_na;
+    }
+
+    public void setCr_phone_na(String cr_phone_na) {
+        this.cr_phone_na = cr_phone_na;
+        notifyPropertyChanged(BR.cr_phone_na);
     }
 
     @Bindable
@@ -1306,6 +1318,16 @@ public class Form extends BaseObservable {
     }
 
     @Bindable
+    public String getWr_phone_na() {
+        return wr_phone_na;
+    }
+
+    public void setWr_phone_na(String wr_phone_na) {
+        this.wr_phone_na = wr_phone_na;
+        notifyPropertyChanged(BR.wr_phone_na);
+    }
+
+    @Bindable
     public String getWr_ttd1() {
         return wr_ttd1;
     }
@@ -1553,6 +1575,7 @@ public class Form extends BaseObservable {
                 this.cr_gender = json.getString("cr_gender");
                 this.cr_address = json.getString("cr_address");
                 this.cr_phone = json.getString("cr_phone");
+                this.cr_phone_na = json.getString("cr_phone_na");
                 this.cr_bcg = json.getString("cr_bcg");
                 this.cr_bcg_d1 = json.getString("cr_bcg_d1");
                 this.cr_bcg_d2 = json.getString("cr_bcg_d2");
@@ -1628,6 +1651,7 @@ public class Form extends BaseObservable {
                 this.wr_age_years = json.getString("wr_age_years");
                 this.wr_address = json.getString("wr_address");
                 this.wr_phone = json.getString("wr_phone");
+                this.wr_phone_na = json.getString("wr_phone_na");
                 this.wr_ttd1 = json.getString("wr_ttd1");
                 this.wr_ttd1ds1 = json.getString("wr_ttd1ds1");
                 this.wr_ttd1ds2 = json.getString("wr_ttd1ds2");
@@ -1669,6 +1693,7 @@ public class Form extends BaseObservable {
                     .put("cr_gender", cr_gender)
                     .put("cr_address", cr_address)
                     .put("cr_phone", cr_phone)
+                    .put("cr_phone_na", cr_phone_na)
                     .put("cr_bcg", cr_bcg)
                     .put("cr_bcg_d1", cr_bcg_d1)
                     .put("cr_bcg_d2", cr_bcg_d2)
@@ -1744,6 +1769,7 @@ public class Form extends BaseObservable {
                     .put("wr_age_years", wr_age_years)
                     .put("wr_address", wr_address)
                     .put("wr_phone", wr_phone)
+                    .put("wr_phone_na", wr_phone_na)
                     .put("wr_ttd1", wr_ttd1)
                     .put("wr_ttd1ds1", wr_ttd1ds1)
                     .put("wr_ttd1ds2", wr_ttd1ds2)

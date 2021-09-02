@@ -5,9 +5,9 @@
 
         <import type="android.view.View" />
 
-<!--        <variable
-            name="form"
-            type="edu.aku.hassannaqvi.epi_register.models.Form" />-->
+        <!--        <variable
+                    name="form"
+                    type="edu.aku.hassannaqvi.epi_register.models.Form" />-->
 
         <variable
             name="callback"
@@ -421,6 +421,7 @@
                             android:id="@+id/wr_address_previous"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:tag="-1"
                             android:text="@string/wr_address_previous" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -463,6 +464,13 @@
                             app:maxValue="11"
                             app:minValue="1"
                             app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/wr_phone_na"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:tag="-1"
+                            android:text="@string/nav" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -47,6 +48,15 @@ public class SectionWRActivity extends AppCompatActivity {
     }
 
     private void setupSkips() {
+
+        bi.wrAddressPrevious.setOnCheckedChangeListener((compoundButton, b) -> {
+            Clear.clearAllFields(bi.wrAddress, !b);
+        });
+
+        bi.wrPhoneNa.setOnCheckedChangeListener((compoundButton, b) -> {
+            Clear.clearAllFields(bi.wrPhone, !b);
+        });
+
         cbCheck(bi.wrTtd1ds1, bi.wrTtd1ds2, bi.wrTtd1);
         cbCheck(bi.wrTtd1ds2, bi.wrTtd1ds1, bi.wrTtd1);
 
@@ -125,6 +135,8 @@ public class SectionWRActivity extends AppCompatActivity {
         form.setWr_address_previous(bi.wrAddressPrevious.isChecked() ? "1" : "-1");
 
         form.setWr_phone(bi.wrPhone.getText().toString());
+
+        form.setWr_phone_na(bi.wrPhoneNa.isChecked() ? "1" : "-1");
 
         form.setWr_ttd1(bi.wrTtd1.getText().toString());
 
