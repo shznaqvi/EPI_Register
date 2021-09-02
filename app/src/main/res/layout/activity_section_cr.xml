@@ -208,7 +208,7 @@
                             android:id="@+id/cr_page_number"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cr_page_number"
+                            android:hint="###"
                             android:inputType="number"
                             android:maxLength="3"
                             app:maxValue="500"
@@ -250,7 +250,7 @@
                             android:id="@+id/cr_rsno"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cr_rsno"
+                            android:hint="####"
                             android:inputType="number"
                             android:maxLength="4"
                             app:maxValue="9999"
@@ -292,7 +292,7 @@
                             android:id="@+id/cr_card_number"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cr_card_number"
+                            android:hint="#####"
                             android:inputType="number"
                             android:maxLength="5"
                             app:maxValue="99999"
@@ -1376,7 +1376,7 @@
                                 android:id="@+id/cr_pcv2_d2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr_pcv2_d1" />
+                                android:text="@string/cr_pcv2_d2" />
 
                             <CheckBox
                                 android:id="@+id/cr_pcv2_na"
@@ -1890,6 +1890,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="24dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <Button
@@ -1905,7 +1907,7 @@
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="wrap_content"
+                        android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:background="@color/greenLight"

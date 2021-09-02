@@ -1387,7 +1387,7 @@ public class FormCR extends BaseObservable {
                 this.cr_pcv1_na = json.getString("cr_pcv1_na");
                 this.cr_pcv2 = json.getString("cr_pcv2");
                 this.cr_pcv2_d1 = json.getString("cr_pcv2_d1");
-                this.cr_pcv2_d1 = json.getString("cr_pcv2_d1");
+                this.cr_pcv2_d2 = json.getString("cr_pcv2_d2");
                 this.cr_pcv2_na = json.getString("cr_pcv2_na");
                 this.cr_pcv3 = json.getString("cr_pcv3");
                 this.cr_pcv3_d1 = json.getString("cr_pcv3_d1");
