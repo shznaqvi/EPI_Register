@@ -342,6 +342,7 @@
                             android:id="@+id/wr_husband_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/wr_husband_name" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
