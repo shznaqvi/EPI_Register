@@ -411,6 +411,12 @@
                                 android:text="@string/wr_address" />
                         </LinearLayout>
 
+                        <EditText
+                            android:id="@+id/wr_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/wr_address" />
+
                         <CheckBox
                             android:id="@+id/wr_address_previous"
                             android:layout_width="match_parent"

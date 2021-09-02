@@ -169,15 +169,17 @@ public class SectionCRActivity extends AppCompatActivity {
                 : bi.crGender2.isChecked() ? "2"
                 : "-1");
 
-        form.setCr_address(bi.crAddressPrevious.getText().toString());
+        form.setCr_address(bi.crAddress.getText().toString());
+
+        form.setCr_address(bi.crAddressPrevious.isChecked() ? "1" : "-1");
 
         form.setCr_phone(bi.crPhone.getText().toString());
 
         form.setCr_bcg(bi.crBcg.getText().toString());
 
-        form.setCr_bcg_d1(bi.crBcgD1.isChecked() ? "" : "-1");
+        form.setCr_bcg_d1(bi.crBcgD1.isChecked() ? "1" : "-1");
 
-        form.setCr_bcg_d2(bi.crBcgD2.isChecked() ? "" : "-1");
+        form.setCr_bcg_d2(bi.crBcgD2.isChecked() ? "2" : "-1");
 
         form.setCr_hep_b(bi.crHepB.getText().toString());
 

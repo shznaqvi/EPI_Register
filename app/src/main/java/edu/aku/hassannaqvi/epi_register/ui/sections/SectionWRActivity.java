@@ -120,7 +120,9 @@ public class SectionWRActivity extends AppCompatActivity {
 
         form.setWr_age_years(bi.wrAgeYears.getText().toString());
 
-        form.setWr_address(bi.wrAddressPrevious.getText().toString());
+        form.setWr_address(bi.wrAddress.getText().toString());
+
+        form.setWr_address_previous(bi.wrAddressPrevious.isChecked() ? "1" : "-1");
 
         form.setWr_phone(bi.wrPhone.getText().toString());
 
