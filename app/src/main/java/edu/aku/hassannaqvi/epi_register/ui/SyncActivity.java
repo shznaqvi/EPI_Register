@@ -49,7 +49,8 @@ import java.util.concurrent.TimeUnit;
 
 import edu.aku.hassannaqvi.epi_register.R;
 import edu.aku.hassannaqvi.epi_register.adapters.SyncListAdapter;
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.FormCRTable;
+import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.FormWRTable;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
@@ -141,9 +142,13 @@ public class SyncActivity extends AppCompatActivity {
                 uploadTables.clear();
                 MainApp.uploadData.clear();
 
-                // Forms
-                uploadTables.add(new SyncModel(FormsTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedForms());
+                // FormsCR
+                uploadTables.add(new SyncModel(FormCRTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedFormCR());
+
+                // FormsWR
+                uploadTables.add(new SyncModel(FormWRTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedFormWR());
 
                 MainApp.downloadData = new String[uploadData.size()];
 

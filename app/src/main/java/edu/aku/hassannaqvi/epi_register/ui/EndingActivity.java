@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.epi_register.ui;
 
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.cr;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,8 +19,6 @@ import edu.aku.hassannaqvi.epi_register.core.MainApp;
 import edu.aku.hassannaqvi.epi_register.database.DatabaseHelper;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivityEndingBinding;
 
-import static edu.aku.hassannaqvi.epi_register.core.MainApp.form;
-
 
 public class EndingActivity extends AppCompatActivity {
 
@@ -31,7 +31,7 @@ public class EndingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_ending);
-        bi.setForm(form);
+        bi.setForm(cr);
         setSupportActionBar(bi.toolbar);
         setSupportActionBar(bi.toolbar);
         //setTitle(R.string.section1_mainheading);
@@ -41,15 +41,15 @@ public class EndingActivity extends AppCompatActivity {
         //sectionMainCheck = getIntent().getIntExtra("status", 0);
 
 
-        bi.istatusa.setEnabled(check && !form.getiStatus().equals("9")); // form is complete and  patient not on hold
+        bi.istatusa.setEnabled(check && !cr.getiStatus().equals("9")); // form is complete and  patient not on hold
         bi.istatusb.setEnabled(!check);
-        bi.istatusc.setEnabled(check && form.getiStatus().equals("9")); // form is complete and  patient not on hold
+        bi.istatusc.setEnabled(check && cr.getiStatus().equals("9")); // form is complete and  patient not on hold
 
 
     }
 
     private void saveDraft() {
-        form.setiStatus(bi.istatusa.isChecked() ? "1"
+        cr.setiStatus(bi.istatusa.isChecked() ? "1"
                 : bi.istatusb.isChecked() ? "2"
                 : bi.istatusc.isChecked() ? "9"
                 : "-1");
@@ -75,12 +75,12 @@ public class EndingActivity extends AppCompatActivity {
 
 
     private void cleanupProcess() {
-        form = null;
+        cr = null;
     }
 
 
     private boolean UpdateDB() {
-        int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, form.getiStatus());
+        int updcount = db.updateCrColumn(TableContracts.FormCRTable.COLUMN_ISTATUS, cr.getiStatus());
         return updcount > 0;
     }
 

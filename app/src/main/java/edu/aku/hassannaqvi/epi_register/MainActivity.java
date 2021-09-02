@@ -11,7 +11,8 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
 import edu.aku.hassannaqvi.epi_register.database.AndroidManager;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivityMainBinding;
-import edu.aku.hassannaqvi.epi_register.models.Form;
+import edu.aku.hassannaqvi.epi_register.models.FormCR;
+import edu.aku.hassannaqvi.epi_register.models.FormWR;
 import edu.aku.hassannaqvi.epi_register.ui.sections.SectionCRActivity;
 import edu.aku.hassannaqvi.epi_register.ui.sections.SectionWRActivity;
 
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bi.setCallback(this);
         bi.adminView.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
-//        bi.username.setText("Welcome, " + MainApp.user.getFullname() + "!");
+        bi.username.setText("Welcome, " + MainApp.user.getFullname() + "!");
     }
 
     public void sectionPress(View view) {
@@ -35,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.openChildForm:
-                MainApp.form = new Form();
+                MainApp.cr = new FormCR();
                 startActivity(new Intent(this, SectionCRActivity.class));
                 break;
             case R.id.openWomenForm:
-                MainApp.form = new Form();
+                MainApp.wr = new FormWR();
                 startActivity(new Intent(this, SectionWRActivity.class));
                 break;
             case R.id.dbm:

@@ -18,7 +18,8 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.epi_register.BuildConfig;
 import edu.aku.hassannaqvi.epi_register.R;
-import edu.aku.hassannaqvi.epi_register.models.Form;
+import edu.aku.hassannaqvi.epi_register.models.FormCR;
+import edu.aku.hassannaqvi.epi_register.models.FormWR;
 import edu.aku.hassannaqvi.epi_register.models.Users;
 
 
@@ -43,7 +44,8 @@ public class MainApp extends Application {
 
     public static File sdDir;
     public static String[] downloadData;
-    public static Form form;
+    public static FormCR cr;
+    public static FormWR wr;
 
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
