@@ -461,7 +461,8 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/wr_phone"
                             android:inputType="number"
-                            app:maxValue="11"
+                            android:maxLength="11"
+                            app:maxValue="99999999999"
                             app:minValue="1"
                             app:type="range" />
 
@@ -551,6 +552,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/wr_ttd1ds2" />
+
+                            <CheckBox
+                                android:id="@+id/wr_ttd1na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -613,6 +620,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/wr_ttd2ds2" />
+
+                            <CheckBox
+                                android:id="@+id/wr_ttd2na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -675,6 +688,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/wr_ttd3ds2" />
+
+                            <CheckBox
+                                android:id="@+id/wr_ttd3na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -737,6 +756,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/wr_ttd4ds2" />
+
+                            <CheckBox
+                                android:id="@+id/wr_ttd4na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -799,6 +824,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/wr_ttd5ds2" />
+
+                            <CheckBox
+                                android:id="@+id/wr_ttd5na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

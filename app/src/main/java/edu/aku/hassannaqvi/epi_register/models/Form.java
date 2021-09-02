@@ -60,70 +60,87 @@ public class Form extends BaseObservable {
     private String cr_bcg_d = StringUtils.EMPTY;
     private String cr_bcg_d1 = StringUtils.EMPTY;
     private String cr_bcg_d2 = StringUtils.EMPTY;
+    private String cr_bcg_na = StringUtils.EMPTY;
     private String cr_hep_b = StringUtils.EMPTY;
     private String cr_hep_bd = StringUtils.EMPTY;
     private String cr_hep_b1 = StringUtils.EMPTY;
     private String cr_hep_b2 = StringUtils.EMPTY;
+    private String cr_hep_bna = StringUtils.EMPTY;
     private String cr_opv0 = StringUtils.EMPTY;
     private String cr_opv0_d = StringUtils.EMPTY;
     private String cr_opv0_d1 = StringUtils.EMPTY;
     private String cr_opv0_d2 = StringUtils.EMPTY;
+    private String cr_opv0_na = StringUtils.EMPTY;
     private String cr_opv1 = StringUtils.EMPTY;
     private String cr_opv1_d = StringUtils.EMPTY;
     private String cr_opv1_d1 = StringUtils.EMPTY;
     private String cr_opv1_d2 = StringUtils.EMPTY;
+    private String cr_opv1_na = StringUtils.EMPTY;
     private String cr_opv2 = StringUtils.EMPTY;
     private String cr_opv2_d = StringUtils.EMPTY;
     private String cr_opv2_d1 = StringUtils.EMPTY;
     private String cr_opv2_d2 = StringUtils.EMPTY;
+    private String cr_opv2_na = StringUtils.EMPTY;
     private String cr_opv3 = StringUtils.EMPTY;
     private String cr_opv3_d = StringUtils.EMPTY;
     private String cr_opv3_d1 = StringUtils.EMPTY;
     private String cr_opv3_d2 = StringUtils.EMPTY;
+    private String cr_opv3_na = StringUtils.EMPTY;
     private String cr_rota1 = StringUtils.EMPTY;
     private String cr_rota1_d = StringUtils.EMPTY;
     private String cr_rota1_d1 = StringUtils.EMPTY;
     private String cr_rota1_d2 = StringUtils.EMPTY;
+    private String cr_rota1_na = StringUtils.EMPTY;
     private String cr_rota2 = StringUtils.EMPTY;
     private String cr_rota2_d = StringUtils.EMPTY;
     private String cr_rota2_d1 = StringUtils.EMPTY;
     private String cr_rota2_d2 = StringUtils.EMPTY;
+    private String cr_rota2_na = StringUtils.EMPTY;
     private String cr_ipv = StringUtils.EMPTY;
     private String cr_ipv_d = StringUtils.EMPTY;
     private String cr_ipv_d1 = StringUtils.EMPTY;
     private String cr_ipv_d2 = StringUtils.EMPTY;
+    private String cr_ipv_na = StringUtils.EMPTY;
     private String cr_pcv1 = StringUtils.EMPTY;
     private String cr_pcv1_d = StringUtils.EMPTY;
     private String cr_pcv1_d1 = StringUtils.EMPTY;
     private String cr_pcv1_d2 = StringUtils.EMPTY;
+    private String cr_pcv1_na = StringUtils.EMPTY;
     private String cr_pcv2 = StringUtils.EMPTY;
     private String cr_pcv2_d = StringUtils.EMPTY;
     private String cr_pcv2_d1 = StringUtils.EMPTY;
     private String cr_pcv2_d2 = StringUtils.EMPTY;
+    private String cr_pcv2_na = StringUtils.EMPTY;
     private String cr_pcv3 = StringUtils.EMPTY;
     private String cr_pcv3_d = StringUtils.EMPTY;
     private String cr_pcv3_d1 = StringUtils.EMPTY;
     private String cr_pcv3_d2 = StringUtils.EMPTY;
+    private String cr_pcv3_na = StringUtils.EMPTY;
     private String cr_penta1 = StringUtils.EMPTY;
     private String cr_penta1_d = StringUtils.EMPTY;
     private String cr_penta1_d1 = StringUtils.EMPTY;
     private String cr_penta1_d2 = StringUtils.EMPTY;
+    private String cr_penta1_na = StringUtils.EMPTY;
     private String cr_penta2 = StringUtils.EMPTY;
     private String cr_penta2_d = StringUtils.EMPTY;
     private String cr_penta2_d1 = StringUtils.EMPTY;
     private String cr_penta2_d2 = StringUtils.EMPTY;
+    private String cr_penta2_na = StringUtils.EMPTY;
     private String cr_penta3 = StringUtils.EMPTY;
     private String cr_penta3_d = StringUtils.EMPTY;
     private String cr_penta3_d1 = StringUtils.EMPTY;
     private String cr_penta3_d2 = StringUtils.EMPTY;
+    private String cr_penta3_na = StringUtils.EMPTY;
     private String cr_measles1 = StringUtils.EMPTY;
     private String cr_measles1_d = StringUtils.EMPTY;
     private String cr_measles1_d1 = StringUtils.EMPTY;
     private String cr_measles1_d2 = StringUtils.EMPTY;
+    private String cr_measles1_na = StringUtils.EMPTY;
     private String cr_measles2 = StringUtils.EMPTY;
     private String cr_measles2_d = StringUtils.EMPTY;
     private String cr_measles2_d1 = StringUtils.EMPTY;
     private String cr_measles2_d2 = StringUtils.EMPTY;
+    private String cr_measles2_na = StringUtils.EMPTY;
     private String cr_birth_status = StringUtils.EMPTY;
     private String cr_comments = StringUtils.EMPTY;
     // Section WR
@@ -143,22 +160,27 @@ public class Form extends BaseObservable {
     private String wr_ttd1ds = StringUtils.EMPTY;
     private String wr_ttd1ds1 = StringUtils.EMPTY;
     private String wr_ttd1ds2 = StringUtils.EMPTY;
+    private String wr_ttd1na = StringUtils.EMPTY;
     private String wr_ttd2 = StringUtils.EMPTY;
     private String wr_ttd2ds = StringUtils.EMPTY;
     private String wr_ttd2ds1 = StringUtils.EMPTY;
     private String wr_ttd2ds2 = StringUtils.EMPTY;
+    private String wr_ttd2na = StringUtils.EMPTY;
     private String wr_ttd3 = StringUtils.EMPTY;
     private String wr_ttd3ds = StringUtils.EMPTY;
     private String wr_ttd3ds1 = StringUtils.EMPTY;
     private String wr_ttd3ds2 = StringUtils.EMPTY;
+    private String wr_ttd3na = StringUtils.EMPTY;
     private String wr_ttd4 = StringUtils.EMPTY;
     private String wr_ttd4ds = StringUtils.EMPTY;
     private String wr_ttd4ds1 = StringUtils.EMPTY;
     private String wr_ttd4ds2 = StringUtils.EMPTY;
+    private String wr_ttd4na = StringUtils.EMPTY;
     private String wr_ttd5 = StringUtils.EMPTY;
     private String wr_ttd5ds = StringUtils.EMPTY;
     private String wr_ttd5ds1 = StringUtils.EMPTY;
     private String wr_ttd5ds2 = StringUtils.EMPTY;
+    private String wr_ttd5na = StringUtils.EMPTY;
     private String wr_comments = StringUtils.EMPTY;
     private String cR = StringUtils.EMPTY;
     private String wR = StringUtils.EMPTY;
@@ -1537,6 +1559,227 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.wr_comments);
     }
 
+
+    @Bindable
+    public String getCr_bcg_na() {
+        return cr_bcg_na;
+    }
+
+    public void setCr_bcg_na(String cr_bcg_na) {
+        this.cr_bcg_na = cr_bcg_na;
+        notifyPropertyChanged(BR.cr_bcg_na);
+    }
+
+    @Bindable
+    public String getCr_hep_bna() {
+        return cr_hep_bna;
+    }
+
+    public void setCr_hep_bna(String cr_hep_bna) {
+        this.cr_hep_bna = cr_hep_bna;
+        notifyPropertyChanged(BR.cr_hep_bna);
+    }
+
+    @Bindable
+    public String getCr_opv0_na() {
+        return cr_opv0_na;
+    }
+
+    public void setCr_opv0_na(String cr_opv0_na) {
+        this.cr_opv0_na = cr_opv0_na;
+        notifyPropertyChanged(BR.cr_opv0_na);
+    }
+
+    @Bindable
+    public String getCr_opv1_na() {
+        return cr_opv1_na;
+    }
+
+    public void setCr_opv1_na(String cr_opv1_na) {
+        this.cr_opv1_na = cr_opv1_na;
+        notifyPropertyChanged(BR.cr_opv1_na);
+    }
+
+    @Bindable
+    public String getCr_opv2_na() {
+        return cr_opv2_na;
+    }
+
+    public void setCr_opv2_na(String cr_opv2_na) {
+        this.cr_opv2_na = cr_opv2_na;
+        notifyPropertyChanged(BR.cr_opv2_na);
+    }
+
+    @Bindable
+    public String getCr_opv3_na() {
+        return cr_opv3_na;
+    }
+
+    public void setCr_opv3_na(String cr_opv3_na) {
+        this.cr_opv3_na = cr_opv3_na;
+        notifyPropertyChanged(BR.cr_opv3_na);
+    }
+
+    @Bindable
+    public String getCr_rota1_na() {
+        return cr_rota1_na;
+    }
+
+    public void setCr_rota1_na(String cr_rota1_na) {
+        this.cr_rota1_na = cr_rota1_na;
+        notifyPropertyChanged(BR.cr_rota1_na);
+    }
+
+    @Bindable
+    public String getCr_rota2_na() {
+        return cr_rota2_na;
+    }
+
+    public void setCr_rota2_na(String cr_rota2_na) {
+        this.cr_rota2_na = cr_rota2_na;
+        notifyPropertyChanged(BR.cr_rota2_na);
+    }
+
+    @Bindable
+    public String getCr_ipv_na() {
+        return cr_ipv_na;
+    }
+
+    public void setCr_ipv_na(String cr_ipv_na) {
+        this.cr_ipv_na = cr_ipv_na;
+        notifyPropertyChanged(BR.cr_ipv_na);
+    }
+
+    @Bindable
+    public String getCr_pcv1_na() {
+        return cr_pcv1_na;
+    }
+
+    public void setCr_pcv1_na(String cr_pcv1_na) {
+        this.cr_pcv1_na = cr_pcv1_na;
+        notifyPropertyChanged(BR.cr_pcv1_na);
+    }
+
+    @Bindable
+    public String getCr_pcv2_na() {
+        return cr_pcv2_na;
+    }
+
+    public void setCr_pcv2_na(String cr_pcv2_na) {
+        this.cr_pcv2_na = cr_pcv2_na;
+        notifyPropertyChanged(BR.cr_pcv2_na);
+    }
+
+    @Bindable
+    public String getCr_pcv3_na() {
+        return cr_pcv3_na;
+    }
+
+    public void setCr_pcv3_na(String cr_pcv3_na) {
+        this.cr_pcv3_na = cr_pcv3_na;
+        notifyPropertyChanged(BR.cr_pcv3_na);
+    }
+
+    @Bindable
+    public String getCr_penta1_na() {
+        return cr_penta1_na;
+    }
+
+    public void setCr_penta1_na(String cr_penta1_na) {
+        this.cr_penta1_na = cr_penta1_na;
+        notifyPropertyChanged(BR.cr_penta1_na);
+    }
+
+    @Bindable
+    public String getCr_penta2_na() {
+        return cr_penta2_na;
+    }
+
+    public void setCr_penta2_na(String cr_penta2_na) {
+        this.cr_penta2_na = cr_penta2_na;
+        notifyPropertyChanged(BR.cr_penta2_na);
+    }
+
+    @Bindable
+    public String getCr_penta3_na() {
+        return cr_penta3_na;
+    }
+
+    public void setCr_penta3_na(String cr_penta3_na) {
+        this.cr_penta3_na = cr_penta3_na;
+        notifyPropertyChanged(BR.cr_penta3_na);
+    }
+
+    @Bindable
+    public String getCr_measles1_na() {
+        return cr_measles1_na;
+    }
+
+    public void setCr_measles1_na(String cr_measles1_na) {
+        this.cr_measles1_na = cr_measles1_na;
+        notifyPropertyChanged(BR.cr_measles1_na);
+    }
+
+    @Bindable
+    public String getCr_measles2_na() {
+        return cr_measles2_na;
+    }
+
+    public void setCr_measles2_na(String cr_measles2_na) {
+        this.cr_measles2_na = cr_measles2_na;
+        notifyPropertyChanged(BR.cr_measles2_na);
+    }
+
+    @Bindable
+    public String getWr_ttd1na() {
+        return wr_ttd1na;
+    }
+
+    public void setWr_ttd1na(String wr_ttd1na) {
+        this.wr_ttd1na = wr_ttd1na;
+        notifyPropertyChanged(BR.wr_ttd1na);
+    }
+
+    @Bindable
+    public String getWr_ttd2na() {
+        return wr_ttd2na;
+    }
+
+    public void setWr_ttd2na(String wr_ttd2na) {
+        this.wr_ttd2na = wr_ttd2na;
+        notifyPropertyChanged(BR.wr_ttd2na);
+    }
+
+    @Bindable
+    public String getWr_ttd3na() {
+        return wr_ttd3na;
+    }
+
+    public void setWr_ttd3na(String wr_ttd3na) {
+        this.wr_ttd3na = wr_ttd3na;
+        notifyPropertyChanged(BR.wr_ttd3na);
+    }
+
+    @Bindable
+    public String getWr_ttd4na() {
+        return wr_ttd4na;
+    }
+
+    public void setWr_ttd4na(String wr_ttd4na) {
+        this.wr_ttd4na = wr_ttd4na;
+        notifyPropertyChanged(BR.wr_ttd4na);
+    }
+
+    @Bindable
+    public String getWr_ttd5na() {
+        return wr_ttd5na;
+    }
+
+    public void setWr_ttd5na(String wr_ttd5na) {
+        this.wr_ttd5na = wr_ttd5na;
+        notifyPropertyChanged(BR.wr_ttd5na);
+    }
+
     public Form Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UID));
@@ -1579,54 +1822,71 @@ public class Form extends BaseObservable {
                 this.cr_bcg = json.getString("cr_bcg");
                 this.cr_bcg_d1 = json.getString("cr_bcg_d1");
                 this.cr_bcg_d2 = json.getString("cr_bcg_d2");
+                this.cr_bcg_na = json.getString("cr_bcg_na");
                 this.cr_hep_b = json.getString("cr_hep_b");
                 this.cr_hep_b1 = json.getString("cr_hep_b1");
                 this.cr_hep_b2 = json.getString("cr_hep_b2");
+                this.cr_hep_bna = json.getString("cr_hep_bna");
                 this.cr_opv0 = json.getString("cr_opv0");
                 this.cr_opv0_d1 = json.getString("cr_opv0_d1");
                 this.cr_opv0_d2 = json.getString("cr_opv0_d2");
+                this.cr_opv0_na = json.getString("cr_opv0_na");
                 this.cr_opv1 = json.getString("cr_opv1");
                 this.cr_opv1_d1 = json.getString("cr_opv1_d1");
                 this.cr_opv1_d2 = json.getString("cr_opv1_d2");
+                this.cr_opv1_na = json.getString("cr_opv1_na");
                 this.cr_opv2 = json.getString("cr_opv2");
                 this.cr_opv2_d1 = json.getString("cr_opv2_d1");
                 this.cr_opv2_d2 = json.getString("cr_opv2_d2");
+                this.cr_opv2_na = json.getString("cr_opv2_na");
                 this.cr_opv3 = json.getString("cr_opv3");
                 this.cr_opv3_d1 = json.getString("cr_opv3_d1");
                 this.cr_opv3_d2 = json.getString("cr_opv3_d2");
+                this.cr_opv3_na = json.getString("cr_opv3_na");
                 this.cr_rota1 = json.getString("cr_rota1");
                 this.cr_rota1_d1 = json.getString("cr_rota1_d1");
                 this.cr_rota1_d2 = json.getString("cr_rota1_d2");
+                this.cr_rota1_na = json.getString("cr_rota1_na");
                 this.cr_rota2 = json.getString("cr_rota2");
                 this.cr_rota2_d1 = json.getString("cr_rota2_d1");
                 this.cr_rota2_d2 = json.getString("cr_rota2_d2");
+                this.cr_rota2_na = json.getString("cr_rota2_na");
                 this.cr_ipv = json.getString("cr_ipv");
                 this.cr_ipv_d1 = json.getString("cr_ipv_d1");
                 this.cr_ipv_d2 = json.getString("cr_ipv_d2");
+                this.cr_ipv_na = json.getString("cr_ipv_na");
                 this.cr_pcv1 = json.getString("cr_pcv1");
                 this.cr_pcv1_d1 = json.getString("cr_pcv1_d1");
                 this.cr_pcv1_d2 = json.getString("cr_pcv1_d2");
+                this.cr_pcv1_na = json.getString("cr_pcv1_na");
                 this.cr_pcv2 = json.getString("cr_pcv2");
                 this.cr_pcv2_d1 = json.getString("cr_pcv2_d1");
                 this.cr_pcv2_d1 = json.getString("cr_pcv2_d1");
+                this.cr_pcv2_na = json.getString("cr_pcv2_na");
                 this.cr_pcv3 = json.getString("cr_pcv3");
                 this.cr_pcv3_d1 = json.getString("cr_pcv3_d1");
                 this.cr_pcv3_d2 = json.getString("cr_pcv3_d2");
+                this.cr_pcv3_na = json.getString("cr_pcv3_na");
                 this.cr_penta1 = json.getString("cr_penta1");
                 this.cr_penta1_d1 = json.getString("cr_penta1_d1");
                 this.cr_penta1_d2 = json.getString("cr_penta1_d2");
+                this.cr_penta1_na = json.getString("cr_penta1_na");
                 this.cr_penta2 = json.getString("cr_penta2");
                 this.cr_penta2_d1 = json.getString("cr_penta2_d1");
                 this.cr_penta2_d2 = json.getString("cr_penta2_d2");
+                this.cr_penta2_na = json.getString("cr_penta2_na");
                 this.cr_penta3 = json.getString("cr_penta3");
                 this.cr_penta3_d1 = json.getString("cr_penta3_d1");
                 this.cr_penta3_d2 = json.getString("cr_penta3_d2");
+                this.cr_penta3_na = json.getString("cr_penta3_na");
                 this.cr_measles1 = json.getString("cr_measles1");
                 this.cr_measles1_d1 = json.getString("cr_measles1_d1");
                 this.cr_measles1_d2 = json.getString("cr_measles1_d2");
+                this.cr_measles1_na = json.getString("cr_measles1_na");
                 this.cr_measles2 = json.getString("cr_measles2");
                 this.cr_measles2_d1 = json.getString("cr_measles2_d1");
                 this.cr_measles2_d2 = json.getString("cr_measles2_d2");
+                this.cr_measles2_na = json.getString("cr_measles2_na");
                 this.cr_comments = json.getString("cr_comments");
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -1655,18 +1915,23 @@ public class Form extends BaseObservable {
                 this.wr_ttd1 = json.getString("wr_ttd1");
                 this.wr_ttd1ds1 = json.getString("wr_ttd1ds1");
                 this.wr_ttd1ds2 = json.getString("wr_ttd1ds2");
+                this.wr_ttd1na = json.getString("wr_ttd1na");
                 this.wr_ttd2 = json.getString("wr_ttd2");
                 this.wr_ttd2ds1 = json.getString("wr_ttd2ds1");
                 this.wr_ttd2ds2 = json.getString("wr_ttd2ds2");
+                this.wr_ttd2na = json.getString("wr_ttd2na");
                 this.wr_ttd3 = json.getString("wr_ttd3");
                 this.wr_ttd3ds1 = json.getString("wr_ttd3ds1");
                 this.wr_ttd3ds2 = json.getString("wr_ttd3ds2");
+                this.wr_ttd3na = json.getString("wr_ttd3na");
                 this.wr_ttd4 = json.getString("wr_ttd4");
                 this.wr_ttd4ds1 = json.getString("wr_ttd4ds1");
                 this.wr_ttd4ds2 = json.getString("wr_ttd4ds2");
+                this.wr_ttd4na = json.getString("wr_ttd4na");
                 this.wr_ttd5 = json.getString("wr_ttd5");
                 this.wr_ttd5ds1 = json.getString("wr_ttd5ds1");
                 this.wr_ttd5ds2 = json.getString("wr_ttd5ds2");
+                this.wr_ttd5na = json.getString("wr_ttd5na");
                 this.wr_comments = json.getString("wr_comments");
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -1697,54 +1962,71 @@ public class Form extends BaseObservable {
                     .put("cr_bcg", cr_bcg)
                     .put("cr_bcg_d1", cr_bcg_d1)
                     .put("cr_bcg_d2", cr_bcg_d2)
+                    .put("cr_bcg_na", cr_bcg_na)
                     .put("cr_hep_b", cr_hep_b)
                     .put("cr_hep_b1", cr_hep_b1)
                     .put("cr_hep_b2", cr_hep_b2)
+                    .put("cr_hep_bna", cr_hep_bna)
                     .put("cr_opv0", cr_opv0)
                     .put("cr_opv0_d1", cr_opv0_d1)
                     .put("cr_opv0_d2", cr_opv0_d2)
+                    .put("cr_opv0_na", cr_opv0_na)
                     .put("cr_opv1", cr_opv1)
                     .put("cr_opv1_d1", cr_opv1_d1)
                     .put("cr_opv1_d2", cr_opv1_d2)
+                    .put("cr_opv1_na", cr_opv1_na)
                     .put("cr_opv2", cr_opv2)
                     .put("cr_opv2_d1", cr_opv2_d1)
                     .put("cr_opv2_d2", cr_opv2_d2)
+                    .put("cr_opv2_na", cr_opv2_na)
                     .put("cr_opv3", cr_opv3)
                     .put("cr_opv3_d1", cr_opv3_d1)
                     .put("cr_opv3_d2", cr_opv3_d2)
+                    .put("cr_opv3_na", cr_opv3_na)
                     .put("cr_rota1", cr_rota1)
                     .put("cr_rota1_d1", cr_rota1_d1)
                     .put("cr_rota1_d2", cr_rota1_d2)
+                    .put("cr_rota1_na", cr_rota1_na)
                     .put("cr_rota2", cr_rota2)
                     .put("cr_rota2_d1", cr_rota2_d1)
                     .put("cr_rota2_d2", cr_rota2_d2)
+                    .put("cr_rota2_na", cr_rota2_na)
                     .put("cr_ipv", cr_ipv)
                     .put("cr_ipv_d1", cr_ipv_d1)
                     .put("cr_ipv_d2", cr_ipv_d2)
+                    .put("cr_ipv_na", cr_ipv_na)
                     .put("cr_pcv1", cr_pcv1)
                     .put("cr_pcv1_d1", cr_pcv1_d1)
                     .put("cr_pcv1_d2", cr_pcv1_d2)
+                    .put("cr_pcv1_na", cr_pcv1_na)
                     .put("cr_pcv2", cr_pcv2)
                     .put("cr_pcv2_d1", cr_pcv2_d1)
-                    .put("cr_pcv2_d1", cr_pcv2_d1)
+                    .put("cr_pcv2_d2", cr_pcv2_d2)
+                    .put("cr_pcv2_na", cr_pcv2_na)
                     .put("cr_pcv3", cr_pcv3)
                     .put("cr_pcv3_d1", cr_pcv3_d1)
                     .put("cr_pcv3_d2", cr_pcv3_d2)
+                    .put("cr_pcv3_na", cr_pcv3_na)
                     .put("cr_penta1", cr_penta1)
                     .put("cr_penta1_d1", cr_penta1_d1)
                     .put("cr_penta1_d2", cr_penta1_d2)
+                    .put("cr_penta1_na", cr_penta1_na)
                     .put("cr_penta2", cr_penta2)
                     .put("cr_penta2_d1", cr_penta2_d1)
                     .put("cr_penta2_d2", cr_penta2_d2)
+                    .put("cr_penta2_na", cr_penta2_na)
                     .put("cr_penta3", cr_penta3)
                     .put("cr_penta3_d1", cr_penta3_d1)
                     .put("cr_penta3_d2", cr_penta3_d2)
+                    .put("cr_penta3_na", cr_penta3_na)
                     .put("cr_measles1", cr_measles1)
                     .put("cr_measles1_d1", cr_measles1_d1)
                     .put("cr_measles1_d2", cr_measles1_d2)
+                    .put("cr_measles1_na", cr_measles1_na)
                     .put("cr_measles2", cr_measles2)
                     .put("cr_measles2_d1", cr_measles2_d1)
                     .put("cr_measles2_d2", cr_measles2_d2)
+                    .put("cr_measles2_na", cr_measles2_na)
                     .put("cr_comments", cr_comments);
 
         } catch (JSONException e) {
@@ -1773,18 +2055,23 @@ public class Form extends BaseObservable {
                     .put("wr_ttd1", wr_ttd1)
                     .put("wr_ttd1ds1", wr_ttd1ds1)
                     .put("wr_ttd1ds2", wr_ttd1ds2)
+                    .put("wr_ttd1na", wr_ttd1na)
                     .put("wr_ttd2", wr_ttd2)
                     .put("wr_ttd2ds1", wr_ttd2ds1)
                     .put("wr_ttd2ds2", wr_ttd2ds2)
+                    .put("wr_ttd2na", wr_ttd2na)
                     .put("wr_ttd3", wr_ttd3)
                     .put("wr_ttd3ds1", wr_ttd3ds1)
                     .put("wr_ttd3ds2", wr_ttd3ds2)
+                    .put("wr_ttd3na", wr_ttd3na)
                     .put("wr_ttd4", wr_ttd4)
                     .put("wr_ttd4ds1", wr_ttd4ds1)
                     .put("wr_ttd4ds2", wr_ttd4ds2)
+                    .put("wr_ttd4na", wr_ttd4na)
                     .put("wr_ttd5", wr_ttd5)
                     .put("wr_ttd5ds1", wr_ttd5ds1)
                     .put("wr_ttd5ds2", wr_ttd5ds2)
+                    .put("wr_ttd5na", wr_ttd5na)
                     .put("wr_comments", wr_comments);
 
         } catch (JSONException e) {
@@ -1809,8 +2096,8 @@ public class Form extends BaseObservable {
             json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
             json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
             json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-            //  json.put(FormsTable.COLUMN_SYNCED, this.synced);
-            //  json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
+            json.put(FormsTable.COLUMN_SYNCED, this.synced);
+            json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
 
             // Sections
             json.put(FormsTable.COLUMN_CR, new JSONObject(cRtoString()));

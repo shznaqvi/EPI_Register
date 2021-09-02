@@ -582,8 +582,8 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cr_phone"
                             android:inputType="number"
-                            android:maxLength="2"
-                            app:maxValue="11"
+                            android:maxLength="11"
+                            app:maxValue="99999999999"
                             app:minValue="1"
                             app:type="range" />
 
@@ -654,15 +654,19 @@
                                     android:id="@+id/cr_bcg_d1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:tag="-1"
                                     android:text="@string/cr_bcg_d1" />
 
                                 <CheckBox
                                     android:id="@+id/cr_bcg_d2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:tag="-1"
                                     android:text="@string/cr_bcg_d2" />
+
+                                <CheckBox
+                                    android:id="@+id/cr_bcg_na"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/nap" />
 
                             </LinearLayout>
 
@@ -730,6 +734,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_hep_b2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_hep_bna"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -792,6 +802,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_opv0_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_opv0_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -855,6 +871,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_opv1_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_opv1_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -918,6 +940,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_opv2_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_opv2_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -980,6 +1008,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_opv3_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_opv3_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1042,6 +1076,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_rota1_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_rota1_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1104,6 +1144,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_rota2_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_rota2_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1166,6 +1212,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_ipv_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_ipv_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1228,6 +1280,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_pcv1_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_pcv1_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1290,6 +1348,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_pcv2_d1" />
+
+                            <CheckBox
+                                android:id="@+id/cr_pcv2_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1352,6 +1416,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_pcv3_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_pcv3_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1414,6 +1484,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_penta1_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_penta1_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1476,6 +1552,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_penta2_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_penta2_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1538,6 +1620,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_penta3_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_penta3_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1600,6 +1688,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_measles1_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_measles1_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1662,6 +1756,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr_measles2_d2" />
+
+                            <CheckBox
+                                android:id="@+id/cr_measles2_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nap" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

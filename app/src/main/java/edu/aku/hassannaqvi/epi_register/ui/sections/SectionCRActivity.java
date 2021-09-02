@@ -57,56 +57,73 @@ public class SectionCRActivity extends AppCompatActivity {
             Clear.clearAllFields(bi.crPhone, !b);
         });
 
-        cbCheck(bi.crBcgD1, bi.crBcgD2, bi.crBcg);
-        cbCheck(bi.crBcgD2, bi.crBcgD1, bi.crBcg);
+        cbCheck(bi.crBcgD1, bi.crBcgD2, bi.crBcgNa, bi.crBcg);
+        cbCheck(bi.crBcgD2, bi.crBcgD1, bi.crBcgNa, bi.crBcg);
+        cbCheck(bi.crBcgNa, bi.crBcgD2, bi.crBcgD1, bi.crBcg);
 
-        cbCheck(bi.crHepB1, bi.crHepB2, bi.crHepB);
-        cbCheck(bi.crHepB2, bi.crHepB1, bi.crHepB);
+        cbCheck(bi.crHepB1, bi.crHepB2, bi.crHepBna, bi.crHepB);
+        cbCheck(bi.crHepB2, bi.crHepB1, bi.crHepBna, bi.crHepB);
+        cbCheck(bi.crHepBna, bi.crHepB2, bi.crHepB1, bi.crHepB);
 
-        cbCheck(bi.crOpv0D1, bi.crOpv0D2, bi.crOpv0);
-        cbCheck(bi.crOpv0D2, bi.crOpv0D1, bi.crOpv0);
+        cbCheck(bi.crOpv0D1, bi.crOpv0D2, bi.crOpv0Na, bi.crOpv0);
+        cbCheck(bi.crOpv0D2, bi.crOpv0D1, bi.crOpv0Na, bi.crOpv0);
+        cbCheck(bi.crOpv0Na, bi.crOpv0D2, bi.crOpv0D1, bi.crOpv0);
 
-        cbCheck(bi.crOpv1D1, bi.crOpv1D2, bi.crOpv1);
-        cbCheck(bi.crOpv1D2, bi.crOpv1D1, bi.crOpv1);
+        cbCheck(bi.crOpv1D1, bi.crOpv1D2, bi.crOpv1Na, bi.crOpv1);
+        cbCheck(bi.crOpv1D2, bi.crOpv1D1, bi.crOpv1Na, bi.crOpv1);
+        cbCheck(bi.crOpv1Na, bi.crOpv1D2, bi.crOpv1D1, bi.crOpv1);
 
-        cbCheck(bi.crOpv2D1, bi.crOpv2D2, bi.crOpv2);
-        cbCheck(bi.crOpv2D2, bi.crOpv2D1, bi.crOpv2);
+        cbCheck(bi.crOpv2D1, bi.crOpv2D2, bi.crOpv2Na, bi.crOpv2);
+        cbCheck(bi.crOpv2D2, bi.crOpv2D1, bi.crOpv2Na, bi.crOpv2);
+        cbCheck(bi.crOpv2Na, bi.crOpv2D2, bi.crOpv2D1, bi.crOpv2);
 
-        cbCheck(bi.crOpv3D1, bi.crOpv3D2, bi.crOpv3);
-        cbCheck(bi.crOpv3D2, bi.crOpv3D1, bi.crOpv3);
+        cbCheck(bi.crOpv3D1, bi.crOpv3D2, bi.crOpv3Na, bi.crOpv3);
+        cbCheck(bi.crOpv3D2, bi.crOpv3D1, bi.crOpv3Na, bi.crOpv3);
+        cbCheck(bi.crOpv3Na, bi.crOpv3D2, bi.crOpv3D1, bi.crOpv3);
 
-        cbCheck(bi.crRota1D1, bi.crRota1D2, bi.crRota1);
-        cbCheck(bi.crRota1D2, bi.crRota1D1, bi.crRota1);
+        cbCheck(bi.crRota1D1, bi.crRota1D2, bi.crRota1Na, bi.crRota1);
+        cbCheck(bi.crRota1D2, bi.crRota1D1, bi.crRota1Na, bi.crRota1);
+        cbCheck(bi.crRota1Na, bi.crRota1D2, bi.crRota1D1, bi.crRota1);
 
-        cbCheck(bi.crRota2D1, bi.crRota2D2, bi.crRota2);
-        cbCheck(bi.crRota2D2, bi.crRota2D1, bi.crRota2);
+        cbCheck(bi.crRota2D1, bi.crRota2D2, bi.crRota2Na, bi.crRota2);
+        cbCheck(bi.crRota2D2, bi.crRota2D1, bi.crRota2Na, bi.crRota2);
+        cbCheck(bi.crRota2Na, bi.crRota2D2, bi.crRota2D1, bi.crRota2);
 
-        cbCheck(bi.crIpvD1, bi.crIpvD2, bi.crIpv);
-        cbCheck(bi.crIpvD2, bi.crIpvD1, bi.crIpv);
+        cbCheck(bi.crIpvD1, bi.crIpvD2, bi.crIpvNa, bi.crIpv);
+        cbCheck(bi.crIpvD2, bi.crIpvD1, bi.crIpvNa, bi.crIpv);
+        cbCheck(bi.crIpvNa, bi.crIpvD2, bi.crIpvD1, bi.crIpv);
 
-        cbCheck(bi.crPcv1D1, bi.crPcv1D2, bi.crPcv1);
-        cbCheck(bi.crPcv1D2, bi.crPcv1D1, bi.crPcv1);
+        cbCheck(bi.crPcv1D1, bi.crPcv1D2, bi.crPcv1Na, bi.crPcv1);
+        cbCheck(bi.crPcv1D2, bi.crPcv1D1, bi.crPcv1Na, bi.crPcv1);
+        cbCheck(bi.crPcv1Na, bi.crPcv1D2, bi.crPcv1D1, bi.crPcv1);
 
-        cbCheck(bi.crPcv2D1, bi.crPcv2D2, bi.crPcv2);
-        cbCheck(bi.crPcv2D2, bi.crPcv2D1, bi.crPcv2);
+        cbCheck(bi.crPcv2D1, bi.crPcv2D2, bi.crPcv2Na, bi.crPcv2);
+        cbCheck(bi.crPcv2D2, bi.crPcv2D1, bi.crPcv2Na, bi.crPcv2);
+        cbCheck(bi.crPcv2Na, bi.crPcv2D2, bi.crPcv2D1, bi.crPcv2);
 
-        cbCheck(bi.crPcv3D1, bi.crPcv3D2, bi.crPcv3);
-        cbCheck(bi.crPcv3D2, bi.crPcv3D1, bi.crPcv3);
+        cbCheck(bi.crPcv3D1, bi.crPcv3D2, bi.crPcv3Na, bi.crPcv3);
+        cbCheck(bi.crPcv3D2, bi.crPcv3D1, bi.crPcv3Na, bi.crPcv3);
+        cbCheck(bi.crPcv3Na, bi.crPcv3D2, bi.crPcv3D1, bi.crPcv3);
 
-        cbCheck(bi.crPenta1D1, bi.crPenta1D2, bi.crPenta1);
-        cbCheck(bi.crPenta1D2, bi.crPenta1D1, bi.crPenta1);
+        cbCheck(bi.crPenta1D1, bi.crPenta1D2, bi.crPenta1Na, bi.crPenta1);
+        cbCheck(bi.crPenta1D2, bi.crPenta1D1, bi.crPenta1Na, bi.crPenta1);
+        cbCheck(bi.crPenta1Na, bi.crPenta1D2, bi.crPenta1D1, bi.crPenta1);
 
-        cbCheck(bi.crPenta2D1, bi.crPenta2D2, bi.crPenta2);
-        cbCheck(bi.crPenta2D2, bi.crPenta2D1, bi.crPenta2);
+        cbCheck(bi.crPenta2D1, bi.crPenta2D2, bi.crPenta2Na, bi.crPenta2);
+        cbCheck(bi.crPenta2D2, bi.crPenta2D1, bi.crPenta2Na, bi.crPenta2);
+        cbCheck(bi.crPenta2Na, bi.crPenta2D2, bi.crPenta2D1, bi.crPenta2);
 
-        cbCheck(bi.crPenta3D1, bi.crPenta3D2, bi.crPenta3);
-        cbCheck(bi.crPenta3D2, bi.crPenta3D1, bi.crPenta3);
+        cbCheck(bi.crPenta3D1, bi.crPenta3D2, bi.crPenta3Na, bi.crPenta3);
+        cbCheck(bi.crPenta3D2, bi.crPenta3D1, bi.crPenta3Na, bi.crPenta3);
+        cbCheck(bi.crPenta3D2, bi.crPenta3D1, bi.crPenta3Na, bi.crPenta3);
 
-        cbCheck(bi.crMeasles1D1, bi.crMeasles1D2, bi.crMeasles1);
-        cbCheck(bi.crMeasles1D2, bi.crMeasles1D1, bi.crMeasles1);
+        cbCheck(bi.crMeasles1D1, bi.crMeasles1D2, bi.crMeasles1Na, bi.crMeasles1);
+        cbCheck(bi.crMeasles1D2, bi.crMeasles1D1, bi.crMeasles1Na, bi.crMeasles1);
+        cbCheck(bi.crMeasles1Na, bi.crMeasles1D2, bi.crMeasles1D1, bi.crMeasles1);
 
-        cbCheck(bi.crMeasles2D1, bi.crMeasles2D2, bi.crMeasles2);
-        cbCheck(bi.crMeasles2D2, bi.crMeasles2D1, bi.crMeasles2);
+        cbCheck(bi.crMeasles2D1, bi.crMeasles2D2, bi.crMeasles2Na, bi.crMeasles2);
+        cbCheck(bi.crMeasles2D2, bi.crMeasles2D1, bi.crMeasles2Na, bi.crMeasles2);
+        cbCheck(bi.crMeasles2Na, bi.crMeasles2D2, bi.crMeasles2D1, bi.crMeasles2);
 
     }
 
@@ -187,11 +204,15 @@ public class SectionCRActivity extends AppCompatActivity {
 
         form.setCr_bcg_d2(bi.crBcgD2.isChecked() ? "2" : "-1");
 
+        form.setCr_bcg_na(bi.crBcgNa.isChecked() ? "97" : "-1");
+
         form.setCr_hep_b(bi.crHepB.getText().toString());
 
         form.setCr_hep_b1(bi.crHepB1.isChecked() ? "1" : "-1");
 
         form.setCr_hep_b2(bi.crHepB2.isChecked() ? "2" : "-1");
+
+        form.setCr_hep_bna(bi.crHepBna.isChecked() ? "97" : "-1");
 
         form.setCr_opv0(bi.crOpv0.getText().toString());
 
@@ -199,11 +220,15 @@ public class SectionCRActivity extends AppCompatActivity {
 
         form.setCr_opv0_d2(bi.crOpv0D2.isChecked() ? "2" : "-1");
 
+        form.setCr_opv0_na(bi.crOpv0Na.isChecked() ? "97" : "-1");
+
         form.setCr_opv1(bi.crOpv1.getText().toString());
 
         form.setCr_opv1_d1(bi.crOpv1D1.isChecked() ? "1" : "-1");
 
         form.setCr_opv1_d2(bi.crOpv1D2.isChecked() ? "2" : "-1");
+
+        form.setCr_opv1_na(bi.crOpv1Na.isChecked() ? "97" : "-1");
 
         form.setCr_opv2(bi.crOpv2.getText().toString());
 
@@ -211,11 +236,15 @@ public class SectionCRActivity extends AppCompatActivity {
 
         form.setCr_opv2_d2(bi.crOpv2D2.isChecked() ? "2" : "-1");
 
+        form.setCr_opv2_na(bi.crOpv2Na.isChecked() ? "97" : "-1");
+
         form.setCr_opv3(bi.crOpv3.getText().toString());
 
         form.setCr_opv3_d1(bi.crOpv3D1.isChecked() ? "1" : "-1");
 
         form.setCr_opv3_d2(bi.crOpv3D2.isChecked() ? "2" : "-1");
+
+        form.setCr_opv3_na(bi.crOpv3Na.isChecked() ? "97" : "-1");
 
         form.setCr_rota1(bi.crRota1.getText().toString());
 
@@ -223,11 +252,15 @@ public class SectionCRActivity extends AppCompatActivity {
 
         form.setCr_rota1_d2(bi.crRota1D2.isChecked() ? "2" : "-1");
 
+        form.setCr_rota1_na(bi.crRota1Na.isChecked() ? "97" : "-1");
+
         form.setCr_rota2(bi.crRota2.getText().toString());
 
         form.setCr_rota2_d1(bi.crRota2D1.isChecked() ? "1" : "-1");
 
         form.setCr_rota2_d2(bi.crRota2D2.isChecked() ? "2" : "-1");
+
+        form.setCr_rota2_na(bi.crRota2Na.isChecked() ? "97" : "-1");
 
         form.setCr_ipv(bi.crIpv.getText().toString());
 
@@ -235,11 +268,15 @@ public class SectionCRActivity extends AppCompatActivity {
 
         form.setCr_ipv_d2(bi.crIpvD2.isChecked() ? "2" : "-1");
 
+        form.setCr_ipv_na(bi.crIpvNa.isChecked() ? "97" : "-1");
+
         form.setCr_pcv1(bi.crPcv1.getText().toString());
 
         form.setCr_pcv1_d1(bi.crPcv1D1.isChecked() ? "1" : "-1");
 
         form.setCr_pcv1_d2(bi.crPcv1D2.isChecked() ? "2" : "-1");
+
+        form.setCr_pcv1_na(bi.crPcv1Na.isChecked() ? "97" : "-1");
 
         form.setCr_pcv2(bi.crPcv2.getText().toString());
 
@@ -247,11 +284,15 @@ public class SectionCRActivity extends AppCompatActivity {
 
         form.setCr_pcv2_d1(bi.crPcv2D2.isChecked() ? "2" : "-1");
 
+        form.setCr_pcv2_na(bi.crPcv2Na.isChecked() ? "97" : "-1");
+
         form.setCr_pcv3(bi.crPcv3.getText().toString());
 
         form.setCr_pcv3_d1(bi.crPcv3D1.isChecked() ? "1" : "-1");
 
         form.setCr_pcv3_d2(bi.crPcv3D2.isChecked() ? "2" : "-1");
+
+        form.setCr_pcv3_na(bi.crPcv3Na.isChecked() ? "97" : "-1");
 
         form.setCr_penta1(bi.crPenta1.getText().toString());
 
@@ -259,11 +300,15 @@ public class SectionCRActivity extends AppCompatActivity {
 
         form.setCr_penta1_d2(bi.crPenta1D2.isChecked() ? "2" : "-1");
 
+        form.setCr_penta1_na(bi.crPenta1Na.isChecked() ? "97" : "-1");
+
         form.setCr_penta2(bi.crPenta2.getText().toString());
 
         form.setCr_penta2_d1(bi.crPenta2D1.isChecked() ? "1" : "-1");
 
         form.setCr_penta2_d2(bi.crPenta2D2.isChecked() ? "2" : "-1");
+
+        form.setCr_penta2_na(bi.crPenta2Na.isChecked() ? "97" : "-1");
 
         form.setCr_penta3(bi.crPenta3.getText().toString());
 
@@ -271,17 +316,23 @@ public class SectionCRActivity extends AppCompatActivity {
 
         form.setCr_penta3_d2(bi.crPenta3D2.isChecked() ? "2" : "-1");
 
+        form.setCr_penta3_na(bi.crPenta3Na.isChecked() ? "97" : "-1");
+
         form.setCr_measles1(bi.crMeasles1.getText().toString());
 
         form.setCr_measles1_d1(bi.crMeasles1D1.isChecked() ? "1" : "-1");
 
         form.setCr_measles1_d2(bi.crMeasles1D2.isChecked() ? "2" : "-1");
 
+        form.setCr_measles1_na(bi.crMeasles1Na.isChecked() ? "97" : "-1");
+
         form.setCr_measles2(bi.crMeasles2.getText().toString());
 
         form.setCr_measles2_d1(bi.crMeasles2D1.isChecked() ? "1" : "-1");
 
         form.setCr_measles2_d2(bi.crMeasles2D2.isChecked() ? "2" : "-1");
+
+        form.setCr_measles2_na(bi.crMeasles2Na.isChecked() ? "97" : "-1");
 
         form.setCr_birth_status(bi.crBirthStatus1.isChecked() ? "1"
                 : bi.crBirthStatus2.isChecked() ? "2"

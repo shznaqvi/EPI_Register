@@ -57,20 +57,25 @@ public class SectionWRActivity extends AppCompatActivity {
             Clear.clearAllFields(bi.wrPhone, !b);
         });
 
-        cbCheck(bi.wrTtd1ds1, bi.wrTtd1ds2, bi.wrTtd1);
-        cbCheck(bi.wrTtd1ds2, bi.wrTtd1ds1, bi.wrTtd1);
+        cbCheck(bi.wrTtd1ds1, bi.wrTtd1ds2, bi.wrTtd1na, bi.wrTtd1);
+        cbCheck(bi.wrTtd1ds2, bi.wrTtd1ds1, bi.wrTtd1na, bi.wrTtd1);
+        cbCheck(bi.wrTtd1na, bi.wrTtd1ds2, bi.wrTtd1ds1, bi.wrTtd1);
 
-        cbCheck(bi.wrTtd2ds1, bi.wrTtd2ds2, bi.wrTtd2);
-        cbCheck(bi.wrTtd2ds2, bi.wrTtd2ds1, bi.wrTtd2);
+        cbCheck(bi.wrTtd2ds1, bi.wrTtd2ds2, bi.wrTtd2na, bi.wrTtd2);
+        cbCheck(bi.wrTtd2ds2, bi.wrTtd2ds1, bi.wrTtd2na, bi.wrTtd2);
+        cbCheck(bi.wrTtd2na, bi.wrTtd2ds2, bi.wrTtd2ds1, bi.wrTtd2);
 
-        cbCheck(bi.wrTtd3ds1, bi.wrTtd3ds2, bi.wrTtd3);
-        cbCheck(bi.wrTtd3ds2, bi.wrTtd3ds1, bi.wrTtd3);
+        cbCheck(bi.wrTtd3ds1, bi.wrTtd3ds2, bi.wrTtd3na, bi.wrTtd3);
+        cbCheck(bi.wrTtd3ds2, bi.wrTtd3ds1, bi.wrTtd3na, bi.wrTtd3);
+        cbCheck(bi.wrTtd3na, bi.wrTtd3ds2, bi.wrTtd3ds1, bi.wrTtd3);
 
-        cbCheck(bi.wrTtd4ds1, bi.wrTtd4ds2, bi.wrTtd4);
-        cbCheck(bi.wrTtd4ds2, bi.wrTtd4ds1, bi.wrTtd4);
+        cbCheck(bi.wrTtd4ds1, bi.wrTtd4ds2, bi.wrTtd4na, bi.wrTtd4);
+        cbCheck(bi.wrTtd4ds2, bi.wrTtd4ds1, bi.wrTtd4na, bi.wrTtd4);
+        cbCheck(bi.wrTtd4na, bi.wrTtd4ds2, bi.wrTtd4ds1, bi.wrTtd4);
 
-        cbCheck(bi.wrTtd5ds1, bi.wrTtd5ds2, bi.wrTtd5);
-        cbCheck(bi.wrTtd5ds2, bi.wrTtd5ds1, bi.wrTtd5);
+        cbCheck(bi.wrTtd5ds1, bi.wrTtd5ds2, bi.wrTtd5na, bi.wrTtd5);
+        cbCheck(bi.wrTtd5ds2, bi.wrTtd5ds1, bi.wrTtd5na, bi.wrTtd5);
+        cbCheck(bi.wrTtd5na, bi.wrTtd5ds2, bi.wrTtd5ds1, bi.wrTtd5);
     }
 
 
@@ -144,11 +149,15 @@ public class SectionWRActivity extends AppCompatActivity {
 
         form.setWr_ttd1ds2(bi.wrTtd1ds2.isChecked() ? "2" : "-1");
 
+        form.setWr_ttd1na(bi.wrTtd1na.isChecked() ? "97" : "-1");
+
         form.setWr_ttd2(bi.wrTtd2.getText().toString());
 
         form.setWr_ttd2ds1(bi.wrTtd2ds1.isChecked() ? "1" : "-1");
 
         form.setWr_ttd2ds2(bi.wrTtd2ds2.isChecked() ? "2" : "-1");
+
+        form.setWr_ttd2na(bi.wrTtd2na.isChecked() ? "97" : "-1");
 
         form.setWr_ttd3(bi.wrTtd3.getText().toString());
 
@@ -156,17 +165,23 @@ public class SectionWRActivity extends AppCompatActivity {
 
         form.setWr_ttd3ds2(bi.wrTtd3ds2.isChecked() ? "2" : "-1");
 
+        form.setWr_ttd3na(bi.wrTtd3na.isChecked() ? "97" : "-1");
+
         form.setWr_ttd4(bi.wrTtd4.getText().toString());
 
         form.setWr_ttd4ds1(bi.wrTtd4ds1.isChecked() ? "1" : "-1");
 
         form.setWr_ttd4ds2(bi.wrTtd4ds2.isChecked() ? "2" : "-1");
 
+        form.setWr_ttd4na(bi.wrTtd4na.isChecked() ? "97" : "-1");
+
         form.setWr_ttd5(bi.wrTtd5.getText().toString());
 
         form.setWr_ttd5ds1(bi.wrTtd5ds1.isChecked() ? "1" : "-1");
 
         form.setWr_ttd5ds2(bi.wrTtd5ds2.isChecked() ? "2" : "-1");
+
+        form.setWr_ttd5na(bi.wrTtd5na.isChecked() ? "97" : "-1");
 
         form.setWr_comments(bi.wrComments.getText().toString());
 
