@@ -77,6 +77,79 @@
                     app:cardCornerRadius="24dp">
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/cr_dmu_register" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/cr_reg_number" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llregno"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/dmureg"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                app:maxValue="40"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/reg"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##-##"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                app:mask="##-##"
+                                app:pattern="^(\\d{2,2}\\-\\d{2,2})$" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:padding="12dp"
+                    app:cardCornerRadius="24dp">
+
+                    <LinearLayout
                         android:id="@+id/openChildForm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -124,6 +197,7 @@
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -182,14 +256,15 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <androidx.cardview.widget.CardView
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="24dp"
                     android:padding="12dp"
+                    android:visibility="gone"
                     app:cardCornerRadius="24dp">
 
                     <LinearLayout
@@ -240,14 +315,15 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <androidx.cardview.widget.CardView
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="24dp"
                     android:padding="12dp"
+                    android:visibility="gone"
                     app:cardCornerRadius="24dp">
 
                     <LinearLayout
@@ -284,6 +360,7 @@
                                 android:text="Update stool information"
                                 android:textColor="@color/gray"
                                 android:textSize="14sp" />
+
                         </LinearLayout>
 
                         <TextView
@@ -296,7 +373,9 @@
                             android:textSize="24dp" />
 
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <LinearLayout
                     android:id="@+id/adminView"

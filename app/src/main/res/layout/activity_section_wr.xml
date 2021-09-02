@@ -78,31 +78,45 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
+                            <!--<TextView
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_wr_dmu_register" />
+                                android:text="@string/Q_wr_dmu_register" />-->
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/wr_dmu_register" />
+
+                            <TextView
+                                android:id="@+id/wr_dmu_register"
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/wr_dmu_register" />
+
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/wr_dmu_register"
+                        <!--<com.edittextpicker.aliazaz.EditTextPicker
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/wr_dmu_register"
+                            android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             app:maxValue="40"
                             app:minValue="1"
-                            app:type="range" />
+                            android:enabled="false"
+                            app:type="range" />-->
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- wr_reg_number  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -120,30 +134,45 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
+                            <!--<TextView
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_wr_reg_number" />
+                                android:text="@string/Q_wr_reg_number" />-->
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/wr_reg_number" />
+
+                            <TextView
+                                android:id="@+id/wr_reg_number"
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/wr_reg_number" />
+
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <!--<com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/wr_reg_number"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/wr_reg_number"
+                            android:gravity="center"
+                            android:hint="##-##"
                             android:inputType="number"
                             android:maxLength="4"
                             app:mask="##-##"
-                            app:pattern="^(\\d{2,2}\\-\\d{2,2})$" />
+                            app:pattern="^(\\d{2,2}\\-\\d{2,2})$"
+                            android:enabled="false"/>-->
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- wr_page_number  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -524,15 +553,15 @@
                                 android:text="@string/wr_ttd1" />
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
                             android:id="@+id/wr_ttd1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            android:inputType="number"
-                            app:mask="##/##/####"
-                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
+                            app:dateFormat="dd-MM-yyyy"
+                            app:maxDate="CR_DATE"
+                            app:minDate="01/01/2020" />
 
                         <LinearLayout
                             android:id="@+id/wr_ttd1dscheck"
@@ -592,15 +621,15 @@
                                 android:text="@string/wr_ttd2" />
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
                             android:id="@+id/wr_ttd2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            android:inputType="number"
-                            app:mask="##/##/####"
-                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
+                            app:dateFormat="dd-MM-yyyy"
+                            app:maxDate="CR_DATE"
+                            app:minDate="01/01/2020" />
 
                         <LinearLayout
                             android:id="@+id/wr_ttd2dscheck"
@@ -660,15 +689,15 @@
                                 android:text="@string/wr_ttd3" />
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
                             android:id="@+id/wr_ttd3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            android:inputType="number"
-                            app:mask="##/##/####"
-                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
+                            app:dateFormat="dd-MM-yyyy"
+                            app:maxDate="CR_DATE"
+                            app:minDate="01/01/2020" />
 
                         <LinearLayout
                             android:id="@+id/wr_ttd3dscheck"
@@ -728,15 +757,15 @@
                                 android:text="@string/wr_ttd4" />
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
                             android:id="@+id/wr_ttd4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            android:inputType="number"
-                            app:mask="##/##/####"
-                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
+                            app:dateFormat="dd-MM-yyyy"
+                            app:maxDate="CR_DATE"
+                            app:minDate="01/01/2020" />
 
                         <LinearLayout
                             android:id="@+id/wr_ttd4dscheck"
@@ -796,15 +825,15 @@
                                 android:text="@string/wr_ttd5" />
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
                             android:id="@+id/wr_ttd5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            android:inputType="number"
-                            app:mask="##/##/####"
-                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
+                            app:dateFormat="dd-MM-yyyy"
+                            app:maxDate="CR_DATE"
+                            app:minDate="01/01/2020" />
 
                         <LinearLayout
                             android:id="@+id/wr_ttd5dscheck"
@@ -887,8 +916,9 @@
                         android:layout_marginStart="12dp"
                         android:background="@color/redOverlay"
                         android:onClick="btnEnd"
-                        android:text="Cancel"
-                        android:textColor="@color/white" />
+                        android:text="Exit"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
 
                     <Button
                         android:id="@+id/btn_Continue"

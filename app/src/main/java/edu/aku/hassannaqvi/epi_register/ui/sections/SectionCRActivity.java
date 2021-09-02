@@ -20,13 +20,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import edu.aku.hassannaqvi.epi_register.MainActivity;
 import edu.aku.hassannaqvi.epi_register.R;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
 import edu.aku.hassannaqvi.epi_register.database.DatabaseHelper;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivitySectionCrBinding;
 import edu.aku.hassannaqvi.epi_register.models.FormCR;
-import edu.aku.hassannaqvi.epi_register.ui.EndingActivity;
 
 public class SectionCRActivity extends AppCompatActivity {
     private static final String TAG = "SectionCRActivity";
@@ -44,8 +44,13 @@ public class SectionCRActivity extends AppCompatActivity {
 //        bi.setForm(form);
 //        setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        String dmuReg = getIntent().getStringExtra("dmureg");
+        String reg = getIntent().getStringExtra("reg");
+        bi.crDmuRegister.setText(dmuReg);
+        bi.crRegNumber.setText(reg);
 
     }
+
 
     private void setupSkips() {
 
@@ -127,6 +132,7 @@ public class SectionCRActivity extends AppCompatActivity {
 
     }
 
+
     private boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         long updcount = db.addCR(cr);
@@ -153,9 +159,12 @@ public class SectionCRActivity extends AppCompatActivity {
         }
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionCRActivity.class));
+            startActivity(new Intent(this, SectionCRActivity.class)
+                    .putExtra("dmureg", bi.crDmuRegister.getText().toString())
+                    .putExtra("reg", bi.crRegNumber.getText().toString()));
         } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
     }
+
 
     private void saveDraft() throws JSONException {
 
@@ -344,12 +353,21 @@ public class SectionCRActivity extends AppCompatActivity {
 
     }
 
+
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, MainActivity.class));
     }
+
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Toast.makeText(getApplicationContext(), "Back Press Not Allowed", Toast.LENGTH_LONG).show();
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

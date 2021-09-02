@@ -56,7 +56,7 @@
         <activity
             android:name=".ui.sections.SectionWRActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.loading"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
 
         <activity

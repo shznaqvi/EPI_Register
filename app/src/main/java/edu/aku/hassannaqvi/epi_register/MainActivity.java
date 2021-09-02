@@ -8,11 +8,11 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Validator;
+
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
 import edu.aku.hassannaqvi.epi_register.database.AndroidManager;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivityMainBinding;
-import edu.aku.hassannaqvi.epi_register.models.FormCR;
-import edu.aku.hassannaqvi.epi_register.models.FormWR;
 import edu.aku.hassannaqvi.epi_register.ui.sections.SectionCRActivity;
 import edu.aku.hassannaqvi.epi_register.ui.sections.SectionWRActivity;
 
@@ -32,16 +32,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sectionPress(View view) {
+        if (!Validator.emptyCheckingContainer(this, bi.llregno)) return;
 
         switch (view.getId()) {
 
             case R.id.openChildForm:
-                MainApp.cr = new FormCR();
-                startActivity(new Intent(this, SectionCRActivity.class));
+                //MainApp.cr = new FormCR();
+                finish();
+                startActivity(new Intent(this, SectionCRActivity.class)
+                        .putExtra("dmureg", bi.dmureg.getText().toString())
+                        .putExtra("reg", bi.reg.getText().toString()));
                 break;
             case R.id.openWomenForm:
-                MainApp.wr = new FormWR();
-                startActivity(new Intent(this, SectionWRActivity.class));
+                //MainApp.wr = new FormWR();
+                finish();
+                startActivity(new Intent(this, SectionWRActivity.class)
+                        .putExtra("dmureg", bi.dmureg.getText().toString())
+                        .putExtra("reg", bi.reg.getText().toString()));
                 break;
             case R.id.dbm:
                 startActivity(new Intent(this, AndroidManager.class));
