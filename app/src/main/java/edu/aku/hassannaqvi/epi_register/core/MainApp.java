@@ -8,6 +8,7 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.CheckBox;
 
+import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Clear;
 
 import org.json.JSONArray;
@@ -20,7 +21,6 @@ import edu.aku.hassannaqvi.epi_register.R;
 import edu.aku.hassannaqvi.epi_register.models.FormCR;
 import edu.aku.hassannaqvi.epi_register.models.FormWR;
 import edu.aku.hassannaqvi.epi_register.models.Users;
-import io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText;
 
 
 public class MainApp extends Application {
@@ -128,16 +128,16 @@ public class MainApp extends Application {
 
     }
 
-    public static void cbCheck(CheckBox cb1, CheckBox cb2, CheckBox cb3, DatePickerEditText dedt) {
+    public static void cbCheck(CheckBox cb1, CheckBox cb2, CheckBox cb3, EditTextPicker edt) {
         cb1.setOnCheckedChangeListener((compoundButton, b) -> {
             if (b) {
-                Clear.clearAllFields(dedt, false);
+                Clear.clearAllFields(edt, false);
                 cb2.setChecked(false);
                 cb2.setEnabled(false);
                 cb3.setChecked(false);
                 cb3.setEnabled(false);
             } else {
-                Clear.clearAllFields(dedt, true);
+                Clear.clearAllFields(edt, true);
                 cb2.setEnabled(true);
                 cb3.setEnabled(true);
             }

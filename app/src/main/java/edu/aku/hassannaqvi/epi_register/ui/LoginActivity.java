@@ -1,5 +1,10 @@
 package edu.aku.hassannaqvi.epi_register.ui;
 
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.TAJIKISTAN;
+import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_COPY;
+import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_NAME;
+
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -56,11 +61,6 @@ import edu.aku.hassannaqvi.epi_register.core.MainApp;
 import edu.aku.hassannaqvi.epi_register.database.DatabaseHelper;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivityLoginBinding;
 import edu.aku.hassannaqvi.epi_register.models.Users;
-
-import static edu.aku.hassannaqvi.epi_register.core.MainApp.PROJECT_NAME;
-import static edu.aku.hassannaqvi.epi_register.core.MainApp.TAJIKISTAN;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_COPY;
-import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_NAME;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -168,7 +168,7 @@ public class LoginActivity extends AppCompatActivity {
   /*      editor
                 .putString("lang", bi.countrySwitch.isChecked()? "1" : "3")
                 .apply();*/
-        bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
+//        bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
 /*
 
         bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

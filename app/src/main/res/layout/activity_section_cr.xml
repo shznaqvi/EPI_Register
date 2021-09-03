@@ -621,7 +621,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:tag="-1"
-                            android:text="@string/nav" />
+                            android:text="@string/cr_phone_na" />
 
                     </LinearLayout>
 
@@ -661,15 +661,15 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cr_bcg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:hint="DD/MM/YYYY"
-                                app:dateFormat="dd-MM-yyyy"
-                                app:maxDate="CR_DATE"
-                                app:minDate="01/01/2020" />
+                                android:inputType="number"
+                                app:mask="##/##/####"
+                                app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                             <LinearLayout
                                 android:id="@+id/fldGrpCVcr_bcg_d"
@@ -734,15 +734,15 @@
                                 android:text="@string/cr_hep_b" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_hep_b"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_hep_bdcheck"
@@ -802,15 +802,15 @@
                                 android:text="@string/cr_opv0" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_opv0"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_opv0_dcheck"
@@ -871,15 +871,15 @@
                                 android:text="@string/cr_opv1" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_opv1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_opv1_dcheck"
@@ -940,15 +940,15 @@
                                 android:text="@string/cr_opv2" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_opv2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_opv2_dcheck"
@@ -1008,15 +1008,15 @@
                                 android:text="@string/cr_opv3" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_opv3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_opv3_dcheck"
@@ -1076,15 +1076,15 @@
                                 android:text="@string/cr_rota1" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_rota1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_rota1_dcheck"
@@ -1144,15 +1144,15 @@
                                 android:text="@string/cr_rota2" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_rota2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_rota2_dcheck"
@@ -1212,15 +1212,15 @@
                                 android:text="@string/cr_ipv" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_ipv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_ipv_dcheck"
@@ -1280,15 +1280,15 @@
                                 android:text="@string/cr_pcv1" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_pcv1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_pcv1_dcheck"
@@ -1348,15 +1348,15 @@
                                 android:text="@string/cr_pcv2" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_pcv2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_pcv2_dcheck"
@@ -1376,7 +1376,7 @@
                                 android:id="@+id/cr_pcv2_d2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr_pcv2_d2" />
+                                android:text="@string/cr_pcv2_d1" />
 
                             <CheckBox
                                 android:id="@+id/cr_pcv2_na"
@@ -1416,15 +1416,15 @@
                                 android:text="@string/cr_pcv3" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_pcv3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_pcv3_dcheck"
@@ -1484,15 +1484,15 @@
                                 android:text="@string/cr_penta1" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_penta1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_penta1_dcheck"
@@ -1552,15 +1552,15 @@
                                 android:text="@string/cr_penta2" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_penta2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_penta2_dcheck"
@@ -1620,15 +1620,15 @@
                                 android:text="@string/cr_penta3" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_penta3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_penta3_dcheck"
@@ -1688,15 +1688,15 @@
                                 android:text="@string/cr_measles1" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_measles1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_measles1_dcheck"
@@ -1756,15 +1756,15 @@
                                 android:text="@string/cr_measles2" />
                         </LinearLayout>
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/cr_measles2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="DD/MM/YYYY"
-                            app:dateFormat="dd-MM-yyyy"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                            android:inputType="number"
+                            app:mask="##/##/####"
+                            app:pattern="^(\\d{2,2}\\/\\d{2,2}\\/\\d{4,4})$" />
 
                         <LinearLayout
                             android:id="@+id/cr_measles2_dcheck"
@@ -1877,6 +1877,7 @@
                         </LinearLayout>
 
                         <EditText
+                            android:tag="-1"
                             android:id="@+id/cr_comments"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

@@ -56,13 +56,13 @@
         <activity
             android:name=".ui.sections.SectionWRActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
+            android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.sections.SectionCRActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
+            android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
