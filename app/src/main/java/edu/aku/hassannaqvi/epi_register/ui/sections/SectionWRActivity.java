@@ -35,7 +35,7 @@ public class SectionWRActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.AppThemeEnglish1);
+        setTheme(R.style.AppThemeUrdu);
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_wr);
         bi.setCallback(this);
@@ -43,7 +43,7 @@ public class SectionWRActivity extends AppCompatActivity {
        /* bi.setForm(form);
         if (form == null) form = new Form();*/
 //        bi.setForm(form);
-//        setSupportActionBar(bi.toolbar);
+        setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         String dmuReg = getIntent().getStringExtra("dmureg");
         String reg = getIntent().getStringExtra("reg");

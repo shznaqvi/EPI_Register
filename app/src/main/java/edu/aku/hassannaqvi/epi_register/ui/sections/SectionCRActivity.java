@@ -42,7 +42,7 @@ public class SectionCRActivity extends AppCompatActivity {
 /*        bi.setForm(form);
         if (form == null) form = new Form();*/
 //        bi.setForm(form);
-//        setSupportActionBar(bi.toolbar);
+       setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         String dmuReg = getIntent().getStringExtra("dmureg");
         String reg = getIntent().getStringExtra("reg");
