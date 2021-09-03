@@ -214,5 +214,4 @@ public class SectionWRActivity extends AppCompatActivity {
         finish();
         startActivity(new Intent(this, MainActivity.class));
     }
-
 }

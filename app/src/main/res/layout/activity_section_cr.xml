@@ -442,8 +442,8 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                app:maxValue="29"
-                                app:minValue="1"
+                                app:maxValue="30"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -455,8 +455,8 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                app:maxValue="12"
-                                app:minValue="1"
+                                app:maxValue="60"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -465,11 +465,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="####"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="4"
-                                app:maxValue="2021"
-                                app:minValue="2015"
+                                android:maxLength="2"
+                                app:maxValue="5"
+                                app:minValue="0"
                                 app:type="range" />
 
 
@@ -1843,8 +1843,18 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/cr_birth_status2" />
+
+                            <RadioButton
+                                android:id="@+id/cr_birth_status_na"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/cr_birth_status2" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- cr_comments  Input   -->

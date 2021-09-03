@@ -345,6 +345,7 @@ public class SectionCRActivity extends AppCompatActivity {
 
         cr.setCr_birth_status(bi.crBirthStatus1.isChecked() ? "1"
                 : bi.crBirthStatus2.isChecked() ? "2"
+                : bi.crBirthStatusNa.isChecked() ? "97"
                 : "-1");
 
         cr.setCr_comments(bi.crComments.getText().toString());
