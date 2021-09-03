@@ -42,7 +42,7 @@ public class SectionCRActivity extends AppCompatActivity {
 /*        bi.setForm(form);
         if (form == null) form = new Form();*/
 //        bi.setForm(form);
-       setSupportActionBar(bi.toolbar);
+        setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         String dmuReg = getIntent().getStringExtra("dmureg");
         String reg = getIntent().getStringExtra("reg");
@@ -362,7 +362,15 @@ public class SectionCRActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        if (Integer.parseInt(bi.crAgeDays.getText().toString())
+                + Integer.parseInt(bi.crAgeMonths.getText().toString())
+                + Integer.parseInt(bi.crAgeYears.getText().toString()) == 0) {
+            return Validator.emptyCustomTextBox(this, bi.crAgeYears, "Age Cannot be 0", false);
+        }
+        return true;
     }
 
     @Override

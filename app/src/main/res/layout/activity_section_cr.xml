@@ -1376,7 +1376,7 @@
                                 android:id="@+id/cr_pcv2_d2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr_pcv2_d1" />
+                                android:text="@string/cr_pcv2_d2" />
 
                             <CheckBox
                                 android:id="@+id/cr_pcv2_na"
@@ -1849,7 +1849,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/cr_birth_status2" />
+                                android:text="@string/cr_birth_status_na" />
 
                         </RadioGroup>
 
