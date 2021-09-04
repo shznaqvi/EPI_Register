@@ -195,7 +195,7 @@
                                     android:paddingEnd="12dp"
                                     android:radius="5dp"
                                     android:text="@string/btnLogin"
-                                    android:textColor="@color/grayDark"
+                                    android:textColor="@color/white"
                                     android:textStyle="bold"
                                     android:visibility="visible" />
 

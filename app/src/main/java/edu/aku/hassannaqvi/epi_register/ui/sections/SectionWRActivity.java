@@ -6,6 +6,7 @@ import static edu.aku.hassannaqvi.epi_register.core.MainApp.wr;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,6 +52,20 @@ public class SectionWRActivity extends AppCompatActivity {
         String reg = getIntent().getStringExtra("reg");
         bi.wrDmuRegister.setText(dmuReg);
         bi.wrRegNumber.setText(reg);
+
+        if (MainApp.wrAddress.trim().equals(""))
+            bi.wrAddressPrevious.setVisibility(View.GONE);
+        bi.wrAddressPrevious.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bi.wrAddress.setText(MainApp.wrAddress);
+                } else {
+                    bi.wrAddress.setText("");
+
+                }
+            }
+        });
     }
 
 
@@ -165,6 +180,7 @@ public class SectionWRActivity extends AppCompatActivity {
         wr.setWr_age_years(bi.wrAgeYears.getText().toString());
 
         wr.setWr_address(bi.wrAddress.getText().toString());
+        MainApp.wrAddress = bi.wrAddress.getText().toString();
 
         wr.setWr_address_previous(bi.wrAddressPrevious.isChecked() ? "1" : "-1");
 

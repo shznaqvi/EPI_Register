@@ -75,7 +75,7 @@
     <style name="AppThemeUrdu" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">true</item>
 
-        <item name="android:fontFamily">@font/urdu_nastaleeq</item>
+        <item name="android:fontFamily">@font/jameel_noori_nastaleeq</item>
         <item name="android:textSize">16sp</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -112,11 +112,12 @@
         <item name="android:textSize">16sp</item>
         <item name="android:layout_marginTop">24dp</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/jameel_noori_nastaleeq</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingStart">15dp</item>
         <item name="android:paddingEnd">15dp</item>
-        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingTop">6dp</item>
         <item name="android:paddingBottom">6dp</item>
         <item name="android:minHeight">52dp</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
@@ -130,7 +131,7 @@
         <item name="android:textStyle">bold</item>
         <!--<item name="android:layout_marginTop">24dp</item>-->
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:fontFamily">@font/urdu_nastaleeq</item>
+        <item name="android:fontFamily">@font/jameel_noori_nastaleeq</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingStart">15dp</item>
         <item name="android:paddingEnd">4dp</item>
@@ -295,9 +296,9 @@
         <item name="android:paddingEnd">8dp</item>
         <item name="android:paddingTop">4dp</item>
         <item name="android:paddingBottom">4dp</item>
-        <item name="android:minHeight">16dp</item>
+        <item name="android:minHeight">56dp</item>
         <item name="android:layout_height">16dp</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
@@ -346,7 +347,7 @@
         <item name="android:textColorSecondary">@color/white</item>
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:typeface">sans</item>
-        <item name="android:fontFamily">@font/urdu_nastaleeq</item>
+        <item name="android:fontFamily">@font/jameel_noori_nastaleeq</item>
         <item name="android:maxHeight">@dimen/abc_action_bar_default_height_material</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
         <item name="titleTextAppearance">@style/Widget.AppCompat.Toolbar</item>
@@ -368,7 +369,7 @@
         <item name="android:textColorSecondary">@color/white</item>
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:typeface">sans</item>
-        <item name="android:fontFamily">@font/urdu_nastaleeq</item>
+        <item name="android:fontFamily">@font/jameel_noori_nastaleeq</item>
         <item name="android:maxHeight">@dimen/abc_action_bar_default_height_material</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
         <item name="titleTextAppearance">@style/Toolbar.TitleText</item>
@@ -465,6 +466,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="fontFamily">@font/jameel_noori_nastaleeq</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:windowBackground">@color/colorPrimaryDark</item>
         <item name="android:navigationBarColor">@color/colorAccentLightOverlay</item>
@@ -473,6 +475,7 @@
     <style name="CustomPopupTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textColorPrimary">@color/colorPrimary</item>
         <item name="android:textSize">16dp</item>
+
     </style>
 
     <style name="Theme.splashscreen" parent="Theme.MaterialComponents.NoActionBar">

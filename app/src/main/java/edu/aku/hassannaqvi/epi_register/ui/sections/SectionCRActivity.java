@@ -6,6 +6,7 @@ import static edu.aku.hassannaqvi.epi_register.core.MainApp.cr;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,6 +51,20 @@ public class SectionCRActivity extends AppCompatActivity {
         String reg = getIntent().getStringExtra("reg");
         bi.crDmuRegister.setText(dmuReg);
         bi.crRegNumber.setText(reg);
+
+        if (MainApp.crAddress.trim().equals(""))
+            bi.crAddressPrevious.setVisibility(View.GONE);
+        bi.crAddressPrevious.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bi.crAddress.setText(MainApp.crAddress);
+                } else {
+                    bi.crAddress.setText("");
+
+                }
+            }
+        });
 
     }
 
@@ -208,6 +223,7 @@ public class SectionCRActivity extends AppCompatActivity {
                 : "-1");
 
         cr.setCr_address(bi.crAddress.getText().toString());
+        MainApp.crAddress = bi.crAddress.getText().toString();
 
         cr.setCr_address(bi.crAddressPrevious.isChecked() ? "1" : "-1");
 

@@ -13,6 +13,7 @@
             name="callback"
             type="edu.aku.hassannaqvi.epi_register.ui.sections.SectionCRActivity" />
 
+
     </data>
 
     <LinearLayout
@@ -56,7 +57,7 @@
 
                         <TextView
                             style="@style/labelsHead"
-                            android:fontFamily="@font/urdu_nastaleeq"
+                            android:fontFamily="@font/jameel_noori_nastaleeq"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cr_register_title"
@@ -99,6 +100,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:textSize="24dp"
                                 android:text="@string/cr_dmu_register" />
 
                         </LinearLayout>
@@ -116,20 +118,7 @@
                             android:enabled="false"
                             app:type="range" />-->
 
-                    </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- cr_reg_number  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr_reg_number"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -156,6 +145,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:textSize="24dp"
                                 android:text="@string/cr_reg_number" />
 
                         </LinearLayout>
@@ -193,82 +183,24 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_cr_page_number" />
-
-                            <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/cr_page_number" />
-                        </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cr_page_number"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            app:maxValue="500"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- cr_rsno  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr_rsno"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_cr_rsno" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/cr_rsno" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/cr_card_number" />
+
                         </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cr_rsno"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="####"
-                            android:inputType="number"
-                            android:maxLength="4"
-                            app:maxValue="9999"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- cr_card_number  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr_card_number"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -276,29 +208,42 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_cr_card_number" />
-
-                            <TextView
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/cr_page_number"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr_card_number" />
-                        </LinearLayout>
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                app:maxValue="500"
+                                app:minValue="1"
+                                app:type="range" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cr_card_number"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="#####"
-                            android:inputType="number"
-                            android:maxLength="5"
-                            app:maxValue="99999"
-                            app:minValue="1"
-                            app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/cr_rsno"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="####"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                app:maxValue="9999"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/cr_card_number"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="#####"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                app:maxValue="99999"
+                                app:minValue="1"
+                                app:type="range" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -381,6 +326,7 @@
                 <!-- cr_age_title  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcr_age_title"
+                    android:layoutDirection="rtl"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -403,6 +349,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layoutDirection="ltr"
+                            android:textDirection="ltr"
                             android:orientation="horizontal">
 
                             <TextView
@@ -432,6 +380,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layoutDirection="ltr"
+                            android:textDirection="ltr"
                             android:orientation="horizontal">
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -562,18 +512,32 @@
                                 android:text="@string/cr_address" />
                         </LinearLayout>
 
-                        <EditText
-                            android:id="@+id/cr_address"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cr_address" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/cr_address_previous"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:tag="-1"
-                            android:text="@string/cr_address_previous" />
+                            <EditText
+                                android:id="@+id/cr_address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="top"
+                                android:hint="@string/cr_address"
+                                android:lines="5"
+                                android:minLines="5" />
+
+                            <CheckBox
+                                android:id="@+id/cr_address_previous"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:backgroundTint="@color/lightPink"
+                                android:tag="-1"
+                                android:text="@string/cr_address_previous"
+                                android:textColor="@color/redDark" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -606,26 +570,35 @@
                                 android:text="@string/cr_phone" />
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cr_phone"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cr_phone"
-                            android:inputType="number"
-                            android:maxLength="11"
-                            app:maxValue="99999999999"
-                            app:minValue="1"
-                            app:type="range" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/cr_phone_na"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:tag="-1"
-                            android:text="@string/cr_phone_na" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/cr_phone"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/cr_phone"
+                                android:inputType="number"
+                                android:maxLength="11"
+                                app:maxValue="99999999999"
+                                app:minValue="1"
+                                app:type="range" />
 
+                            <CheckBox
+                                android:id="@+id/cr_phone_na"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/lightPink"
+                                android:tag="-1"
+                                android:text="@string/cr_phone_na"
+                                android:textColor="@color/redDark" />
+
+                        </LinearLayout>
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
 
                 <!-- cr_bcg  Input   -->
@@ -1888,11 +1861,14 @@
                         </LinearLayout>
 
                         <EditText
-                            android:tag="-1"
                             android:id="@+id/cr_comments"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cr_comments" />
+                            android:gravity="top"
+                            android:hint="@string/cr_comments"
+                            android:lines="5"
+                            android:minLines="5"
+                            android:tag="-1" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
