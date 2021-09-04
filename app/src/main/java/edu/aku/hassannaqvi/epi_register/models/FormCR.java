@@ -32,6 +32,7 @@ public class FormCR extends BaseObservable {
     private String deviceTag = StringUtils.EMPTY;
     private String appver = StringUtils.EMPTY;
     private String endTime = StringUtils.EMPTY;
+    private String startTime = StringUtils.EMPTY;
     private String iStatus = StringUtils.EMPTY;
     private String iStatus96x = StringUtils.EMPTY;
     private String synced = StringUtils.EMPTY;
@@ -236,6 +237,15 @@ public class FormCR extends BaseObservable {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
     public String getiStatus() {
@@ -1320,6 +1330,8 @@ public class FormCR extends BaseObservable {
         this.iStatus = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_SYNCED_DATE));
+        this.endTime = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_END_TIME));
+        this.startTime = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_START_TIME));
         cRHydrate(cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_CR)));
 
         return this;
@@ -1336,83 +1348,83 @@ public class FormCR extends BaseObservable {
             this.cr_rsno = json.getString("cr_rsno");
             this.cr_card_number = json.getString("cr_card_number");
             this.cr_child_name = json.getString("cr_child_name");
-                this.cr_father_name = json.getString("cr_father_name");
-                this.cr_age_months = json.getString("cr_age_months");
-                this.cr_age_years = json.getString("cr_age_years");
-                this.cr_age_days = json.getString("cr_age_days");
-                this.cr_gender = json.getString("cr_gender");
-                this.cr_address = json.getString("cr_address");
-                this.cr_phone = json.getString("cr_phone");
-                this.cr_phone_na = json.getString("cr_phone_na");
-                this.cr_bcg = json.getString("cr_bcg");
-                this.cr_bcg_d1 = json.getString("cr_bcg_d1");
-                this.cr_bcg_d2 = json.getString("cr_bcg_d2");
-                this.cr_bcg_na = json.getString("cr_bcg_na");
-                this.cr_hep_b = json.getString("cr_hep_b");
-                this.cr_hep_b1 = json.getString("cr_hep_b1");
-                this.cr_hep_b2 = json.getString("cr_hep_b2");
-                this.cr_hep_bna = json.getString("cr_hep_bna");
-                this.cr_opv0 = json.getString("cr_opv0");
-                this.cr_opv0_d1 = json.getString("cr_opv0_d1");
-                this.cr_opv0_d2 = json.getString("cr_opv0_d2");
-                this.cr_opv0_na = json.getString("cr_opv0_na");
-                this.cr_opv1 = json.getString("cr_opv1");
-                this.cr_opv1_d1 = json.getString("cr_opv1_d1");
-                this.cr_opv1_d2 = json.getString("cr_opv1_d2");
-                this.cr_opv1_na = json.getString("cr_opv1_na");
-                this.cr_opv2 = json.getString("cr_opv2");
-                this.cr_opv2_d1 = json.getString("cr_opv2_d1");
-                this.cr_opv2_d2 = json.getString("cr_opv2_d2");
-                this.cr_opv2_na = json.getString("cr_opv2_na");
-                this.cr_opv3 = json.getString("cr_opv3");
-                this.cr_opv3_d1 = json.getString("cr_opv3_d1");
-                this.cr_opv3_d2 = json.getString("cr_opv3_d2");
-                this.cr_opv3_na = json.getString("cr_opv3_na");
-                this.cr_rota1 = json.getString("cr_rota1");
-                this.cr_rota1_d1 = json.getString("cr_rota1_d1");
-                this.cr_rota1_d2 = json.getString("cr_rota1_d2");
-                this.cr_rota1_na = json.getString("cr_rota1_na");
-                this.cr_rota2 = json.getString("cr_rota2");
-                this.cr_rota2_d1 = json.getString("cr_rota2_d1");
-                this.cr_rota2_d2 = json.getString("cr_rota2_d2");
-                this.cr_rota2_na = json.getString("cr_rota2_na");
-                this.cr_ipv = json.getString("cr_ipv");
-                this.cr_ipv_d1 = json.getString("cr_ipv_d1");
-                this.cr_ipv_d2 = json.getString("cr_ipv_d2");
-                this.cr_ipv_na = json.getString("cr_ipv_na");
-                this.cr_pcv1 = json.getString("cr_pcv1");
-                this.cr_pcv1_d1 = json.getString("cr_pcv1_d1");
-                this.cr_pcv1_d2 = json.getString("cr_pcv1_d2");
-                this.cr_pcv1_na = json.getString("cr_pcv1_na");
-                this.cr_pcv2 = json.getString("cr_pcv2");
-                this.cr_pcv2_d1 = json.getString("cr_pcv2_d1");
-                this.cr_pcv2_d2 = json.getString("cr_pcv2_d2");
-                this.cr_pcv2_na = json.getString("cr_pcv2_na");
-                this.cr_pcv3 = json.getString("cr_pcv3");
-                this.cr_pcv3_d1 = json.getString("cr_pcv3_d1");
-                this.cr_pcv3_d2 = json.getString("cr_pcv3_d2");
-                this.cr_pcv3_na = json.getString("cr_pcv3_na");
-                this.cr_penta1 = json.getString("cr_penta1");
-                this.cr_penta1_d1 = json.getString("cr_penta1_d1");
-                this.cr_penta1_d2 = json.getString("cr_penta1_d2");
-                this.cr_penta1_na = json.getString("cr_penta1_na");
-                this.cr_penta2 = json.getString("cr_penta2");
-                this.cr_penta2_d1 = json.getString("cr_penta2_d1");
-                this.cr_penta2_d2 = json.getString("cr_penta2_d2");
-                this.cr_penta2_na = json.getString("cr_penta2_na");
-                this.cr_penta3 = json.getString("cr_penta3");
-                this.cr_penta3_d1 = json.getString("cr_penta3_d1");
-                this.cr_penta3_d2 = json.getString("cr_penta3_d2");
-                this.cr_penta3_na = json.getString("cr_penta3_na");
-                this.cr_measles1 = json.getString("cr_measles1");
-                this.cr_measles1_d1 = json.getString("cr_measles1_d1");
-                this.cr_measles1_d2 = json.getString("cr_measles1_d2");
-                this.cr_measles1_na = json.getString("cr_measles1_na");
-                this.cr_measles2 = json.getString("cr_measles2");
-                this.cr_measles2_d1 = json.getString("cr_measles2_d1");
-                this.cr_measles2_d2 = json.getString("cr_measles2_d2");
-                this.cr_measles2_na = json.getString("cr_measles2_na");
-                this.cr_comments = json.getString("cr_comments");
+            this.cr_father_name = json.getString("cr_father_name");
+            this.cr_age_months = json.getString("cr_age_months");
+            this.cr_age_years = json.getString("cr_age_years");
+            this.cr_age_days = json.getString("cr_age_days");
+            this.cr_gender = json.getString("cr_gender");
+            this.cr_address = json.getString("cr_address");
+            this.cr_phone = json.getString("cr_phone");
+            this.cr_phone_na = json.getString("cr_phone_na");
+            this.cr_bcg = json.getString("cr_bcg");
+            this.cr_bcg_d1 = json.getString("cr_bcg_d1");
+            this.cr_bcg_d2 = json.getString("cr_bcg_d2");
+            this.cr_bcg_na = json.getString("cr_bcg_na");
+            this.cr_hep_b = json.getString("cr_hep_b");
+            this.cr_hep_b1 = json.getString("cr_hep_b1");
+            this.cr_hep_b2 = json.getString("cr_hep_b2");
+            this.cr_hep_bna = json.getString("cr_hep_bna");
+            this.cr_opv0 = json.getString("cr_opv0");
+            this.cr_opv0_d1 = json.getString("cr_opv0_d1");
+            this.cr_opv0_d2 = json.getString("cr_opv0_d2");
+            this.cr_opv0_na = json.getString("cr_opv0_na");
+            this.cr_opv1 = json.getString("cr_opv1");
+            this.cr_opv1_d1 = json.getString("cr_opv1_d1");
+            this.cr_opv1_d2 = json.getString("cr_opv1_d2");
+            this.cr_opv1_na = json.getString("cr_opv1_na");
+            this.cr_opv2 = json.getString("cr_opv2");
+            this.cr_opv2_d1 = json.getString("cr_opv2_d1");
+            this.cr_opv2_d2 = json.getString("cr_opv2_d2");
+            this.cr_opv2_na = json.getString("cr_opv2_na");
+            this.cr_opv3 = json.getString("cr_opv3");
+            this.cr_opv3_d1 = json.getString("cr_opv3_d1");
+            this.cr_opv3_d2 = json.getString("cr_opv3_d2");
+            this.cr_opv3_na = json.getString("cr_opv3_na");
+            this.cr_rota1 = json.getString("cr_rota1");
+            this.cr_rota1_d1 = json.getString("cr_rota1_d1");
+            this.cr_rota1_d2 = json.getString("cr_rota1_d2");
+            this.cr_rota1_na = json.getString("cr_rota1_na");
+            this.cr_rota2 = json.getString("cr_rota2");
+            this.cr_rota2_d1 = json.getString("cr_rota2_d1");
+            this.cr_rota2_d2 = json.getString("cr_rota2_d2");
+            this.cr_rota2_na = json.getString("cr_rota2_na");
+            this.cr_ipv = json.getString("cr_ipv");
+            this.cr_ipv_d1 = json.getString("cr_ipv_d1");
+            this.cr_ipv_d2 = json.getString("cr_ipv_d2");
+            this.cr_ipv_na = json.getString("cr_ipv_na");
+            this.cr_pcv1 = json.getString("cr_pcv1");
+            this.cr_pcv1_d1 = json.getString("cr_pcv1_d1");
+            this.cr_pcv1_d2 = json.getString("cr_pcv1_d2");
+            this.cr_pcv1_na = json.getString("cr_pcv1_na");
+            this.cr_pcv2 = json.getString("cr_pcv2");
+            this.cr_pcv2_d1 = json.getString("cr_pcv2_d1");
+            this.cr_pcv2_d2 = json.getString("cr_pcv2_d2");
+            this.cr_pcv2_na = json.getString("cr_pcv2_na");
+            this.cr_pcv3 = json.getString("cr_pcv3");
+            this.cr_pcv3_d1 = json.getString("cr_pcv3_d1");
+            this.cr_pcv3_d2 = json.getString("cr_pcv3_d2");
+            this.cr_pcv3_na = json.getString("cr_pcv3_na");
+            this.cr_penta1 = json.getString("cr_penta1");
+            this.cr_penta1_d1 = json.getString("cr_penta1_d1");
+            this.cr_penta1_d2 = json.getString("cr_penta1_d2");
+            this.cr_penta1_na = json.getString("cr_penta1_na");
+            this.cr_penta2 = json.getString("cr_penta2");
+            this.cr_penta2_d1 = json.getString("cr_penta2_d1");
+            this.cr_penta2_d2 = json.getString("cr_penta2_d2");
+            this.cr_penta2_na = json.getString("cr_penta2_na");
+            this.cr_penta3 = json.getString("cr_penta3");
+            this.cr_penta3_d1 = json.getString("cr_penta3_d1");
+            this.cr_penta3_d2 = json.getString("cr_penta3_d2");
+            this.cr_penta3_na = json.getString("cr_penta3_na");
+            this.cr_measles1 = json.getString("cr_measles1");
+            this.cr_measles1_d1 = json.getString("cr_measles1_d1");
+            this.cr_measles1_d2 = json.getString("cr_measles1_d2");
+            this.cr_measles1_na = json.getString("cr_measles1_na");
+            this.cr_measles2 = json.getString("cr_measles2");
+            this.cr_measles2_d1 = json.getString("cr_measles2_d1");
+            this.cr_measles2_d2 = json.getString("cr_measles2_d2");
+            this.cr_measles2_na = json.getString("cr_measles2_na");
+            this.cr_comments = json.getString("cr_comments");
 
         }
     }
@@ -1429,82 +1441,82 @@ public class FormCR extends BaseObservable {
                 .put("cr_card_number", cr_card_number)
                 .put("cr_child_name", cr_child_name)
                 .put("cr_father_name", cr_father_name)
-                    .put("cr_age_months", cr_age_months)
-                    .put("cr_age_years", cr_age_years)
-                    .put("cr_age_days", cr_age_days)
-                    .put("cr_gender", cr_gender)
-                    .put("cr_address", cr_address)
-                    .put("cr_phone", cr_phone)
-                    .put("cr_phone_na", cr_phone_na)
-                    .put("cr_bcg", cr_bcg)
-                    .put("cr_bcg_d1", cr_bcg_d1)
-                    .put("cr_bcg_d2", cr_bcg_d2)
-                    .put("cr_bcg_na", cr_bcg_na)
-                    .put("cr_hep_b", cr_hep_b)
-                    .put("cr_hep_b1", cr_hep_b1)
-                    .put("cr_hep_b2", cr_hep_b2)
-                    .put("cr_hep_bna", cr_hep_bna)
-                    .put("cr_opv0", cr_opv0)
-                    .put("cr_opv0_d1", cr_opv0_d1)
-                    .put("cr_opv0_d2", cr_opv0_d2)
-                    .put("cr_opv0_na", cr_opv0_na)
-                    .put("cr_opv1", cr_opv1)
-                    .put("cr_opv1_d1", cr_opv1_d1)
-                    .put("cr_opv1_d2", cr_opv1_d2)
-                    .put("cr_opv1_na", cr_opv1_na)
-                    .put("cr_opv2", cr_opv2)
-                    .put("cr_opv2_d1", cr_opv2_d1)
-                    .put("cr_opv2_d2", cr_opv2_d2)
-                    .put("cr_opv2_na", cr_opv2_na)
-                    .put("cr_opv3", cr_opv3)
-                    .put("cr_opv3_d1", cr_opv3_d1)
-                    .put("cr_opv3_d2", cr_opv3_d2)
-                    .put("cr_opv3_na", cr_opv3_na)
-                    .put("cr_rota1", cr_rota1)
-                    .put("cr_rota1_d1", cr_rota1_d1)
-                    .put("cr_rota1_d2", cr_rota1_d2)
-                    .put("cr_rota1_na", cr_rota1_na)
-                    .put("cr_rota2", cr_rota2)
-                    .put("cr_rota2_d1", cr_rota2_d1)
-                    .put("cr_rota2_d2", cr_rota2_d2)
-                    .put("cr_rota2_na", cr_rota2_na)
-                    .put("cr_ipv", cr_ipv)
-                    .put("cr_ipv_d1", cr_ipv_d1)
-                    .put("cr_ipv_d2", cr_ipv_d2)
-                    .put("cr_ipv_na", cr_ipv_na)
-                    .put("cr_pcv1", cr_pcv1)
-                    .put("cr_pcv1_d1", cr_pcv1_d1)
-                    .put("cr_pcv1_d2", cr_pcv1_d2)
-                    .put("cr_pcv1_na", cr_pcv1_na)
-                    .put("cr_pcv2", cr_pcv2)
-                    .put("cr_pcv2_d1", cr_pcv2_d1)
-                    .put("cr_pcv2_d2", cr_pcv2_d2)
-                    .put("cr_pcv2_na", cr_pcv2_na)
-                    .put("cr_pcv3", cr_pcv3)
-                    .put("cr_pcv3_d1", cr_pcv3_d1)
-                    .put("cr_pcv3_d2", cr_pcv3_d2)
-                    .put("cr_pcv3_na", cr_pcv3_na)
-                    .put("cr_penta1", cr_penta1)
-                    .put("cr_penta1_d1", cr_penta1_d1)
-                    .put("cr_penta1_d2", cr_penta1_d2)
-                    .put("cr_penta1_na", cr_penta1_na)
-                    .put("cr_penta2", cr_penta2)
-                    .put("cr_penta2_d1", cr_penta2_d1)
-                    .put("cr_penta2_d2", cr_penta2_d2)
-                    .put("cr_penta2_na", cr_penta2_na)
-                    .put("cr_penta3", cr_penta3)
-                    .put("cr_penta3_d1", cr_penta3_d1)
-                    .put("cr_penta3_d2", cr_penta3_d2)
-                    .put("cr_penta3_na", cr_penta3_na)
-                    .put("cr_measles1", cr_measles1)
-                    .put("cr_measles1_d1", cr_measles1_d1)
-                    .put("cr_measles1_d2", cr_measles1_d2)
-                    .put("cr_measles1_na", cr_measles1_na)
-                    .put("cr_measles2", cr_measles2)
-                    .put("cr_measles2_d1", cr_measles2_d1)
-                    .put("cr_measles2_d2", cr_measles2_d2)
-                    .put("cr_measles2_na", cr_measles2_na)
-                    .put("cr_comments", cr_comments);
+                .put("cr_age_months", cr_age_months)
+                .put("cr_age_years", cr_age_years)
+                .put("cr_age_days", cr_age_days)
+                .put("cr_gender", cr_gender)
+                .put("cr_address", cr_address)
+                .put("cr_phone", cr_phone)
+                .put("cr_phone_na", cr_phone_na)
+                .put("cr_bcg", cr_bcg)
+                .put("cr_bcg_d1", cr_bcg_d1)
+                .put("cr_bcg_d2", cr_bcg_d2)
+                .put("cr_bcg_na", cr_bcg_na)
+                .put("cr_hep_b", cr_hep_b)
+                .put("cr_hep_b1", cr_hep_b1)
+                .put("cr_hep_b2", cr_hep_b2)
+                .put("cr_hep_bna", cr_hep_bna)
+                .put("cr_opv0", cr_opv0)
+                .put("cr_opv0_d1", cr_opv0_d1)
+                .put("cr_opv0_d2", cr_opv0_d2)
+                .put("cr_opv0_na", cr_opv0_na)
+                .put("cr_opv1", cr_opv1)
+                .put("cr_opv1_d1", cr_opv1_d1)
+                .put("cr_opv1_d2", cr_opv1_d2)
+                .put("cr_opv1_na", cr_opv1_na)
+                .put("cr_opv2", cr_opv2)
+                .put("cr_opv2_d1", cr_opv2_d1)
+                .put("cr_opv2_d2", cr_opv2_d2)
+                .put("cr_opv2_na", cr_opv2_na)
+                .put("cr_opv3", cr_opv3)
+                .put("cr_opv3_d1", cr_opv3_d1)
+                .put("cr_opv3_d2", cr_opv3_d2)
+                .put("cr_opv3_na", cr_opv3_na)
+                .put("cr_rota1", cr_rota1)
+                .put("cr_rota1_d1", cr_rota1_d1)
+                .put("cr_rota1_d2", cr_rota1_d2)
+                .put("cr_rota1_na", cr_rota1_na)
+                .put("cr_rota2", cr_rota2)
+                .put("cr_rota2_d1", cr_rota2_d1)
+                .put("cr_rota2_d2", cr_rota2_d2)
+                .put("cr_rota2_na", cr_rota2_na)
+                .put("cr_ipv", cr_ipv)
+                .put("cr_ipv_d1", cr_ipv_d1)
+                .put("cr_ipv_d2", cr_ipv_d2)
+                .put("cr_ipv_na", cr_ipv_na)
+                .put("cr_pcv1", cr_pcv1)
+                .put("cr_pcv1_d1", cr_pcv1_d1)
+                .put("cr_pcv1_d2", cr_pcv1_d2)
+                .put("cr_pcv1_na", cr_pcv1_na)
+                .put("cr_pcv2", cr_pcv2)
+                .put("cr_pcv2_d1", cr_pcv2_d1)
+                .put("cr_pcv2_d2", cr_pcv2_d2)
+                .put("cr_pcv2_na", cr_pcv2_na)
+                .put("cr_pcv3", cr_pcv3)
+                .put("cr_pcv3_d1", cr_pcv3_d1)
+                .put("cr_pcv3_d2", cr_pcv3_d2)
+                .put("cr_pcv3_na", cr_pcv3_na)
+                .put("cr_penta1", cr_penta1)
+                .put("cr_penta1_d1", cr_penta1_d1)
+                .put("cr_penta1_d2", cr_penta1_d2)
+                .put("cr_penta1_na", cr_penta1_na)
+                .put("cr_penta2", cr_penta2)
+                .put("cr_penta2_d1", cr_penta2_d1)
+                .put("cr_penta2_d2", cr_penta2_d2)
+                .put("cr_penta2_na", cr_penta2_na)
+                .put("cr_penta3", cr_penta3)
+                .put("cr_penta3_d1", cr_penta3_d1)
+                .put("cr_penta3_d2", cr_penta3_d2)
+                .put("cr_penta3_na", cr_penta3_na)
+                .put("cr_measles1", cr_measles1)
+                .put("cr_measles1_d1", cr_measles1_d1)
+                .put("cr_measles1_d2", cr_measles1_d2)
+                .put("cr_measles1_na", cr_measles1_na)
+                .put("cr_measles2", cr_measles2)
+                .put("cr_measles2_d1", cr_measles2_d1)
+                .put("cr_measles2_d2", cr_measles2_d2)
+                .put("cr_measles2_na", cr_measles2_na)
+                .put("cr_comments", cr_comments);
 
         return json.toString();
     }
@@ -1521,18 +1533,20 @@ public class FormCR extends BaseObservable {
         json.put(FormCRTable.COLUMN_USERNAME, this.userName);
         json.put(FormCRTable.COLUMN_SYSDATE, this.sysDate);
         json.put(FormCRTable.COLUMN_DEVICEID, this.deviceId);
-            json.put(FormCRTable.COLUMN_DEVICETAGID, this.deviceTag);
-            json.put(FormCRTable.COLUMN_ISTATUS, this.iStatus);
-            json.put(FormCRTable.COLUMN_SYNCED, this.synced);
-            json.put(FormCRTable.COLUMN_SYNCED_DATE, this.syncDate);
-            json.put(FormCRTable.COLUMN_CR, new JSONObject(cRtoString()));
+        json.put(FormCRTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(FormCRTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(FormCRTable.COLUMN_SYNCED, this.synced);
+        json.put(FormCRTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(FormCRTable.COLUMN_CR, new JSONObject(cRtoString()));
+        json.put(FormCRTable.COLUMN_END_TIME, this.endTime);
+        json.put(FormCRTable.COLUMN_START_TIME, this.startTime);
 
 
-            if (this.cR != null && !this.cR.equals("")) {
-                json.put(FormCRTable.COLUMN_CR, new JSONObject(this.cR));
-            }
+        if (this.cR != null && !this.cR.equals("")) {
+            json.put(FormCRTable.COLUMN_CR, new JSONObject(this.cR));
+        }
 
-            return json;
+        return json;
 
     }
 }

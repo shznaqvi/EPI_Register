@@ -31,6 +31,7 @@ public class FormWR extends BaseObservable {
     private String deviceId = StringUtils.EMPTY;
     private String deviceTag = StringUtils.EMPTY;
     private String appver = StringUtils.EMPTY;
+    private String startTime = StringUtils.EMPTY;
     private String endTime = StringUtils.EMPTY;
     private String iStatus = StringUtils.EMPTY;
     private String iStatus96x = StringUtils.EMPTY;
@@ -164,14 +165,6 @@ public class FormWR extends BaseObservable {
         this.appver = appver;
     }
 
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
-
     public String getiStatus() {
         return iStatus;
     }
@@ -204,6 +197,22 @@ public class FormWR extends BaseObservable {
         this.syncDate = syncDate;
     }
 
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
 
     public String getwR() {
         return wR;
@@ -607,6 +616,8 @@ public class FormWR extends BaseObservable {
         this.iStatus = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_SYNCED_DATE));
+        this.endTime = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_END_TIME));
+        this.startTime = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_START_TIME));
         wRHydrate(cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_WR)));
 
         return this;
@@ -710,6 +721,8 @@ public class FormWR extends BaseObservable {
         json.put(FormWRTable.COLUMN_ISTATUS, this.iStatus);
         json.put(FormWRTable.COLUMN_SYNCED, this.synced);
         json.put(FormWRTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(FormWRTable.COLUMN_START_TIME, this.startTime);
+        json.put(FormWRTable.COLUMN_END_TIME, this.endTime);
         json.put(FormWRTable.COLUMN_WR, new JSONObject(wRtoString()));
 
 

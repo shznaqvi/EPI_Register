@@ -68,26 +68,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //ADDITION in DB
-    public Long addCR(FormCR form) throws JSONException {
+    public Long addCR(FormCR cr) throws JSONException {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(FormCRTable.COLUMN_PROJECT_NAME, form.getProjectName());
-        values.put(FormCRTable.COLUMN_UID, form.getUid());
-        values.put(FormCRTable.COLUMN_CLUSTER, form.getCluster());
-        values.put(FormCRTable.COLUMN_HHID, form.getHhid());
-        values.put(FormCRTable.COLUMN_USERNAME, form.getUserName());
-        values.put(FormCRTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(FormCRTable.COLUMN_ISTATUS, form.getiStatus());
-        values.put(FormCRTable.COLUMN_DEVICETAGID, form.getDeviceTag());
-        values.put(FormCRTable.COLUMN_DEVICEID, form.getDeviceId());
-        values.put(FormCRTable.COLUMN_APPVERSION, form.getAppver());
+        values.put(FormCRTable.COLUMN_PROJECT_NAME, cr.getProjectName());
+        values.put(FormCRTable.COLUMN_UID, cr.getUid());
+        values.put(FormCRTable.COLUMN_CLUSTER, cr.getCluster());
+        values.put(FormCRTable.COLUMN_HHID, cr.getHhid());
+        values.put(FormCRTable.COLUMN_USERNAME, cr.getUserName());
+        values.put(FormCRTable.COLUMN_SYSDATE, cr.getSysDate());
+        values.put(FormCRTable.COLUMN_ISTATUS, cr.getiStatus());
+        values.put(FormCRTable.COLUMN_DEVICETAGID, cr.getDeviceTag());
+        values.put(FormCRTable.COLUMN_DEVICEID, cr.getDeviceId());
+        values.put(FormCRTable.COLUMN_APPVERSION, cr.getAppver());
+        values.put(FormCRTable.COLUMN_START_TIME, cr.getStartTime());
+        values.put(FormCRTable.COLUMN_END_TIME, cr.getEndTime());
 
         // Put all JSON as xxtoString()
-        values.put(FormCRTable.COLUMN_CR, form.cRtoString());
+        values.put(FormCRTable.COLUMN_CR, cr.cRtoString());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -111,6 +113,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormWRTable.COLUMN_DEVICETAGID, wr.getDeviceTag());
         values.put(FormWRTable.COLUMN_DEVICEID, wr.getDeviceId());
         values.put(FormWRTable.COLUMN_APPVERSION, wr.getAppver());
+        values.put(FormWRTable.COLUMN_START_TIME, wr.getStartTime());
+        values.put(FormWRTable.COLUMN_END_TIME, wr.getEndTime());
 
         // Put all JSON as xxtoString()
         values.put(FormWRTable.COLUMN_WR, wr.wRtoString());

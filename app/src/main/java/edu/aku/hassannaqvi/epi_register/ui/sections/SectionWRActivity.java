@@ -32,6 +32,7 @@ public class SectionWRActivity extends AppCompatActivity {
     private static final String TAG = "SectionWRActivity";
     ActivitySectionWrBinding bi;
     private DatabaseHelper db;
+    String st = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class SectionWRActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_wr);
         bi.setCallback(this);
         setupSkips();
+        st = new SimpleDateFormat("HH:mm:ss", Locale.ENGLISH).format(new Date().getTime());
        /* bi.setForm(form);
         if (form == null) form = new Form();*/
 //        bi.setForm(form);
@@ -142,6 +144,9 @@ public class SectionWRActivity extends AppCompatActivity {
         wr.setDeviceId(MainApp.appInfo.getDeviceID());
         wr.setDeviceTag(MainApp.appInfo.getTagName());
         wr.setAppver(MainApp.appInfo.getAppVersion());
+
+        wr.setStartTime(st);
+        wr.setEndTime(new SimpleDateFormat("HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
 
         wr.setWr_dmu_register(bi.wrDmuRegister.getText().toString());
 

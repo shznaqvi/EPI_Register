@@ -21,6 +21,8 @@ public class TableContracts {
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_ISTATUS = "istatus";
+        public static final String COLUMN_END_TIME = "end_time";
+        public static final String COLUMN_START_TIME = "start_time";
     }
 
     public static abstract class FormWRTable implements BaseColumns {
@@ -40,6 +42,8 @@ public class TableContracts {
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_ISTATUS = "istatus";
+        public static final String COLUMN_END_TIME = "end_time";
+        public static final String COLUMN_START_TIME = "start_time";
     }
 
     public static abstract class UsersTable implements BaseColumns {

@@ -32,12 +32,14 @@ public class SectionCRActivity extends AppCompatActivity {
     private static final String TAG = "SectionCRActivity";
     ActivitySectionCrBinding bi;
     private DatabaseHelper db;
+    String st = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cr);
         bi.setCallback(this);
+        st = new SimpleDateFormat("HH:mm:ss", Locale.ENGLISH).format(new Date().getTime());
         setupSkips();
 /*        bi.setForm(form);
         if (form == null) form = new Form();*/
@@ -178,13 +180,14 @@ public class SectionCRActivity extends AppCompatActivity {
 
 
     private void saveDraft() {
-
         cr = new FormCR();
         cr.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         cr.setUserName(MainApp.user.getUserName());
         cr.setDeviceId(MainApp.appInfo.getDeviceID());
         cr.setDeviceTag(MainApp.appInfo.getTagName());
         cr.setAppver(MainApp.appInfo.getAppVersion());
+        cr.setStartTime(st);
+        cr.setEndTime(new SimpleDateFormat("HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
 
         cr.setCr_dmu_register(bi.crDmuRegister.getText().toString());
 
