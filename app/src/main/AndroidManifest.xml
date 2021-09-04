@@ -52,15 +52,14 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
-
         <activity
-            android:name=".ui.sections.SectionWRActivity"
+            android:name=".ui.sections.SectionCRActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".ui.sections.SectionCRActivity"
+            android:name=".ui.sections.SectionWRActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize" />

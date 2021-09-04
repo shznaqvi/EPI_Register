@@ -3,12 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/EPI_Register/app/src/main/res/drawable/ic_item_right_arrow.xml" value="0.5875" />
         <entry key="..\:/Android/EPI_Register/app/src/main/res/layout-v17/sync_list_adapter.xml" value="0.56328125" />
-        <entry key="..\:/Android/EPI_Register/app/src/main/res/layout/activity_login.xml" value="0.29140625" />
-        <entry key="..\:/Android/EPI_Register/app/src/main/res/layout/activity_main.xml" value="0.56328125" />
         <entry key="..\:/Android/EPI_Register/app/src/main/res/layout/activity_section_cr.xml" value="0.56328125" />
-        <entry key="..\:/Android/EPI_Register/app/src/main/res/layout/activity_section_wr.xml" value="0.41059225512528474" />
+        <entry key="..\:/Android/EPI_Register/app/src/main/res/layout/activity_section_wr.xml" value="0.56328125" />
       </map>
     </option>
   </component>

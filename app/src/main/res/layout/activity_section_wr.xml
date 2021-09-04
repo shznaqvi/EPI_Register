@@ -14,10 +14,12 @@
             type="edu.aku.hassannaqvi.epi_register.ui.sections.SectionWRActivity" />
     </data>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
 
         <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
@@ -32,10 +34,12 @@
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/wr_mainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
+        m
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -61,6 +65,7 @@
                             android:textAlignment="center" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- wr_dmu_register  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -216,6 +221,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- wr_rsno  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVwr_rsno"
@@ -257,6 +263,7 @@
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- wr_card_number  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -300,6 +307,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- wr_women_name  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVwr_women_name"
@@ -337,6 +345,7 @@
                             android:hint="@string/wr_women_name" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- wr_husband_name  Input   -->
                 <androidx.cardview.widget.CardView
@@ -376,6 +385,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- wr_age_years  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVwr_age_years"
@@ -411,6 +421,7 @@
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- wr_address  Input   -->
                 <androidx.cardview.widget.CardView
@@ -455,6 +466,7 @@
                             android:text="@string/wr_address_previous" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- wr_phone  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -504,6 +516,7 @@
                             android:text="@string/nav" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- wr_tt_title  Title   -->
                 <androidx.cardview.widget.CardView
@@ -593,6 +606,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- wr_ttd2  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVwr_ttd2"
@@ -660,6 +674,7 @@
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- wr_ttd3  Input   -->
                 <androidx.cardview.widget.CardView
@@ -729,6 +744,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- wr_ttd4  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVwr_ttd4"
@@ -796,6 +812,7 @@
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- wr_ttd5  Input   -->
                 <androidx.cardview.widget.CardView
@@ -866,6 +883,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- wr_comments  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVwr_comments"
@@ -904,6 +922,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -936,7 +955,9 @@
                         android:text="Save"
                         android:textColor="@color/white" />
                 </LinearLayout>
+
             </LinearLayout>
+
         </ScrollView>
 
     </LinearLayout>

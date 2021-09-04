@@ -350,6 +350,7 @@ public class SectionCRActivity extends AppCompatActivity {
 
         cr.setCr_birth_status(bi.crBirthStatus1.isChecked() ? "1"
                 : bi.crBirthStatus2.isChecked() ? "2"
+                : bi.crBirthStatusNa.isChecked() ? "97"
                 : "-1");
 
         cr.setCr_comments(bi.crComments.getText().toString());
@@ -371,7 +372,15 @@ public class SectionCRActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        if (Integer.parseInt(bi.crAgeDays.getText().toString())
+                + Integer.parseInt(bi.crAgeMonths.getText().toString())
+                + Integer.parseInt(bi.crAgeYears.getText().toString()) == 0) {
+            return Validator.emptyCustomTextBox(this, bi.crAgeYears, "Age Cannot be 0", false);
+        }
+        return true;
     }
 
     @Override

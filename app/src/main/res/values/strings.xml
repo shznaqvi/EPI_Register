@@ -205,6 +205,7 @@
     <string name="cr_birth_status">کیا پیدائش پر بچہ محفوظ تھا</string>
     <string name="cr_birth_status1">ہاں</string>
     <string name="cr_birth_status2">نہیں</string>
+    <string name="cr_birth_status_na">جواب نہیں دیا</string>
     <string name="cr_comments">تبصرہ اگر کوئی ہے</string>
 
     <string name="wr_mainheading">حفاظتی ٹیکوں کا رجسٹربرائے خواتین</string>
