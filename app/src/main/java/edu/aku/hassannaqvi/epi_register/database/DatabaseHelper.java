@@ -68,7 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //ADDITION in DB
-    public Long addCR(FormCR form) {
+    public Long addCR(FormCR form) throws JSONException {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
@@ -82,10 +82,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormCRTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormCRTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormCRTable.COLUMN_ISTATUS, form.getiStatus());
-        values.put(FormCRTable.COLUMN_CR, form.getcR());
         values.put(FormCRTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormCRTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormCRTable.COLUMN_APPVERSION, form.getAppver());
+
+        // Put all JSON as xxtoString()
+        values.put(FormCRTable.COLUMN_CR, form.cRtoString());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -96,7 +98,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addWR(FormWR wr) {
+    public Long addWR(FormWR wr) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(FormWRTable.COLUMN_PROJECT_NAME, wr.getProjectName());
@@ -106,10 +108,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormWRTable.COLUMN_USERNAME, wr.getUserName());
         values.put(FormWRTable.COLUMN_SYSDATE, wr.getSysDate());
         values.put(FormWRTable.COLUMN_ISTATUS, wr.getiStatus());
-        values.put(FormWRTable.COLUMN_WR, wr.getwR());
         values.put(FormWRTable.COLUMN_DEVICETAGID, wr.getDeviceTag());
         values.put(FormWRTable.COLUMN_DEVICEID, wr.getDeviceId());
         values.put(FormWRTable.COLUMN_APPVERSION, wr.getAppver());
+
+        // Put all JSON as xxtoString()
+        values.put(FormWRTable.COLUMN_WR, wr.wRtoString());
+
+        // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
                 FormWRTable.TABLE_NAME,
@@ -482,7 +488,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //get UnSyncedTables
-    public JSONArray getUnsyncedFormCR() {
+    public JSONArray getUnsyncedFormCR() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -530,7 +536,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allCR;
     }
 
-    public JSONArray getUnsyncedFormWR() {
+    public JSONArray getUnsyncedFormWR() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;

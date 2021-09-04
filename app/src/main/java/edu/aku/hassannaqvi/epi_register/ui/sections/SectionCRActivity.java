@@ -42,7 +42,7 @@ public class SectionCRActivity extends AppCompatActivity {
 /*        bi.setForm(form);
         if (form == null) form = new Form();*/
 //        bi.setForm(form);
-       setSupportActionBar(bi.toolbar);
+        setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         String dmuReg = getIntent().getStringExtra("dmureg");
         String reg = getIntent().getStringExtra("reg");
@@ -133,31 +133,42 @@ public class SectionCRActivity extends AppCompatActivity {
     }
 
 
-    private boolean updateDB() {
+    private boolean insertRecord() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addCR(cr);
-        cr.setId(String.valueOf(updcount));
-        cr.setUid(cr.getDeviceId() + cr.getId());
-        long count = db.updateCrColumn(TableContracts.FormCRTable.COLUMN_UID, cr.getUid());
-        if (count > 0) {
-            db.updateCrColumn(TableContracts.FormCRTable.COLUMN_CR, cr.getcR());
-            db.updateCrColumn(TableContracts.FormCRTable.COLUMN_ISTATUS, "1");
-            return true;
-        } else {
-            Toast.makeText(this, "Updating Database… ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
+        long rowId = 0;
+
+        try {
+            rowId = db.addCR(cr);
+
+            if (rowId > 0) {
+                long updCount = 0;
+
+                cr.setId(String.valueOf(rowId));
+                cr.setUid(cr.getDeviceId() + cr.getId());
+
+                updCount = db.updateCrColumn(TableContracts.FormCRTable.COLUMN_UID, cr.getUid());
+
+                if (updCount > 0) {
+                    return true;
+                }
+
+            } else {
+                Toast.makeText(this, "Updating Database… ERROR!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(CR):" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+
+        return false;
     }
 
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        try {
-            saveDraft();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        if (updateDB()) {
+        saveDraft();
+        if (insertRecord()) {
             finish();
             startActivity(new Intent(this, SectionCRActivity.class)
                     .putExtra("dmureg", bi.crDmuRegister.getText().toString())
@@ -166,7 +177,7 @@ public class SectionCRActivity extends AppCompatActivity {
     }
 
 
-    private void saveDraft() throws JSONException {
+    private void saveDraft() {
 
         cr = new FormCR();
         cr.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
@@ -178,17 +189,11 @@ public class SectionCRActivity extends AppCompatActivity {
         cr.setCr_dmu_register(bi.crDmuRegister.getText().toString());
 
         cr.setCr_reg_number(bi.crRegNumber.getText().toString());
-
         cr.setCr_page_number(bi.crPageNumber.getText().toString());
-
         cr.setCr_rsno(bi.crRsno.getText().toString());
-
         cr.setCr_card_number(bi.crCardNumber.getText().toString());
-
         cr.setCr_child_name(bi.crChildName.getText().toString());
-
         cr.setCr_father_name(bi.crFatherName.getText().toString());
-
         cr.setCr_age_months(bi.crAgeMonths.getText().toString());
 
         cr.setCr_age_years(bi.crAgeYears.getText().toString());
@@ -349,7 +354,12 @@ public class SectionCRActivity extends AppCompatActivity {
 
         cr.setCr_comments(bi.crComments.getText().toString());
 
-        cr.setcR(cr.cRtoString());
+        try {
+            cr.setcR(cr.cRtoString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(CR): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
 
     }
 

@@ -594,7 +594,7 @@ public class FormWR extends BaseObservable {
         notifyPropertyChanged(BR.wr_ttd5na);
     }
 
-    public FormWR Hydrate(Cursor cursor) {
+    public FormWR Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_UID));
         this.cluster = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_CLUSTER));
@@ -613,18 +613,17 @@ public class FormWR extends BaseObservable {
     }
 
 
-    public void wRHydrate(String string) {
+    public void wRHydrate(String string) throws JSONException {
         Log.d(TAG, "wRHydrate: " + string);
         if (string != null) {
-            try {
-                JSONObject json = null;
-                json = new JSONObject(string);
-                this.wr_dmu_register = json.getString("wr_dmu_register");
-                this.wr_reg_number = json.getString("wr_reg_number");
-                this.wr_page_number = json.getString("wr_page_number");
-                this.wr_rsno = json.getString("wr_rsno");
-                this.wr_card_number = json.getString("wr_card_number");
-                this.wr_women_name = json.getString("wr_women_name");
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.wr_dmu_register = json.getString("wr_dmu_register");
+            this.wr_reg_number = json.getString("wr_reg_number");
+            this.wr_page_number = json.getString("wr_page_number");
+            this.wr_rsno = json.getString("wr_rsno");
+            this.wr_card_number = json.getString("wr_card_number");
+            this.wr_women_name = json.getString("wr_women_name");
                 this.wr_husband_name = json.getString("wr_husband_name");
                 this.wr_age_years = json.getString("wr_age_years");
                 this.wr_address = json.getString("wr_address");
@@ -651,9 +650,7 @@ public class FormWR extends BaseObservable {
                 this.wr_ttd5ds2 = json.getString("wr_ttd5ds2");
                 this.wr_ttd5na = json.getString("wr_ttd5na");
                 this.wr_comments = json.getString("wr_comments");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+
         }
     }
 
@@ -661,75 +658,66 @@ public class FormWR extends BaseObservable {
     public String wRtoString() throws JSONException {
         Log.d(TAG, "wRtoString: ");
         JSONObject json = new JSONObject();
-        try {
-            json.put("wr_dmu_register", wr_dmu_register)
-                    .put("wr_reg_number", wr_reg_number)
-                    .put("wr_page_number", wr_page_number)
-                    .put("wr_rsno", wr_rsno)
-                    .put("wr_card_number", wr_card_number)
-                    .put("wr_women_name", wr_women_name)
-                    .put("wr_husband_name", wr_husband_name)
-                    .put("wr_age_years", wr_age_years)
-                    .put("wr_address", wr_address)
-                    .put("wr_phone", wr_phone)
-                    .put("wr_phone_na", wr_phone_na)
-                    .put("wr_ttd1", wr_ttd1)
-                    .put("wr_ttd1ds1", wr_ttd1ds1)
-                    .put("wr_ttd1ds2", wr_ttd1ds2)
-                    .put("wr_ttd1na", wr_ttd1na)
-                    .put("wr_ttd2", wr_ttd2)
-                    .put("wr_ttd2ds1", wr_ttd2ds1)
-                    .put("wr_ttd2ds2", wr_ttd2ds2)
-                    .put("wr_ttd2na", wr_ttd2na)
-                    .put("wr_ttd3", wr_ttd3)
-                    .put("wr_ttd3ds1", wr_ttd3ds1)
-                    .put("wr_ttd3ds2", wr_ttd3ds2)
-                    .put("wr_ttd3na", wr_ttd3na)
-                    .put("wr_ttd4", wr_ttd4)
-                    .put("wr_ttd4ds1", wr_ttd4ds1)
-                    .put("wr_ttd4ds2", wr_ttd4ds2)
-                    .put("wr_ttd4na", wr_ttd4na)
-                    .put("wr_ttd5", wr_ttd5)
-                    .put("wr_ttd5ds1", wr_ttd5ds1)
-                    .put("wr_ttd5ds2", wr_ttd5ds2)
-                    .put("wr_ttd5na", wr_ttd5na)
-                    .put("wr_comments", wr_comments);
+        json.put("wr_dmu_register", wr_dmu_register)
+                .put("wr_reg_number", wr_reg_number)
+                .put("wr_page_number", wr_page_number)
+                .put("wr_rsno", wr_rsno)
+                .put("wr_card_number", wr_card_number)
+                .put("wr_women_name", wr_women_name)
+                .put("wr_husband_name", wr_husband_name)
+                .put("wr_age_years", wr_age_years)
+                .put("wr_address", wr_address)
+                .put("wr_phone", wr_phone)
+                .put("wr_phone_na", wr_phone_na)
+                .put("wr_ttd1", wr_ttd1)
+                .put("wr_ttd1ds1", wr_ttd1ds1)
+                .put("wr_ttd1ds2", wr_ttd1ds2)
+                .put("wr_ttd1na", wr_ttd1na)
+                .put("wr_ttd2", wr_ttd2)
+                .put("wr_ttd2ds1", wr_ttd2ds1)
+                .put("wr_ttd2ds2", wr_ttd2ds2)
+                .put("wr_ttd2na", wr_ttd2na)
+                .put("wr_ttd3", wr_ttd3)
+                .put("wr_ttd3ds1", wr_ttd3ds1)
+                .put("wr_ttd3ds2", wr_ttd3ds2)
+                .put("wr_ttd3na", wr_ttd3na)
+                .put("wr_ttd4", wr_ttd4)
+                .put("wr_ttd4ds1", wr_ttd4ds1)
+                .put("wr_ttd4ds2", wr_ttd4ds2)
+                .put("wr_ttd4na", wr_ttd4na)
+                .put("wr_ttd5", wr_ttd5)
+                .put("wr_ttd5ds1", wr_ttd5ds1)
+                .put("wr_ttd5ds2", wr_ttd5ds2)
+                .put("wr_ttd5na", wr_ttd5na)
+                .put("wr_comments", wr_comments);
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-        }
         return json.toString();
     }
 
 
-    public JSONObject toJSONObject() {
+    public JSONObject toJSONObject() throws JSONException {
 
         JSONObject json = new JSONObject();
 
-        try {
-            json.put(FormWRTable.COLUMN_ID, this.id);
-            json.put(FormWRTable.COLUMN_UID, this.uid);
-            json.put(FormWRTable.COLUMN_CLUSTER, this.cluster);
-            json.put(FormWRTable.COLUMN_HHID, this.hhid);
-            json.put(FormWRTable.COLUMN_USERNAME, this.userName);
-            json.put(FormWRTable.COLUMN_SYSDATE, this.sysDate);
-            json.put(FormWRTable.COLUMN_DEVICEID, this.deviceId);
-            json.put(FormWRTable.COLUMN_DEVICETAGID, this.deviceTag);
-            json.put(FormWRTable.COLUMN_ISTATUS, this.iStatus);
-            json.put(FormWRTable.COLUMN_SYNCED, this.synced);
-            json.put(FormWRTable.COLUMN_SYNCED_DATE, this.syncDate);
-            json.put(FormWRTable.COLUMN_WR, new JSONObject(wRtoString()));
+        json.put(FormWRTable.COLUMN_ID, this.id);
+        json.put(FormWRTable.COLUMN_UID, this.uid);
+        json.put(FormWRTable.COLUMN_CLUSTER, this.cluster);
+        json.put(FormWRTable.COLUMN_HHID, this.hhid);
+        json.put(FormWRTable.COLUMN_USERNAME, this.userName);
+        json.put(FormWRTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(FormWRTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(FormWRTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(FormWRTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(FormWRTable.COLUMN_SYNCED, this.synced);
+        json.put(FormWRTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(FormWRTable.COLUMN_WR, new JSONObject(wRtoString()));
 
 
-            if (this.wR != null && !this.wR.equals("")) {
-                json.put(FormWRTable.COLUMN_WR, new JSONObject(this.wR));
-            }
-
-            return json;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
+        if (this.wR != null && !this.wR.equals("")) {
+            json.put(FormWRTable.COLUMN_WR, new JSONObject(this.wR));
         }
+
+        return json;
+
     }
 }

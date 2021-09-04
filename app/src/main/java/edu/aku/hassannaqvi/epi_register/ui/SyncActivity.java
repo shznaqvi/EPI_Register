@@ -144,12 +144,21 @@ public class SyncActivity extends AppCompatActivity {
 
                 // FormsCR
                 uploadTables.add(new SyncModel(FormCRTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedFormCR());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedFormCR());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(FormCR): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
 
                 // FormsWR
                 uploadTables.add(new SyncModel(FormWRTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedFormWR());
-
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedFormWR());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(FormWR): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
                 MainApp.downloadData = new String[uploadData.size()];
 
                 setAdapter(uploadTables);

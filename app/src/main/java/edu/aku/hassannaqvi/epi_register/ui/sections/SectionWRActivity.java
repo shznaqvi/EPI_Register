@@ -22,7 +22,7 @@ import java.util.Locale;
 
 import edu.aku.hassannaqvi.epi_register.MainActivity;
 import edu.aku.hassannaqvi.epi_register.R;
-import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.FormWRTable;
+import edu.aku.hassannaqvi.epi_register.contracts.TableContracts;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
 import edu.aku.hassannaqvi.epi_register.database.DatabaseHelper;
 import edu.aku.hassannaqvi.epi_register.databinding.ActivitySectionWrBinding;
@@ -84,20 +84,35 @@ public class SectionWRActivity extends AppCompatActivity {
     }
 
 
-    private boolean updateDB() {
+    private boolean insertRecord() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addWR(wr);
-        wr.setId(String.valueOf(updcount));
-        wr.setUid(wr.getDeviceId() + wr.getId());
-        long count = db.updateWrColumn(FormWRTable.COLUMN_UID, wr.getUid());
-        if (count > 0) {
-            db.updateWrColumn(FormWRTable.COLUMN_WR, wr.getwR());
-            db.updateWrColumn(FormWRTable.COLUMN_ISTATUS, "1");
-            return true;
-        } else {
-            Toast.makeText(this, "Updating Database… ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
+        long rowId = 0;
+
+        try {
+            rowId = db.addWR(wr);
+
+            if (rowId > 0) {
+                long updCount = 0;
+
+                wr.setId(String.valueOf(rowId));
+                wr.setUid(wr.getDeviceId() + wr.getId());
+
+                updCount = db.updateWrColumn(TableContracts.FormWRTable.COLUMN_UID, wr.getUid());
+
+                if (updCount > 0) {
+                    return true;
+                }
+
+            } else {
+                Toast.makeText(this, "Updating Database… ERROR!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(WR):" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+
+        return false;
     }
 
 
@@ -108,7 +123,7 @@ public class SectionWRActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        if (updateDB()) {
+        if (insertRecord()) {
             finish();
             startActivity(new Intent(this, SectionWRActivity.class)
                     .putExtra("dmureg", bi.wrDmuRegister.getText().toString())

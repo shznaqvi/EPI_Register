@@ -1307,7 +1307,7 @@ public class FormCR extends BaseObservable {
     }
 
 
-    public FormCR Hydrate(Cursor cursor) {
+    public FormCR Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_UID));
         this.cluster = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_CLUSTER));
@@ -1325,18 +1325,17 @@ public class FormCR extends BaseObservable {
         return this;
     }
 
-    public void cRHydrate(String string) {
+    public void cRHydrate(String string) throws JSONException {
         Log.d(TAG, "cRHydrate: " + string);
         if (string != null) {
-            try {
-                JSONObject json = null;
-                json = new JSONObject(string);
-                this.cr_dmu_register = json.getString("cr_dmu_register");
-                this.cr_reg_number = json.getString("cr_reg_number");
-                this.cr_page_number = json.getString("cr_page_number");
-                this.cr_rsno = json.getString("cr_rsno");
-                this.cr_card_number = json.getString("cr_card_number");
-                this.cr_child_name = json.getString("cr_child_name");
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.cr_dmu_register = json.getString("cr_dmu_register");
+            this.cr_reg_number = json.getString("cr_reg_number");
+            this.cr_page_number = json.getString("cr_page_number");
+            this.cr_rsno = json.getString("cr_rsno");
+            this.cr_card_number = json.getString("cr_card_number");
+            this.cr_child_name = json.getString("cr_child_name");
                 this.cr_father_name = json.getString("cr_father_name");
                 this.cr_age_months = json.getString("cr_age_months");
                 this.cr_age_years = json.getString("cr_age_years");
@@ -1414,25 +1413,22 @@ public class FormCR extends BaseObservable {
                 this.cr_measles2_d2 = json.getString("cr_measles2_d2");
                 this.cr_measles2_na = json.getString("cr_measles2_na");
                 this.cr_comments = json.getString("cr_comments");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+
         }
     }
 
 
-    public String cRtoString() {
+    public String cRtoString() throws JSONException {
         Log.d(TAG, "cRtoString: ");
         JSONObject json = new JSONObject();
 
-        try {
-            json.put("cr_dmu_register", cr_dmu_register)
-                    .put("cr_reg_number", cr_reg_number)
-                    .put("cr_page_number", cr_page_number)
-                    .put("cr_rsno", cr_rsno)
-                    .put("cr_card_number", cr_card_number)
-                    .put("cr_child_name", cr_child_name)
-                    .put("cr_father_name", cr_father_name)
+        json.put("cr_dmu_register", cr_dmu_register)
+                .put("cr_reg_number", cr_reg_number)
+                .put("cr_page_number", cr_page_number)
+                .put("cr_rsno", cr_rsno)
+                .put("cr_card_number", cr_card_number)
+                .put("cr_child_name", cr_child_name)
+                .put("cr_father_name", cr_father_name)
                     .put("cr_age_months", cr_age_months)
                     .put("cr_age_years", cr_age_years)
                     .put("cr_age_days", cr_age_days)
@@ -1510,26 +1506,21 @@ public class FormCR extends BaseObservable {
                     .put("cr_measles2_na", cr_measles2_na)
                     .put("cr_comments", cr_comments);
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-        }
         return json.toString();
     }
 
 
-    public JSONObject toJSONObject() {
+    public JSONObject toJSONObject() throws JSONException {
 
         JSONObject json = new JSONObject();
 
-        try {
-            json.put(FormCRTable.COLUMN_ID, this.id);
-            json.put(FormCRTable.COLUMN_UID, this.uid);
-            json.put(FormCRTable.COLUMN_CLUSTER, this.cluster);
-            json.put(FormCRTable.COLUMN_HHID, this.hhid);
-            json.put(FormCRTable.COLUMN_USERNAME, this.userName);
-            json.put(FormCRTable.COLUMN_SYSDATE, this.sysDate);
-            json.put(FormCRTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(FormCRTable.COLUMN_ID, this.id);
+        json.put(FormCRTable.COLUMN_UID, this.uid);
+        json.put(FormCRTable.COLUMN_CLUSTER, this.cluster);
+        json.put(FormCRTable.COLUMN_HHID, this.hhid);
+        json.put(FormCRTable.COLUMN_USERNAME, this.userName);
+        json.put(FormCRTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(FormCRTable.COLUMN_DEVICEID, this.deviceId);
             json.put(FormCRTable.COLUMN_DEVICETAGID, this.deviceTag);
             json.put(FormCRTable.COLUMN_ISTATUS, this.iStatus);
             json.put(FormCRTable.COLUMN_SYNCED, this.synced);
@@ -1542,9 +1533,6 @@ public class FormCR extends BaseObservable {
             }
 
             return json;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
-        }
+
     }
 }
