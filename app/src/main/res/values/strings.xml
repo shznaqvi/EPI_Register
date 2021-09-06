@@ -52,7 +52,7 @@
     <string name="istatusf">Dwelling not found</string>
     <string name="istatus96">Other (specify)</string>
 
-    <string name="cr_mainheading">CR: بچوں کے حفاظتی ٹیکوں کا رجسٹر</string>
+    <string name="cr_mainheading"> بچوں کے حفاظتی ٹیکوں کا رجسٹر </string>
     <string name="app_name">EPI Register</string>
     <string name="btnSync">Download Data</string>
     <string name="btnUpload">Upload Data</string>

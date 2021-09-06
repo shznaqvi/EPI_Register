@@ -83,6 +83,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:textSize="22dp"
                                 android:text="@string/wr_dmu_register" />
 
                             <TextView
@@ -92,7 +93,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
 
-                                android:textSize="24dp"
+                                android:textSize="22dp"
                                 android:text="@string/wr_dmu_register" />
 
                         </LinearLayout>
@@ -128,6 +129,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:textSize="22dp"
                                 android:text="@string/wr_reg_number" />
 
                             <TextView
@@ -136,7 +138,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:textSize="24dp"
+                                android:textSize="22dp"
                                 android:text="@string/wr_reg_number" />
 
                         </LinearLayout>
@@ -257,11 +259,6 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_wr_women_name" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -295,12 +292,6 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_wr_husband_name" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -372,11 +363,6 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_wr_address" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -431,13 +417,8 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_wr_phone" />
 
-                            <TextView
+                        <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -800,12 +781,6 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_wr_comments" />
 
                             <TextView
                                 android:layout_width="0dp"
