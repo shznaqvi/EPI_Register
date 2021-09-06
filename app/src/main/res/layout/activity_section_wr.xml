@@ -470,7 +470,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/wr_tt_title"
-                            android:textAlignment="center" />
+                      />
 
 
                         <LinearLayout
