@@ -77,8 +77,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(FormCRTable.COLUMN_PROJECT_NAME, cr.getProjectName());
         values.put(FormCRTable.COLUMN_UID, cr.getUid());
-        values.put(FormCRTable.COLUMN_CLUSTER, cr.getCluster());
-        values.put(FormCRTable.COLUMN_HHID, cr.getHhid());
         values.put(FormCRTable.COLUMN_USERNAME, cr.getUserName());
         values.put(FormCRTable.COLUMN_SYSDATE, cr.getSysDate());
         values.put(FormCRTable.COLUMN_ISTATUS, cr.getiStatus());
@@ -105,8 +103,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(FormWRTable.COLUMN_PROJECT_NAME, wr.getProjectName());
         values.put(FormWRTable.COLUMN_UID, wr.getUid());
-        values.put(FormWRTable.COLUMN_CLUSTER, wr.getCluster());
-        values.put(FormWRTable.COLUMN_HHID, wr.getHhid());
         values.put(FormWRTable.COLUMN_USERNAME, wr.getUserName());
         values.put(FormWRTable.COLUMN_SYSDATE, wr.getSysDate());
         values.put(FormWRTable.COLUMN_ISTATUS, wr.getiStatus());

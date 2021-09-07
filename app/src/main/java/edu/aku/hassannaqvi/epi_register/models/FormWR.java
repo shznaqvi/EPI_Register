@@ -26,8 +26,6 @@ public class FormWR extends BaseObservable {
     private String uid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
     private String sysDate = StringUtils.EMPTY;
-    private String cluster = StringUtils.EMPTY;
-    private String hhid = StringUtils.EMPTY;
     private String deviceId = StringUtils.EMPTY;
     private String deviceTag = StringUtils.EMPTY;
     private String appver = StringUtils.EMPTY;
@@ -103,26 +101,6 @@ public class FormWR extends BaseObservable {
 
     public void setUid(String uid) {
         this.uid = uid;
-    }
-
-    @Bindable
-    public String getCluster() {
-        return cluster;
-    }
-
-    public void setCluster(String cluster) {
-        this.cluster = cluster;
-        notifyPropertyChanged(BR.cluster);
-    }
-
-    @Bindable
-    public String getHhid() {
-        return hhid;
-    }
-
-    public void setHhid(String hhid) {
-        this.hhid = hhid;
-        notifyPropertyChanged(BR.hhid);
     }
 
     public String getUserName() {
@@ -606,8 +584,6 @@ public class FormWR extends BaseObservable {
     public FormWR Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_UID));
-        this.cluster = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_CLUSTER));
-        this.hhid = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndex(FormWRTable.COLUMN_DEVICEID));
@@ -712,8 +688,6 @@ public class FormWR extends BaseObservable {
 
         json.put(FormWRTable.COLUMN_ID, this.id);
         json.put(FormWRTable.COLUMN_UID, this.uid);
-        json.put(FormWRTable.COLUMN_CLUSTER, this.cluster);
-        json.put(FormWRTable.COLUMN_HHID, this.hhid);
         json.put(FormWRTable.COLUMN_USERNAME, this.userName);
         json.put(FormWRTable.COLUMN_SYSDATE, this.sysDate);
         json.put(FormWRTable.COLUMN_DEVICEID, this.deviceId);
