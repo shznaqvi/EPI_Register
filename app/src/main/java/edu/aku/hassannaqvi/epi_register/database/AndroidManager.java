@@ -32,6 +32,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import edu.aku.hassannaqvi.epi_register.core.MainApp;
+
 public class AndroidManager extends Activity implements OnItemClickListener {
 
     //in the below line Change the text 'yourCustomSqlHelper' with your custom sqlitehelper class name.
@@ -57,7 +59,7 @@ public class AndroidManager extends Activity implements OnItemClickListener {
 
 
         //in the below line Change the text 'yourCustomSqlHelper' with your custom sqlitehelper class name
-        dbm = new DatabaseHelper(AndroidManager.this);
+        dbm = MainApp.appInfo.dbHelper;
 
         mainscrollview = new ScrollView(AndroidManager.this);
 

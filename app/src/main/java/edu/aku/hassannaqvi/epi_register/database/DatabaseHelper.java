@@ -498,8 +498,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = FormCRTable.COLUMN_SYNCED + " is null AND " +
-                FormCRTable.COLUMN_ISTATUS + "= '1'";
+        whereClause = FormCRTable.COLUMN_SYNCED + " is null ";
 
         String[] whereArgs = null;
 
@@ -546,8 +545,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = FormWRTable.COLUMN_SYNCED + " is null AND " +
-                FormWRTable.COLUMN_ISTATUS + "= '1'";
+        whereClause = FormWRTable.COLUMN_SYNCED + " is null ";
 
         String[] whereArgs = null;
 
