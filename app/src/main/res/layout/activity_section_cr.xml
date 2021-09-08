@@ -234,17 +234,14 @@
                                 app:minValue="1"
                                 app:type="range" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
+                            <EditText
                                 android:id="@+id/cr_card_number"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="#####"
-                                android:inputType="number"
-                                android:maxLength="5"
-                                app:maxValue="99999"
-                                app:minValue="1"
-                                app:type="range" />
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890 "
+                                android:hint="######"
+                                android:maxLength="6" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
