@@ -1400,6 +1400,7 @@ public class FormCR extends BaseObservable {
             this.cr_measles2_d1 = json.getString("cr_measles2_d1");
             this.cr_measles2_d2 = json.getString("cr_measles2_d2");
             this.cr_measles2_na = json.getString("cr_measles2_na");
+            this.cr_birth_status = json.getString("cr_birth_status");
             this.cr_comments = json.getString("cr_comments");
 
         }
@@ -1492,6 +1493,7 @@ public class FormCR extends BaseObservable {
                 .put("cr_measles2_d1", cr_measles2_d1)
                 .put("cr_measles2_d2", cr_measles2_d2)
                 .put("cr_measles2_na", cr_measles2_na)
+                .put("cr_birth_status", cr_birth_status)
                 .put("cr_comments", cr_comments);
 
         return json.toString();
