@@ -225,7 +225,7 @@ public class SectionCRActivity extends AppCompatActivity {
         cr.setCr_address(bi.crAddress.getText().toString());
         MainApp.crAddress = bi.crAddress.getText().toString();
 
-        cr.setCr_address(bi.crAddressPrevious.isChecked() ? "1" : "-1");
+        //cr.setCr_address(bi.crAddressPrevious.isChecked() ? "1" : "-1");
 
         cr.setCr_phone(bi.crPhone.getText().toString());
 
