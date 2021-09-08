@@ -182,7 +182,7 @@ public class SectionWRActivity extends AppCompatActivity {
         wr.setWr_address(bi.wrAddress.getText().toString());
         MainApp.wrAddress = bi.wrAddress.getText().toString();
 
-        wr.setWr_address_previous(bi.wrAddressPrevious.isChecked() ? "1" : "-1");
+        //wr.setWr_address_previous(bi.wrAddressPrevious.isChecked() ? "1" : "-1");
 
         wr.setWr_phone(bi.wrPhone.getText().toString());
 
