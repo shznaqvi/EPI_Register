@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.epi_register.workers;
 
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.PROJECT_NAME;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.ProgressDialog;
@@ -22,13 +24,12 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
 
 import edu.aku.hassannaqvi.epi_register.R;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
-
-import static edu.aku.hassannaqvi.epi_register.core.MainApp.PROJECT_NAME;
 
 
 public class DataUpWorkerALL extends Worker {
@@ -44,7 +45,7 @@ public class DataUpWorkerALL extends Worker {
     private final String nTitle = PROJECT_NAME + ": Data Upload";
     private final int position;
     private final String uploadWhere;
-    HttpURLConnection urlConnection;
+    HttpsURLConnection urlConnection;
     private ProgressDialog pd;
     private int length;
     private Data data;
@@ -101,7 +102,7 @@ public class DataUpWorkerALL extends Worker {
                 url = serverURL;
             }
             Log.d(TAG, "doWork: Connecting...");
-            urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection = (HttpsURLConnection) url.openConnection();
             urlConnection.setReadTimeout(100000 /* milliseconds */);
             urlConnection.setConnectTimeout(150000 /* milliseconds */);
             urlConnection.setRequestMethod("POST");
@@ -139,7 +140,7 @@ public class DataUpWorkerALL extends Worker {
 
             Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
 
-            if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+            if (urlConnection.getResponseCode() == HttpsURLConnection.HTTP_OK) {
                 Log.d(TAG, "Connection Response: " + urlConnection.getResponseCode());
                 displayNotification(nTitle, "Connection Established");
 

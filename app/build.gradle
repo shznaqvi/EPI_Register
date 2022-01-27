@@ -125,4 +125,12 @@ dependencies {
 
     // WorkManager(Java only)
     implementation "androidx.work:work-runtime:2.5.0"
+
+    // Sqlcipher
+    implementation "net.zetetic:android-database-sqlcipher:4.5.0"
+    implementation "androidx.sqlite:sqlite-ktx:2.2.0"
+    implementation "androidx.sqlite:sqlite:2.2.0"
+
+    //Rooted
+    implementation 'com.scottyab:rootbeer-lib:0.1.0'
 }

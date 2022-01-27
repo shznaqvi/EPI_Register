@@ -15,8 +15,9 @@ import androidx.work.WorkerParameters;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.nio.charset.StandardCharsets;
+
+import javax.net.ssl.HttpsURLConnection;
 
 import edu.aku.hassannaqvi.epi_register.R;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
@@ -26,7 +27,7 @@ import edu.aku.hassannaqvi.epi_register.database.DatabaseHelper;
 public class ReadJSONWorker extends Worker {
 
     private final String TAG = "ReadJSONWorker()";
-    HttpURLConnection urlConnection;
+    HttpsURLConnection urlConnection;
     private int length;
     private DatabaseHelper db;
 

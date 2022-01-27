@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.epi_register.workers;
 
+import static edu.aku.hassannaqvi.epi_register.core.MainApp._PHOTO_UPLOAD_URL;
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.sdDir;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -25,17 +28,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Random;
 
+import javax.net.ssl.HttpsURLConnection;
+
 import edu.aku.hassannaqvi.epi_register.R;
 import edu.aku.hassannaqvi.epi_register.core.MainApp;
-
-import static edu.aku.hassannaqvi.epi_register.core.MainApp._PHOTO_UPLOAD_URL;
-import static edu.aku.hassannaqvi.epi_register.core.MainApp.sdDir;
 
 public class PhotoUploadWorker2 extends Worker {
 
@@ -44,7 +45,7 @@ public class PhotoUploadWorker2 extends Worker {
     private final int photoid;
     private final String nTitle = "Naunehal: Photo Upload";
     public Boolean errMsg = false;
-    HttpURLConnection urlConnection;
+    HttpsURLConnection urlConnection;
     File fileZero;
     private Data data;
 
@@ -243,7 +244,7 @@ public class PhotoUploadWorker2 extends Worker {
     private String uploadPhoto(String filepath) {
         displayNotification(fileZero.toString(), "Connecting...", 100, 0);
 
-        HttpURLConnection connection = null;
+        HttpsURLConnection connection = null;
         DataOutputStream outputStream = null;
         InputStream inputStream = null;
 
@@ -276,7 +277,7 @@ public class PhotoUploadWorker2 extends Worker {
             }
             Log.d(TAG, "uploadPhoto: " + file);
 
-            connection = (HttpURLConnection) url.openConnection();
+            connection = (HttpsURLConnection) url.openConnection();
 
             connection.setDoInput(true);
             connection.setDoOutput(true);
@@ -326,7 +327,7 @@ public class PhotoUploadWorker2 extends Worker {
             inputStream = connection.getInputStream();
 
             int status = connection.getResponseCode();
-            if (status == HttpURLConnection.HTTP_OK) {
+            if (status == HttpsURLConnection.HTTP_OK) {
                 displayNotification(fileZero.toString(), "Connected to server...", 100, 0);
 
                 BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));

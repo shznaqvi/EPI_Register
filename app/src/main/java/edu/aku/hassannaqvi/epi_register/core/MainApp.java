@@ -3,13 +3,19 @@ package edu.aku.hassannaqvi.epi_register.core;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 
 import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Clear;
+
+import net.sqlcipher.database.SQLiteDatabase;
 
 import org.json.JSONArray;
 
@@ -77,6 +83,8 @@ public class MainApp extends Application {
     public static List<String> subjectNames;
     public static String crAddress;
     public static String wrAddress;
+    private static final String TAG = "MainApp";
+    public static String IBAHC = "";
 
 
     public static void hideSystemUI(View decorView) {
@@ -118,6 +126,13 @@ public class MainApp extends Application {
     public void onCreate() {
         super.onCreate();
 
+        /*
+        RootBeer rootBeer = new RootBeer(this);
+        if (rootBeer.isRooted()) {
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        }*/
+
         //Initiate DateTime
         //Initializ App info
         appInfo = new AppInfo(this);
@@ -128,6 +143,24 @@ public class MainApp extends Application {
                 .apply();
         deviceid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
+        initSecure();
+    }
+
+    private void initSecure() {
+        // Initialize SQLCipher library
+        SQLiteDatabase.loadLibs(this);
+
+        // Prepare encryption KEY
+        ApplicationInfo ai = null;
+        try {
+            ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            Bundle bundle = ai.metaData;
+            int TRATS = bundle.getInt("YEK_TRATS");
+            IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
+            Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void cbCheck(CheckBox cb1, CheckBox cb2, CheckBox cb3, EditTextPicker edt) {

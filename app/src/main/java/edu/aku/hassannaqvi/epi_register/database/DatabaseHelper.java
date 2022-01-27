@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.epi_register.database;
 
+import static edu.aku.hassannaqvi.epi_register.core.MainApp.IBAHC;
 import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_VERSION;
 import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_FORMCR;
@@ -12,9 +13,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.database.SQLException;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import net.sqlcipher.database.SQLiteDatabase;
+import net.sqlcipher.database.SQLiteOpenHelper;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,6 +46,7 @@ import edu.aku.hassannaqvi.epi_register.models.VersionApp;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private final String TAG = "DatabaseHelper";
+    private static final String DATABASE_PASSWORD = IBAHC;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -71,7 +74,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Long addCR(FormCR cr) throws JSONException {
 
         // Gets the data repository in write mode
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
@@ -99,7 +102,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Long addWR(FormWR wr) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(FormWRTable.COLUMN_PROJECT_NAME, wr.getProjectName());
         values.put(FormWRTable.COLUMN_UID, wr.getUid());
@@ -127,7 +130,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //UPDATE in DB
     public int updateCrColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
@@ -142,7 +145,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updateWrColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
@@ -157,7 +160,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updateEnding() {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         // New value for one column
         ContentValues values = new ContentValues();
@@ -178,7 +181,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * Functions that dealing with table data
      * */
     public boolean doLogin(String username, String password) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = {
                 UsersTable.COLUMN_ID,
@@ -221,7 +224,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public ArrayList<FormCR> getFormsByDate(String sysdate) {
 
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = {
                 FormCRTable._ID,
@@ -270,7 +273,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // istatus examples: (1) or (1,9) or (1,3,5)
     public FormCR getFormByAssessNo(String uid, String istatus) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
@@ -312,7 +315,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public ArrayList<Cursor> getDatabaseManagerData(String Query) {
         //get writable database
-        SQLiteDatabase sqlDB = this.getWritableDatabase();
+        SQLiteDatabase sqlDB = this.getWritableDatabase(DATABASE_PASSWORD);
         String[] columns = new String[]{"message"};
         //an array list of cursor to save two cursors one has results from the query
         //other cursor stores error message if any errors are triggered
@@ -347,7 +350,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /*public int updateTemp(String assessNo, String temp) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD)
 
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_TSF305, temp);
@@ -368,7 +371,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public int syncVersionApp(JSONObject VersionList) {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(VersionTable.TABLE_NAME, null, null);
         long count = 0;
         try {
@@ -394,7 +397,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int syncUser(JSONArray userList) {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(UsersTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
@@ -424,7 +427,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 /*
 
     public int syncClusters(JSONArray clusterList) {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(ClustersTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
@@ -455,7 +458,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int syncRandom(JSONArray list) {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(RandomTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
@@ -489,7 +492,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //get UnSyncedTables
     public JSONArray getUnsyncedFormCR() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
@@ -536,7 +539,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public JSONArray getUnsyncedFormWR() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
@@ -584,7 +587,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //update SyncedTables
     public void updateSyncedFormCR(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
 // New value for one column
         ContentValues values = new ContentValues();
@@ -603,7 +606,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void updateSyncedFormWR(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
 // New value for one column
         ContentValues values = new ContentValues();
@@ -625,7 +628,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 /*    public void updateSyncedSamp(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD)
         ContentValues values = new ContentValues();
         values.put(SamplesTable.COLUMN_SYNCED, true);
         values.put(SamplesTable.COLUMN_SYNCED_DATE, new Date().toString());
@@ -643,7 +646,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public ArrayList<Cursor> getData(String Query) {
         //get writable database
-        SQLiteDatabase sqlDB = this.getWritableDatabase();
+        SQLiteDatabase sqlDB = this.getWritableDatabase(DATABASE_PASSWORD);
         String[] columns = new String[]{"message"};
         //an array list of cursor to save two cursors one has results from the query
         //other cursor stores error message if any errors are triggered
