@@ -1296,19 +1296,19 @@ public class FormCR extends BaseObservable {
 
 
     public FormCR Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_UID));
-        this.userName = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_SYNCED_DATE));
-        this.endTime = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_END_TIME));
-        this.startTime = cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_START_TIME));
-        cRHydrate(cursor.getString(cursor.getColumnIndex(FormCRTable.COLUMN_CR)));
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_SYNCED_DATE));
+        this.endTime = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_END_TIME));
+        this.startTime = cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_START_TIME));
+        cRHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormCRTable.COLUMN_CR)));
 
         return this;
     }

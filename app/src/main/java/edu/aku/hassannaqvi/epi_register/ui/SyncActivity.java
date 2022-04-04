@@ -49,6 +49,7 @@ import java.util.concurrent.TimeUnit;
 
 import edu.aku.hassannaqvi.epi_register.R;
 import edu.aku.hassannaqvi.epi_register.adapters.SyncListAdapter;
+import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.EntryLogTable;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.FormCRTable;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.FormWRTable;
 import edu.aku.hassannaqvi.epi_register.contracts.TableContracts.UsersTable;
@@ -159,6 +160,16 @@ public class SyncActivity extends AppCompatActivity {
                     e.printStackTrace();
                     Toast.makeText(this, "JSONException(FormWR): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+
+                //Entry Log
+                uploadTables.add(new SyncModel(EntryLogTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedEntryLog());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(EntryLog)" + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
                 MainApp.downloadData = new String[uploadData.size()];
 
                 setAdapter(uploadTables);

@@ -85,6 +85,7 @@ public class MainApp extends Application {
     public static String wrAddress;
     private static final String TAG = "MainApp";
     public static String IBAHC = "";
+    public static final String _USER_URL = "resetpassword.php";
 
 
     public static void hideSystemUI(View decorView) {

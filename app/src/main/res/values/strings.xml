@@ -9,6 +9,9 @@
     <string name="btnLogin">Login</string>
     <string name="btnDownloadData">Download Data</string>
     <string name="cs_MAexist">might be already exist</string>
+    <string name="confirmPassword" translatable="false">Confirm Password</string>
+    <string name="btnResetPassword">Reset Password</string>
+    <string name="upd_db_error"> Updating Database… ERROR! </string>
 
     <string name="netwrok">Network connection not available!</string>
     <string name="invalidpass">Invalid Password</string>
