@@ -7,7 +7,7 @@ object CreateTable {
 
     const val DATABASE_NAME = "$PROJECT_NAME.db"
     const val DATABASE_COPY = "${PROJECT_NAME}_copy.db"
-    const val DATABASE_VERSION = 1
+    const val DATABASE_VERSION = 2
 
     const val SQL_CREATE_FORMCR = ("CREATE TABLE "
             + FormCRTable.TABLE_NAME + "("
@@ -60,6 +60,22 @@ object CreateTable {
             + " );"
             )
 
+    const val SQL_ALTER_USERS_ENABLED = ("Alter TABLE "
+            + UsersTable.TABLE_NAME + " ADD "
+            + UsersTable.COLUMN_ENABLED + " TEXT"
+            + " ;"
+            )
+
+    const val SQL_ALTER_USERS_ISNEW_USER = ("Alter TABLE "
+            + UsersTable.TABLE_NAME + " ADD "
+            + UsersTable.COLUMN_ISNEW_USER + " TEXT"
+            + " ;"
+            )
+    const val SQL_ALTER_USERS_PWD_EXPIRY = ("Alter TABLE "
+            + UsersTable.TABLE_NAME + " ADD "
+            + UsersTable.COLUMN_PWD_EXPIRY + " TEXT"
+            + " ;"
+            )
 
     const val SQL_CREATE_VERSIONAPP = ("CREATE TABLE "
             + VersionTable.TABLE_NAME + " ("

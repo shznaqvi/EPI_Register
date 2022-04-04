@@ -4,6 +4,9 @@ import static edu.aku.hassannaqvi.epi_register.core.MainApp.IBAHC;
 import static edu.aku.hassannaqvi.epi_register.core.UserAuth.checkPassword;
 import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.epi_register.database.CreateTable.DATABASE_VERSION;
+import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_ALTER_USERS_ENABLED;
+import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_ALTER_USERS_ISNEW_USER;
+import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_ALTER_USERS_PWD_EXPIRY;
 import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_ENTRYLOGS;
 import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_FORMCR;
 import static edu.aku.hassannaqvi.epi_register.database.CreateTable.SQL_CREATE_FORMWR;
@@ -76,7 +79,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         switch (oldVersion) {
             case 1:
-            case 2:
+                db.execSQL(SQL_ALTER_USERS_ENABLED);
+                db.execSQL(SQL_ALTER_USERS_ISNEW_USER);
+                db.execSQL(SQL_ALTER_USERS_PWD_EXPIRY);
         }
     }
 
