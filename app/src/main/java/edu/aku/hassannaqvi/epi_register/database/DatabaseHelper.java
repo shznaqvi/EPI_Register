@@ -469,6 +469,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(UsersTable.COLUMN_USERNAME, user.getUserName());
                 values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
                 values.put(UsersTable.COLUMN_FULLNAME, user.getFullname());
+                values.put(UsersTable.COLUMN_ENABLED, user.getEnabled());
+                values.put(UsersTable.COLUMN_ISNEW_USER, user.getNewUser());
+                values.put(UsersTable.COLUMN_PWD_EXPIRY, user.getPwdExpiry());
                 long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
