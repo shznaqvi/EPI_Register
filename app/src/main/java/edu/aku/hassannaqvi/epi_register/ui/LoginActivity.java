@@ -298,8 +298,8 @@ public class LoginActivity extends AppCompatActivity {
 
         } else {
             // Store values at the time of the login attempt.
-            String username = bi.username.getText().toString();
-            String password = bi.password.getText().toString();
+            username = bi.username.getText().toString();
+            password = bi.password.getText().toString();
 
             boolean cancel = false;
             View focusView = null;
