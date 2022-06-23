@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Office Work/EPI_Register/app/src/main/res/layout-v17/sync_list_adapter.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/EPI_Register/app/src/main/res/layout/activity_change_password.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/EPI_Register/app/src/main/res/layout/activity_login.xml" value="0.35625" />
+        <entry key="..\:/Android Office Work/EPI_Register/app/src/main/res/layout/activity_main.xml" value="0.34" />
         <entry key="..\:/Android Office Work/EPI_Register/app/src/main/res/layout/activity_section_cr.xml" value="0.33416666666666667" />
         <entry key="..\:/Android Office Work/EPI_Register/app/src/main/res/layout/activity_section_wr.xml" value="0.33416666666666667" />
+        <entry key="..\:/Android Office Work/EPI_Register/app/src/main/res/layout/activity_sync.xml" value="0.35" />
+        <entry key="..\:/Android Office Work/EPI_Register/app/src/main/res/layout/sync_list_adapter.xml" value="0.371875" />
         <entry key="..\:/Android/EPI_Register/app/src/main/res/drawable/ic_item_right_arrow.xml" value="0.5875" />
         <entry key="..\:/Android/EPI_Register/app/src/main/res/layout-v17/sync_list_adapter.xml" value="0.56328125" />
         <entry key="..\:/Android/EPI_Register/app/src/main/res/layout/activity_login.xml" value="0.29140625" />
@@ -14,7 +20,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="15" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -3,16 +3,19 @@ package edu.aku.hassannaqvi.epi_register.models;
 import org.apache.commons.lang3.StringUtils;
 
 public class SyncModel {
+    String tableTitle;
     String tableName;
     String status;
     int statusID;
     String message;
     String filter = null;
     String select = null;
+    String info;
 
     public SyncModel(String tableName) {
 
         this.tableName = tableName;
+        this.tableTitle = tableName.replaceAll("\\d+", "").replaceAll("(.)([A-Z])", "$1 $2");
         this.status = StringUtils.EMPTY;
         this.statusID = 0;
         this.message = StringUtils.EMPTY;
@@ -23,6 +26,7 @@ public class SyncModel {
     public SyncModel(String tableName, String select) {
 
         this.tableName = tableName;
+        this.tableTitle = tableName.replaceAll("\\d+", "").replaceAll("(.)([A-Z])", "$1 $2");
         this.status = StringUtils.EMPTY;
         this.statusID = 0;
         this.message = StringUtils.EMPTY;
@@ -32,12 +36,21 @@ public class SyncModel {
     public SyncModel(String tableName, String select, String filter) {
 
         this.tableName = tableName;
+        this.tableTitle = tableName.replaceAll("\\d+", "").replaceAll("(.)([A-Z])", "$1 $2");
         this.status = StringUtils.EMPTY;
         this.statusID = 0;
         this.message = StringUtils.EMPTY;
         this.select = select;
         this.filter = filter;
 
+    }
+
+    public String getTableTitle() {
+        return tableTitle;
+    }
+
+    public void setTableTitle(String tableTitle) {
+        this.tableTitle = tableTitle;
     }
 
 
@@ -88,5 +101,13 @@ public class SyncModel {
 
     public void setSelect(String select) {
         this.select = select;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 }

@@ -57,7 +57,7 @@ import edu.aku.hassannaqvi.epi_register.models.VersionApp;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private final String TAG = "DatabaseHelper";
-    private static final String DATABASE_PASSWORD = IBAHC;
+    public static final String DATABASE_PASSWORD = IBAHC;
     private final Context mContext;
 
     public DatabaseHelper(Context context) {

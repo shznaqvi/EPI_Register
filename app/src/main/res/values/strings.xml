@@ -12,6 +12,8 @@
     <string name="confirmPassword" translatable="false">Confirm Password</string>
     <string name="btnResetPassword">Reset Password</string>
     <string name="upd_db_error"> Updating Database… ERROR! </string>
+    <string name="oldPassword" translatable="false">Old Password</string>
+    <string name="newPassword" translatable="false">New Password</string>
 
     <string name="netwrok">Network connection not available!</string>
     <string name="invalidpass">Invalid Password</string>
