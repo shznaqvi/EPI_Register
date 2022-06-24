@@ -356,6 +356,13 @@ public class ChangePasswordActivity extends AppCompatActivity {
             isValid = false;
         }
 
+        // Check same username and password
+        if (password.matches(MainApp.user.getUserName())) {
+            System.out.println("Username and Password cannot be same");
+            bi.password1.setError("Username and Password cannot be same");
+            isValid = false;
+        }
+
         /*String specialChars = "(.*[@,#,$,%].*$)";
         if (!password.matches(specialChars ))
         {
