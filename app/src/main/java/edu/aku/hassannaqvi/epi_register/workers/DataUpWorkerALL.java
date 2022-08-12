@@ -67,7 +67,6 @@ public class DataUpWorkerALL extends Worker {
     private long startTime;
     private int responseLength = 0, requestLength = 0;
 
-
     public DataUpWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mContext = context;
@@ -94,7 +93,7 @@ public class DataUpWorkerALL extends Worker {
      * It will display a notification
      * So that we will understand the work is executed
      * */
-    /*private static SSLSocketFactory buildSslSocketFactory(Context context) {
+  /*  private static SSLSocketFactory buildSslSocketFactory(Context context) {
         try {
 
 
@@ -182,7 +181,7 @@ public class DataUpWorkerALL extends Worker {
         notificationManager.notify(1, notification.build());
     }
 
-    /*private boolean certIsValid(Certificate[] certs, Certificate ca) {
+   /* private boolean certIsValid(Certificate[] certs, Certificate ca) {
         for (Certificate cert : certs) {
             System.out.println("Certificate is: " + cert);
             if (cert instanceof X509Certificate) {
@@ -237,7 +236,7 @@ public class DataUpWorkerALL extends Worker {
 
 
             ca = cf.generateCertificate(caInput);
-//            System.out.println("ca=" + ((X509Certificate) ca).getSubjectDN());
+            //     System.out.println("ca=" + ((X509Certificate) ca).getSubjectDN());
         } catch (CertificateException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -347,18 +346,18 @@ public class DataUpWorkerALL extends Worker {
 
                     data = new Data.Builder()
                             .putString("error", String.valueOf(urlConnection.getResponseCode()))
-                            .putInt("position", this.position)
                             .putString("time", getTime())
                             .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
+                            .putInt("position", this.position)
                             .build();
                     return Result.failure(data);
                 }
             } else {
                 data = new Data.Builder()
                         .putString("error", "Invalid Certificate")
-                        .putInt("position", this.position)
                         .putString("time", getTime())
                         .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
+                        .putInt("position", this.position)
                         .build();
 
                 return Result.failure(data);
@@ -368,9 +367,9 @@ public class DataUpWorkerALL extends Worker {
             displayNotification(nTitle, "Timeout Error: " + e.getMessage());
             data = new Data.Builder()
                     .putString("error", e.getMessage())
-                    .putInt("position", this.position)
                     .putString("time", getTime())
                     .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
+                    .putInt("position", this.position)
                     .build();
             return Result.failure(data);
 
@@ -379,9 +378,9 @@ public class DataUpWorkerALL extends Worker {
             displayNotification(nTitle, "IO Error: " + e.getMessage());
             data = new Data.Builder()
                     .putString("error", e.getMessage())
-                    .putInt("position", this.position)
                     .putString("time", getTime())
                     .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
+                    .putInt("position", this.position)
                     .build();
 
             return Result.failure(data);
@@ -396,9 +395,9 @@ public class DataUpWorkerALL extends Worker {
             displayNotification(nTitle, "Encryption Error: " + e.getMessage());
             data = new Data.Builder()
                     .putString("error", e.getMessage())
-                    .putInt("position", this.position)
                     .putString("time", getTime())
                     .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
+                    .putInt("position", this.position)
                     .build();
 
             return Result.failure(data);
@@ -442,9 +441,9 @@ public class DataUpWorkerALL extends Worker {
         } else {
             data = new Data.Builder()
                     .putString("error", String.valueOf(result))
-                    .putInt("position", this.position)
                     .putString("time", getTime())
                     .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
+                    .putInt("position", this.position)
                     .build();
             displayNotification(nTitle, "Error Received");
             return Result.failure(data);
@@ -467,4 +466,6 @@ public class DataUpWorkerALL extends Worker {
 
         return toMinutes > 0 ? toMinutes + "m " + toSeconds + "s" : toSeconds > 0 ? TimeUnit.MILLISECONDS.toSeconds(timeElapsed) + "s" : timeElapsed + "ms";
     }
+
+
 }

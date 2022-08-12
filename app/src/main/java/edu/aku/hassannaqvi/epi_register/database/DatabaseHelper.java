@@ -262,7 +262,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         c.close();
 
-        db.close();
         if (loggedInUser.getPassword().equals("")) {
             Toast.makeText(mContext, "Stored password is invalid", Toast.LENGTH_SHORT).show();
             return false;
@@ -318,9 +317,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             if (c != null) {
                 c.close();
             }
-            if (db != null) {
-                db.close();
-            }
         }
         return allForms;
     }
@@ -360,9 +356,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } finally {
             if (c != null) {
                 c.close();
-            }
-            if (db != null) {
-                db.close();
             }
         }
         return allFC;
@@ -459,18 +452,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return (int) count;
     }
 
-    public int syncUser(JSONArray userList) {
+    public int syncusers(JSONArray userList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(UsersTable.TABLE_NAME, null, null);
         int insertCount = 0;
-        try {
-            for (int i = 0; i < userList.length(); i++) {
+        for (int i = 0; i < userList.length(); i++) {
 
-                JSONObject jsonObjectUser = userList.getJSONObject(i);
+            JSONObject jsonObjectUser = userList.getJSONObject(i);
 
-                Users user = new Users();
-                user.sync(jsonObjectUser);
-                ContentValues values = new ContentValues();
+            Users user = new Users();
+            user.sync(jsonObjectUser);
+            ContentValues values = new ContentValues();
 
                 values.put(UsersTable.COLUMN_USERNAME, user.getUserName());
                 values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
@@ -481,13 +473,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
-
-        } catch (Exception e) {
-            Log.d(TAG, "syncUser(e): " + e);
-            db.close();
-        } finally {
-            db.close();
-        }
         return insertCount;
     }
 /*
@@ -573,7 +558,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = FormCRTable.COLUMN_ID + " ASC";
 
         JSONArray allCR = new JSONArray();
-        try {
             c = db.query(
                     FormCRTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
@@ -591,14 +575,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormCR cr = new FormCR();
                 allCR.put(cr.Hydrate(c).toJSONObject());
             }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
         Log.d(TAG, "getUnsyncedFormCR: " + allCR.toString().length());
         Log.d(TAG, "getUnsyncedFormCR: " + allCR);
         return allCR;
@@ -620,7 +596,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = FormWRTable.COLUMN_ID + " ASC";
 
         JSONArray allWR = new JSONArray();
-        try {
             c = db.query(
                     FormWRTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
@@ -638,14 +613,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormWR wr = new FormWR();
                 allWR.put(wr.Hydrate(c).toJSONObject());
             }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
         Log.d(TAG, "getUnsyncedFormWR: " + allWR.toString().length());
         Log.d(TAG, "getUnsyncedFormWR: " + allWR);
         return allWR;

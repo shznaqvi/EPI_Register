@@ -871,7 +871,7 @@ public class SyncActivity extends AppCompatActivity {
         JSONArray dummylist = new JSONArray();
 
         try {
-            db.syncUser(dummylist);
+            db.syncusers(dummylist);
             db.syncVersionApp(dummylist);
         } catch (JSONException e) {
             e.printStackTrace();

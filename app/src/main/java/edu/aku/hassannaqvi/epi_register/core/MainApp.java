@@ -45,6 +45,7 @@ public class MainApp extends Application {
     public static final String _SERVER_GET_URL = "getDataGCM.php";
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
     public static final String _UPDATE_URL = MainApp._IP + "/epi_register/app/";
+    public static final String _USER_URL = "resetpasswordgcm.php";
     public static final String _APP_FOLDER = "../app/epi_register";
     public static int TRATS = 8;
 
@@ -90,7 +91,6 @@ public class MainApp extends Application {
     public static String wrAddress;
     private static final String TAG = "MainApp";
     public static String IBAHC = "";
-    public static final String _USER_URL = "resetpassword.php";
 
 
     public static void hideSystemUI(View decorView) {
